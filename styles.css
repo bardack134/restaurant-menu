@@ -1,3 +1,51 @@
-.pageDesign{
+.pageDesign {
     background-color: #2A3335;
 }
+
+li a:hover {
+    color: black;
+    background: #D8A25E;
+}
+
+
+
+.backgroundImage {
+
+    background-image: url("https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2023/01/31073408/RK-Naperville-Bar-scaled.jpg") !important;
+    background-size: cover;
+}
+
+
+section h1 span {
+    color: #D8A25E;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: white !important;
+}
+
+.mybutton {
+    color: white;
+    border: 2px solid #D8A25E;
+    font-weight: 550;
+    font-size: 18px;
+    letter-spacing: .2rem;
+    padding: 6px 30px;
+    border-radius: 90px;
+    text-decoration: none;
+    transition: 3ms;
+}
+
+.mybutton:hover {
+
+    background-color: #d5b48c;
+    opacity: 0.85;
+
+}
+
+/* <div class="col-lg-4 d-flex align-items-center justify-content-center mt-5 mt-lg-0"><a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a></div> */
