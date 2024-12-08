@@ -3,29 +3,56 @@
 }
 
 li a:hover {
-    color: black;
-    background: #D8A25E;
-}
+    color: #D8A25E!important;
+    
+    }
 
-
-
-.backgroundImage {
-
-    background-image: url("https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2023/01/31073408/RK-Naperville-Bar-scaled.jpg") !important;
-    background-size: cover;
-}
-
+    .backgroundImage {
+        background-image: url("https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2023/01/31073408/RK-Naperville-Bar-scaled.jpg") !important;
+        background-size: cover;
+        position: relative; 
+    }
+    
+    .backgroundImage2 {
+        background-image: url("/imgs/img2.webp") !important;
+        background-size: cover;
+        background-position-y: 86%;
+        position: relative; 
+    }
+    
+    /* https://www.w3schools.com/cssref/sel_before.php */
+    .backgroundImage::before { /* https://developer.mozilla.org/en-US/docs/Web/CSS/::before#examples */
+        content: ""; 
+        position: absolute; 
+        top: 0; left: 0;
+        right: 0; 
+        bottom: 0; 
+        background-color: rgba(0, 0, 0, 0.2); 
+        z-index: 1; /* https://www.w3schools.com/css/css_z-index.asp */
+    }
+    
+    .backgroundImage2::before { /* https://developer.mozilla.org/en-US/docs/Web/CSS/::before#examples */
+        content: ""; 
+        position: absolute; 
+        top: 0; left: 0;
+        right: 0; 
+        bottom: 0; 
+        background-color: rgba(0, 0, 0, 0.7); 
+        z-index: 1; /* https://www.w3schools.com/css/css_z-index.asp */
+    }
+    
 
 section h1 span {
     color: #D8A25E;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.txt-white  {
+    position:relative;
+    color: #ffffff ;
+    z-index: 2;/* https://www.w3schools.com/css/css_z-index.asp */
+}
+
+h1,h2, h3, h4, h5, h6 {
     color: white !important;
 }
 
@@ -47,5 +74,3 @@ h6 {
     opacity: 0.85;
 
 }
-
-/* <div class="col-lg-4 d-flex align-items-center justify-content-center mt-5 mt-lg-0"><a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a></div> */
