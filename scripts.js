@@ -37,3 +37,15 @@ const menuItems = [
 ];
 
 
+
+
+function showModal() {
+    console.log("Hi i am showModal clicked ");
+    document.getElementById("modal-bg").classList.remove("NoDisplayModal")
+    document.getElementById("modal-container").classList.remove("NoDisplayModal")
+}
+function NoShowModal() {
+    console.log("hi i am NoShowModal function  ");
+    document.getElementById("modal-bg").classList.add("NoDisplayModal")
+    document.getElementById("modal-container").classList.add("NoDisplayModal")
+}
