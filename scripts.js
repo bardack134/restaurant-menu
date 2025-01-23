@@ -41,11 +41,16 @@ const menuItems = [
 
 function showModal() {
     console.log("Hi i am showModal clicked ");
-    document.getElementById("modal-bg").classList.remove("NoDisplayModal")
-    document.getElementById("modal-container").classList.remove("NoDisplayModal")
+    document.getElementById("modal-bg").classList.remove("NoDisplayModal");
+    document.getElementById("modal-container").classList.remove("NoDisplayModal");
+    document.getElementById("hide-item").classList.add("hide-element");
+    document.getElementById('myVideo').play();
 }
 function NoShowModal() {
-    console.log("hi i am NoShowModal function  ");
-    document.getElementById("modal-bg").classList.add("NoDisplayModal")
-    document.getElementById("modal-container").classList.add("NoDisplayModal")
-}
+    // console.log("hi i am NoShowModal function  ");
+    document.getElementById("modal-bg").classList.add("NoDisplayModal");
+    document.getElementById("modal-container").classList.add("NoDisplayModal");
+    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause
+    // document.getElementsByTagName('video')[0].pause()
+    document.getElementById('myVideo').pause()
+    }

@@ -85,7 +85,7 @@ h1,h2, h3, h4, h5, h6 {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     
 }
 
@@ -93,11 +93,11 @@ h1,h2, h3, h4, h5, h6 {
 /* モーダルコンテナが画面の中央に */
 #modal-container{
     position: absolute;
-    top: 350px;
+    top: 100px;
     left: 50%;
     /* 水平方向に自分の幅の50%だけ左に移動させることで、要素を完全に中央に配置します。 */
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateX(-80%);
+    /* background-color: rgba(0, 0, 0, 0.8); */
     padding: 160px;
     margin-left: auto;
     margin-right: auto;
@@ -114,6 +114,11 @@ h1,h2, h3, h4, h5, h6 {
 #modal-close{
     float: right;
     
+}
+
+/* モーダルウィンドウが開かれたときに要素を非表示にする */
+.hide-element{
+    opacity: 0;
 }
 
 
