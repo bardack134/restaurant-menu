@@ -37,8 +37,7 @@ const menuItems = [
 ];
 
 
-
-
+// モーダルを表示し、ビデオを再生する
 function showModal() {
     console.log("Hi i am showModal clicked ");
     document.getElementById("modal-bg").classList.remove("NoDisplayModal");
@@ -46,6 +45,9 @@ function showModal() {
     document.getElementById("hide-item").classList.add("hide-element");
     document.getElementById('myVideo').play();
 }
+
+
+// モーダルを非表示にし、ビデオを一時停止する
 function NoShowModal() {
     // console.log("hi i am NoShowModal function  ");
     document.getElementById("modal-bg").classList.add("NoDisplayModal");
@@ -54,3 +56,6 @@ function NoShowModal() {
     // document.getElementsByTagName('video')[0].pause()
     document.getElementById('myVideo').pause()
     }
+
+
+
