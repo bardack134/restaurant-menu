@@ -1,27 +1,40 @@
-.pageDesign {
-    background-color: #2A3335;
-}
-
+/* START NAV BAR */
 li a:hover {
     color: #D8A25E !important;
 
 }
+/* FINISH  NAV BAR */
+/* ---------------------------------------------------------------------------------- */
 
+
+
+/* ---------------------------------------------------------------------------------- */
+/* START BODY  */
+.pageDesign {
+    background-color: #2A3335;
+}
+
+h2,
+h3,
+h5,
+h6 {
+    color: white !important;
+}
+/* END BODY  */
+/* ---------------------------------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* start section "hero us" */
 .backgroundImage {
     background-image: url("https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2023/01/31073408/RK-Naperville-Bar-scaled.jpg") !important;
     background-size: cover;
     position: relative;
 }
 
-.backgroundImage2 {
-    background-image: url("/imgs/img2.webp") !important;
-    background-size: cover;
-    background-position-y: 86%;
-    position: relative;
-}
-
 /* https://www.w3schools.com/cssref/sel_before.php */
-.backgroundImage::before {
+.backgroundImage::after {
     /* https://developer.mozilla.org/en-US/docs/Web/CSS/::before#examples */
     content: "";
     position: absolute;
@@ -34,29 +47,6 @@ li a:hover {
     /* https://www.w3schools.com/css/css_z-index.asp */
 }
 
-.backgroundImage2::before {
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/::before#examples */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-    /* https://www.w3schools.com/css/css_z-index.asp */
-}
-
-
-section h1 span {
-    color: #D8A25E;
-}
-
-section h2 span {
-    color: #D8A25E;
-    font-size: 36px;
-    font-weight: 550;
-}
 
 .txt-white {
     position: relative;
@@ -65,13 +55,6 @@ section h2 span {
     /* https://www.w3schools.com/css/css_z-index.asp */
 }
 
-h1,
-h2,
-h3,
-h5,
-h6 {
-    color: white !important;
-}
 
 .mybutton {
     color: white;
@@ -92,20 +75,77 @@ h6 {
 
 }
 
-.NoDisplayModal {
-    display: none;
+section h1 span {
+    color: #D8A25E;
 }
 
-#modal-bg {
-    position: fixed;
+section h2 span {
+    color: #D8A25E;
+    font-size: 36px;
+    font-weight: 550;
+}
+
+/* finish section "hero us" */
+/* ---------------------------------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* start section "about us" */
+
+.backgroundImage2 {
+    background-image: url("/imgs/img2.webp") !important;
+    background-size: cover;
+    background-position-y: 86%;
+    position: relative;
+}
+
+
+.backgroundImage2::after {
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/::before#examples */
+    content: "";
+    position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
-
+    z-index: 1;
+    /* https://www.w3schools.com/css/css_z-index.asp */
 }
 
+.myContainer{
+    margin:  10px 0px 30px 60px;
+    /* padding: 10px 10px 30px 30px; */
+    
+}
+
+section img{
+    border: 5px solid grey;
+}
+
+section div h1{
+    color: #D8A25E;
+}
+/* Finish section about us */
+/* ---------------------------------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* MODAL Window in section "about us" */
+.hide-element {/* モーダルウィンドウが開かれたときに要素を非表示にする */
+    opacity: 0;
+}
+
+#modal-container p {
+    float: left;
+}
+
+#modal-close {
+    float: right;
+
+}
 
 /* モーダルコンテナが画面の中央に */
 #modal-container {
@@ -124,23 +164,28 @@ h6 {
 
 }
 
-#modal-container p {
-    float: left;
+#modal-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
 }
 
-#modal-close {
-    float: right;
-
+.NoDisplayModal {
+    display: none;
 }
 
-/* モーダルウィンドウが開かれたときに要素を非表示にする */
-.hide-element {
-    opacity: 0;
-}
+
+/* FINISH MODAL Window - section "about us" */
+/* ---------------------------------------------------------------------------------- */
+
 
 
 /* ---------------------------------------------------------------------------------- */
-/* section why us */
+/* start section "why us" */
 .why-us {
     background-color: #0c0b09;
     padding: 60px;
@@ -152,18 +197,22 @@ h6 {
 }
 
 .myCard {
-    padding:  50px 30px;
+    padding:  40px 30px;
     margin: 15px;
-    background-color: rgba(89, 87, 87, 0.3);
+    background-color: #473311;
+    /* background-color: #FFF0DC; */
+    /* background-color: #F0BB78; */
+    height: 310px;
 }
 
 .myCard:hover {
     background: #D8A25E;
-    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.7);
-    transition: all 0.3s ease-out;
+    /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.7); */
+    box-shadow: 0 0 8px rgb(255, 255, 255);
+    transition: all 0.4s ease-out;
     
-    .transition {
-        transition: all 1s ease-out;
+    .myTransition {
+        transition: all 0.4s ease-out;
         color: rgba(0, 0, 0, 0.8);
     }
 
@@ -175,15 +224,22 @@ h6 {
 
 .card-text {
     color: rgba(255, 255, 255, 0.7);
+    
 }
 
 .why-us .myCard span {
     color: #D8A25E;
     font-size: 28px;
     font-weight: 700;
+    
 }
 .why-us .myCard h4 {
     color: #f8f8f8;
     font-size: 24px;
     font-weight: 600;
+    margin-bottom: 25px;
+    margin-top: 28px;
 }
+
+/*finish  section "why us" */
+/* ---------------------------------------------------------------------------------- */
