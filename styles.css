@@ -3,6 +3,7 @@ li a:hover {
     color: #D8A25E !important;
 
 }
+
 /* FINISH  NAV BAR */
 /* ---------------------------------------------------------------------------------- */
 
@@ -14,12 +15,13 @@ li a:hover {
     background-color: #2A3335;
 }
 
-h2,
+
 h3,
 h5,
 h6 {
     color: white !important;
 }
+
 /* END BODY  */
 /* ---------------------------------------------------------------------------------- */
 
@@ -114,19 +116,20 @@ section h2 span {
     /* https://www.w3schools.com/css/css_z-index.asp */
 }
 
-.myContainer{
-    margin:  10px 0px 30px 60px;
+.myContainer {
+    margin: 10px 0px 30px 60px;
     /* padding: 10px 10px 30px 30px; */
-    
+
 }
 
-section img{
+section img {
     border: 5px solid grey;
 }
 
-section div h1{
+section div h1 {
     color: #D8A25E;
 }
+
 /* Finish section about us */
 /* ---------------------------------------------------------------------------------- */
 
@@ -134,7 +137,8 @@ section div h1{
 
 /* ---------------------------------------------------------------------------------- */
 /* MODAL Window in section "about us" */
-.hide-element {/* モーダルウィンドウが開かれたときに要素を非表示にする */
+.hide-element {
+    /* モーダルウィンドウが開かれたときに要素を非表示にする */
     opacity: 0;
 }
 
@@ -192,15 +196,15 @@ section div h1{
     scroll-margin-top: 50px;
 }
 
-.myCardTitle{
+.myCardTitle {
     padding: 1rem 3rem 3rem 0;
 }
 
 .myCard {
-    padding:  40px 30px;
+    padding: 40px 30px;
     margin: 15px;
-    background-color: #473311;
-    /* background-color: #FFF0DC; */
+    /* background-color: #473311; */
+    background-color: rgb(24, 24, 24);
     /* background-color: #F0BB78; */
     height: 310px;
 }
@@ -210,7 +214,7 @@ section div h1{
     /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.7); */
     box-shadow: 0 0 8px rgb(255, 255, 255);
     transition: all 0.4s ease-out;
-    
+
     .myTransition {
         transition: all 0.4s ease-out;
         color: rgba(0, 0, 0, 0.8);
@@ -224,15 +228,16 @@ section div h1{
 
 .card-text {
     color: rgba(255, 255, 255, 0.7);
-    
+
 }
 
 .why-us .myCard span {
     color: #D8A25E;
     font-size: 28px;
     font-weight: 700;
-    
+
 }
+
 .why-us .myCard h4 {
     color: #f8f8f8;
     font-size: 24px;
@@ -242,4 +247,55 @@ section div h1{
 }
 
 /*finish  section "why us" */
+/* ---------------------------------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* START MY MENU */
+#menu {
+    background: #000000;
+
+}
+
+.gold-text {
+    color: #D8A25E;
+    ;
+}
+
+.white-text {
+    color: white;
+}
+
+.myContainer-menu {
+    padding: 60px 0px 30px 80px;
+
+}
+
+.menu-nav-bar {
+    text-align: center;
+
+}
+
+section div ul li {
+    list-style: none;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 40px 40px 0 0;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    font-family: arvo;
+}
+
+section div ul li:hover {
+    color: #D8A25E !important;
+    font-size: 23px;
+
+}
+
+.active {
+    color: #D8A25E;
+}
+/* FINISH MY MENU */
 /* ---------------------------------------------------------------------------------- */
