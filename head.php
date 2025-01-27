@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-    <a href="home.php">ホーム</a> |
+    <a href="/templates/index.html">ホーム</a> |
     <a href="admin.php">管理</a> |
     <a href="logout.php">ログアウト</a> |
 
