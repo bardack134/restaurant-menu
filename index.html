@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <!-- cambio de prueba -->
+
 <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -62,14 +63,14 @@
     </header>
 
     <main>
-       
+
         <section id="hero" class="text-white backgroundImage ">
             <!-- <img src="https://d2syaugtnopsqd.cloudfront.net/wp-content/uploads/sites/19/2022/03/02193621/heroes-restaurant-brewery-800x533.jpg" alt="Restaurant photo"> -->
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                     <div class="container">
                         <div class="row " style="height: 100vh;">
-                            <div class="col-lg-8 align-self-center " id="hide-item" >
+                            <div class="col-lg-8 align-self-center " id="hide-item">
                                 <h1 class="display-5 fw-bold   lh-1 mb-3 txt-white">Welcome to <span>cousin</span></h1>
                                 <p class="lead txt-white">18年以上にお客様に満足していただいています</p>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
@@ -81,10 +82,11 @@
                             </div>
 
 
-                            <div onclick="showModal()" class="modal-open col-10 col-sm-8 col-lg-3 d-flex align-items-center justify-content-center mt-5 txt-white">
+                            <div onclick="showModal()"
+                                class="modal-open col-10 col-sm-8 col-lg-3 d-flex align-items-center justify-content-center mt-5 txt-white">
                                 <i class="fa-solid fa-circle-play fa-beat-fade  fa-5x"
-                                        style="color: #d8a25e; --fa-animation-duration: 3s;"></i>
-                                        <!-- https://youtu.be/xPPLbEFbCAo -->
+                                    style="color: #d8a25e; --fa-animation-duration: 3s;"></i>
+                                <!-- https://youtu.be/xPPLbEFbCAo -->
                             </div>
                             <div id="modal-bg" class="NoDisplayModal">
 
@@ -94,9 +96,10 @@
                                 <div class="container">
                                     <!-- <p><iframe width="560" height="315" src="https://www.youtube.com/embed/kRCH8kD1GD0?si=lcrZ_UXmbKar6keM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </p>        -->
-                                    <video controls  width="550" src="video/videoplayback.mp4" id="myVideo"></video>
+                                    <video controls width="550" src="video/videoplayback.mp4" id="myVideo"></video>
                                 </div>
-                                <div id="modal-close" onclick="NoShowModal()"><i class="fa-solid fa-xmark fa-2xl" style="color: #d8a25e;"></i></div>
+                                <div id="modal-close" onclick="NoShowModal()"><i class="fa-solid fa-xmark fa-2xl"
+                                        style="color: #d8a25e;"></i></div>
                             </div>
                         </div>
                     </div>
@@ -108,9 +111,8 @@
             <div class="myContainer col-xxl-8 px-4 py-5 txt-white">
                 <div class="row flex-lg-row-reverse align-items-center g-5 py-5 ">
                     <div class="col-10 col-sm-8 col-lg-6">
-                        
-                        <img src="/imgs/img1.jpg" class="" alt="レストランのテーマ"
-                             height="420" loading="lazy">
+
+                        <img src="/imgs/img1.jpg" class="" alt="レストランのテーマ" height="420" loading="lazy">
                     </div>
                     <div class="col-lg-6">
                         <h1 class="">レストランの紹介</h1>
@@ -132,7 +134,7 @@
 
         <section id="why-us" class="why-us">
             <div class="container myCardTitle">
-                <h2 ><span>なぜ当店を選んだのか</span></h2>
+                <h2><span>なぜ当店を選んだのか</span></h2>
             </div>
             <div class="container">
                 <div class="row">
@@ -147,7 +149,8 @@
                         <div class="myCard">
                             <span class="myTransition">02</span>
                             <h4 class="myTransition">素晴らしい雰囲気</h4>
-                            <p class="card-text">温かみのあるインテリアと心地よい音楽が、特別な時間を演出します。デートや家族の集まり、友人との楽しいひとときを過ごすのに最適な場所です。</p>
+                            <p class="card-text">温かみのあるインテリアと心地よい音楽が、特別な時間を演出します。デートや家族の集まり、友人との楽しいひとときを過ごすのに最適な場所です。
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -160,50 +163,90 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- ------------------------------------- -->
-        <section id="menu" class="" >
+        <section id="menu" class="">
             <div class="myContainer-menu">
                 <h2 class="gold-text">メニューをご覧ください</h2>
-                <!-- filter buttons--> 
-                <div class="white-text menu-nav-bar" >
-                    <ul >
-                        <li class="nav-item ">All</li>
+                <!-- filter buttons-->
+                <div class="white-text menu-nav-bar">
+                    <ul>
+                        <li class="nav-item active">All</li>
                         <li class="nav-item">Main</li>
                         <li class="nav-item">Drinks</li>
                         <li class="nav-item">desserts</li>
                     </ul>
                 </div>
                 <!-- menu items -->
-                 <div>
-                    <div class="menu-items col-lg-6 col-sm-12">
-                        <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg" alt="Twin cannoli" class="photo">
-                        <div class="menu-info">
-                          <div class="menu-title">
-                            <h4>Twin Cannoli</h4>
-                            <span class="price">$7.00</span>
-                          </div>
-                          <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate chip ricotta cannoli cream.
-                          </div>
+                <div>
+                    <div class="display-row">
+                        <div class="menu-items col-lg-6 col-sm-12">
+                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
+                                alt="Twin cannoli" class="photo">
+                            <div class="menu-info">
+                                <div class="menu-title">
+                                    <h4>Twin Cannoli</h4>
+                                    <span class="price">$7.00</span>
+                                </div>
+                                <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate
+                                    chip
+                                    ricotta cannoli cream.
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="menu-items col-lg-6 col-sm-12">
-                        <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg" alt="Twin cannoli" class="photo">
-                        <div class="menu-info">
-                          <div class="menu-title">
-                            <h4>Twin Cannoli</h4>
-                            <span class="price">$7.00</span>
-                          </div>
-                          <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate chip ricotta cannoli cream.
-                          </div>
+                        <div class="menu-items col-lg-6 col-sm-12">
+                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
+                                alt="Twin cannoli" class="photo">
+                            <div class="menu-info">
+                                <div class="menu-title">
+                                    <h4>Twin Cannoli</h4>
+                                    <span class="price">$7.00</span>
+                                </div>
+                                <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate
+                                    chip
+                                    ricotta cannoli cream.
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                 </div>
+                        
+                    </div>
+                    <div class="display-row">
+                        <div class="menu-items col-lg-6 col-sm-12">
+                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
+                                alt="Twin cannoli" class="photo">
+                            <div class="menu-info">
+                                <div class="menu-title">
+                                    <h4>Twin Cannoli</h4>
+                                    <span class="price">$7.00</span>
+                                </div>
+                                <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate
+                                    chip
+                                    ricotta cannoli cream.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-items col-lg-6 col-sm-12">
+                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
+                                alt="Twin cannoli" class="photo">
+                            <div class="menu-info">
+                                <div class="menu-title">
+                                    <h4>Twin Cannoli</h4>
+                                    <span class="price">$7.00</span>
+                                </div>
+                                <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate
+                                    chip
+                                    ricotta cannoli cream.
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
-            
+
         </section>
-       
-        
+
+
     </main>
     <footer>
         <!-- place footer here -->

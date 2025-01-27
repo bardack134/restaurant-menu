@@ -317,12 +317,15 @@ section div ul li:hover {
     content: "........................................................................................";
 }
 
+.display-row{
+    display: flex;
+}
+
 .menu-items {
     display: flex;
     margin-top: 40px;
     margin-bottom: 30px;
     padding-right: 50px;
-    
     
 }
 

@@ -62,20 +62,19 @@ function NoShowModal() {
 
 document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み込まれたらmenu_options関数を実行
     function () {
-         const navItems = document.querySelectorAll('.nav-item'); // .nav-itemクラスを持つすべての要素を取得
+        const navItems = document.querySelectorAll('.nav-item'); // .nav-itemクラスを持つすべての要素を取得
 
         // 各要素にクリックイベントリスナーを追加
         navItems.forEach(item => {
             item.addEventListener('click', function () {
-               
+
                 navItems.forEach(navItem => {
-                    navItem.classList.remove('active')});  // すべての.nav-item要素から'active'クラスを削除
-                
+                    navItem.classList.remove('active')
+                });  // すべての.nav-item要素から'active'クラスを削除
+
                 this.classList.add('active'); // クリックされたアイテムに'active'クラスを追加
             });
         });
     });
 
-    array.forEach(element => {
-        
-    });
+
