@@ -1,7 +1,7 @@
 <?php
 class conection{
     private $servername='localhost'; // サーバーネーム
-    private $db_name="menu"; // データベース名
+    private $db_name="restaurant"; // データベース名
     private $username= 'root'; // ユーザー名
     private $password = ""; // パスワード
     private $connection; // 接続オブジェクト
