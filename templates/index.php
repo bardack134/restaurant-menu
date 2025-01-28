@@ -1,18 +1,3 @@
-<?php include("../conection.php"); ?>
-
-<?php
-$ObjConnection = new conection();
-$sql = "SELECT * FROM menu";
-
-try {
-    $items = $ObjConnection->consult($sql);
-    var_dump($items);
-} catch (Exception $e) {
-    echo "Something failed: " . $e->getMessage();
-}
-?>
-
-
 <!doctype html>
 <html lang="en">
 <!-- cambio de prueba -->
@@ -189,37 +174,39 @@ try {
                         <li class="nav-item active">All</li>
                         <li class="nav-item">Main</li>
                         <li class="nav-item">Drinks</li>
-                        <li class="nav-item">desserts</li>
+                        <li class="nav-item">Desserts</li>
                     </ul>
                 </div>
                 <!-- menu items -->
                 <div>
 
-                    
-                        <?php $count = 0;
+
+                    <?php $count = 0;
+                    foreach ($items as $key => $item) {
                         if ($count % 2 == 0) {
                             echo '<div class="display-row">';
                         }
-                        foreach ($items as $key => $item) {  ?>
-                            <div class="menu-items col-lg-6 col-sm-12">
-                                <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
-                                    alt="Twin cannoli" class="photo">
-                                <div class="menu-info">
-                                    <div class="menu-title">
-                                        <h4><?php echo $item['name']; ?></h4>
-                                        <span class="price">$<?php echo $item['price']; ?></span>
-                                    </div>
-                                    <div class="menu-text"><?php echo $item['description']; ?>
-                                    </div>
+                    ?>
+                        <div class="menu-items col-lg-6 col-sm-12">
+                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
+                                alt="Twin cannoli" class="photo">
+                            <div class="menu-info">
+                                <div class="menu-title">
+                                    <h4><?php echo $item['name']; ?></h4>
+                                    <span class="price">$<?php echo $item['price']; ?></span>
+                                </div>
+                                <div class="menu-text"><?php echo $item['description']; ?>
                                 </div>
                             </div>
+                        </div>
 
-                        <?php }
-                        $count += 2;
-                        if ($count % 2 == 0 ) {
+                    <?php
+                        $count += 1;
+                        if ($count % 2 == 0) {
                             echo "</div>";
-                        } ?>
-                    
+                        }
+                    } ?>
+
 
                     <!-- <div class="display-row">
                         <div class="menu-items col-lg-6 col-sm-12">

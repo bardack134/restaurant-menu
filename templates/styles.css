@@ -277,12 +277,13 @@ section div h1 {
 
 }
 
-section div ul li {
+.links, section div ul li {
 
     display: inline-block;
     padding: 40px 80px 0 0;
     text-decoration: none;
     text-align: center;
+    color: white;
 
 }
 
