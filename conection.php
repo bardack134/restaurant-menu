@@ -1,4 +1,5 @@
 <?php
+
 class conection{
     private $servername='localhost'; // サーバーネーム
     private $db_name="restaurant"; // データベース名

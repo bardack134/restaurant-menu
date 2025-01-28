@@ -77,4 +77,29 @@ document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み�
         });
     });
 
+// ----------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", showData);
+
+function showData() {
+    fetch("data.php")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("La respuesta de la red no fue correcta: " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            // Aquí puedes agregar código para mostrar los datos en la pantalla
+        })
+        .catch(error => {
+            console.error("Hubo un problema con la operación de fetch:", error);
+        });
+}
+
+
+
+
+
+
 

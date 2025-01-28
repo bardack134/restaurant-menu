@@ -1,0 +1,16 @@
+<?php include("../conection.php"); ?>
+
+<?php
+$ObjConnection = new conection();
+$sql = "SELECT * FROM menu";
+// $sql = "SELECT * FROM `menu` WHERE category='drinks';";
+
+
+try {
+    $items = $ObjConnection->consult($sql);
+} catch (Exception $e) {
+    echo "Something failed: " . $e->getMessage();
+}
+
+var_dump($items);  
+?>
