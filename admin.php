@@ -36,6 +36,7 @@ function update()
     $ObjConnection = new conection();
     $ObjConnection->execute_sql($sql);
     header('Location:admin.php');
+}
 
 function delete()
 {
