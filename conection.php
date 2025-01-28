@@ -22,11 +22,10 @@ class conection{
     }
 
     // SQL文を実行するメソッド
-    public function execute_sql($sql){
+    public function delete($sql){
         $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
         $sql_statement->execute(); // SQLステートメントを実行
-        // 接続オブジェクトから最後に挿入されたIDを取得して返す
-        return $this->connection->lastInsertId(); // lastInsertId()はPDOプロパティ
+        
     }
 
     // SQL文を実行し、結果を取得するメソッド
@@ -36,13 +35,16 @@ class conection{
         return $sql_statement->fetchAll(PDO::FETCH_ASSOC); // 結果をすべて取得して返す
     }
 
-    public function update($sql, $name,  $description, $price, $category, $return_id){
+    public function execute_sql($sql, $name,  $description, $price, $category, $return_id=null){
         $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
         $sql_statement->bindParam(1, $name, PDO::PARAM_STR);
         $sql_statement->bindParam(2, $description, PDO::PARAM_STR);
         $sql_statement->bindParam(3, $price, PDO::PARAM_INT);
         $sql_statement->bindParam(4, $category, PDO::PARAM_STR);
-        $sql_statement->bindParam(5, $return_id, PDO::PARAM_INT);
+        if ($return_id != null) {
+            $sql_statement->bindParam(5, $return_id, PDO::PARAM_INT);
+        }
+        
         $sql_statement->execute();
     }
 }

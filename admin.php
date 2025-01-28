@@ -11,17 +11,16 @@ if (!isset($_SESSION['user'])) {
 
 function adding()
 {
-    echo 'I am adding';
-    $ObjConnection = new conection();
-    // print_r($_POST);
+    print_r($_POST);
+    $return_id = $_POST['food_id'];
     $name = $_POST['name'];
-    $description = $_POST['description'];
     $category = $_POST['category'];
-
-    // print_r($name);
-    // print_r($description);
-    // print_r($category);
-    // TODO; price column, prince input
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $sql = "INSERT INTO menu (name, description, price, category) VALUES (?, ?, ?, ?)";
+    $ObjConnection = new conection();
+    $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
+    header('Location:admin.php');
 }
 
 function update()
@@ -32,15 +31,20 @@ function update()
     $category = $_POST['category'];
     $price = $_POST['price'];
     $description = $_POST['description'];
-    $sql= "UPDATE menu SET name = '$name', description = '$description ', price = '$price', category='$category' WHERE id = $return_id";
+    $sql= "UPDATE menu SET name = ?, description = ?, price = ?, category=? WHERE id = ?";
     $ObjConnection = new conection();
-    $ObjConnection->execute_sql($sql);
+    $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
     header('Location:admin.php');
 }
 
 function delete()
 {
-    return 'I am deleting';
+    $ObjConnection = new conection();
+    $id = $_POST['selected_id'];
+    $sql = "DELETE  FROM menu WHERE id=$id"; 
+    $ObjConnection->delete($sql);
+
+    header('Location:admin.php');
 }
 
 function show_all(){
@@ -79,7 +83,7 @@ if (isset($_POST['action'])) {
         'select' => returnData(),
     };
 
-    var_dump($return_value);
+    
 } else {
     echo 'アクションが提供されていません';
 }
@@ -95,28 +99,28 @@ if (isset($_POST['action'])) {
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="food_id" value="<?php echo isset($return_id) ? $return_id : ''; ?>">
 
-                        <label for="name">皿名:</label>
+                        <label for="name" class="fw-bold">皿名:</label>
                         <input type="text" required class="form-control" id="name" name="name" value="<?php echo isset($name) ? $name : ''; ?>"><br><br>
 
                         <!-- file -->
-                        <label for="file">料理イメージ:</label>
+                        <label for="file" class="fw-bold">料理イメージ:</label>
                         <input type="file" class="form-control" name="file" id="file"><br><br>
 
-                        <label for="category">カテゴリ:</label>
+                        <label for="category" class="fw-bold">カテゴリ:</label>
                         <select name="category" id="category" class="form-control" >
-                            <option value="">オプションをお選び下さい</option>
+                            <option value="" >オプションをお選び下さい</option>
                             <option value="main">メイン</option>
                             <option value="dessert">デザート</option>
                             <option value="drinks">ドリンク</option>
                         </select>
 
                         <div class="mb-3">
-                            <label for="text_area" class="form-label">説明</label>
+                            <label for="text_area" class="form-label fw-bold">説明</label>
                             <textarea required class="form-control" name="description" id="text_area" rows="3">
                                 <?php echo isset($description) ? $description : ''; ?>
                             </textarea>
                         </div>
-                        <label for="price">値段:</label>
+                        <label for="price " class="fw-bold">値段:</label>
                         <input type="text" required class="form-control" id="price" name="price" value="<?php echo isset($price) ? $price : ''; ?>"><br><br>
 
                         <input type="submit" class="btn btn-success my-3" name="action" value="add">

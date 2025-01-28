@@ -83,6 +83,7 @@ if ($_POST) {
     }
 }
 
+
 if ($_GET) {
     $ObjConnection = new conexion();
     $sql_1 = "SELECT image FROM projects WHERE id=" . $_GET['delete_id'];
