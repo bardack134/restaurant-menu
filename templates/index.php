@@ -1,13 +1,17 @@
-<?php include("conection.php"); ?>
+<?php include("../conection.php"); ?>
 
 <?php
 $ObjConnection = new conection();
 $sql = "SELECT * FROM menu";
-$items = $ObjConnection->consult($sql);
 
-
-var_dump($items);
+try {
+    $items = $ObjConnection->consult($sql);
+    var_dump($items);
+} catch (Exception $e) {
+    echo "Something failed: " . $e->getMessage();
+}
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -175,7 +179,7 @@ var_dump($items);
             </div>
         </section>
 
-       
+
         <section id="menu" class="">
             <div class="myContainer-menu">
                 <h2 class="gold-text">メニューをご覧ください</h2>
@@ -190,7 +194,34 @@ var_dump($items);
                 </div>
                 <!-- menu items -->
                 <div>
-                    <div class="display-row">
+
+                    
+                        <?php $count = 0;
+                        if ($count % 2 == 0) {
+                            echo '<div class="display-row">';
+                        }
+                        foreach ($items as $key => $item) {  ?>
+                            <div class="menu-items col-lg-6 col-sm-12">
+                                <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
+                                    alt="Twin cannoli" class="photo">
+                                <div class="menu-info">
+                                    <div class="menu-title">
+                                        <h4><?php echo $item['name']; ?></h4>
+                                        <span class="price">$<?php echo $item['price']; ?></span>
+                                    </div>
+                                    <div class="menu-text"><?php echo $item['description']; ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php }
+                        $count += 2;
+                        if ($count % 2 == 0 ) {
+                            echo "</div>";
+                        } ?>
+                    
+
+                    <!-- <div class="display-row">
                         <div class="menu-items col-lg-6 col-sm-12">
                             <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
                                 alt="Twin cannoli" class="photo">
@@ -220,38 +251,7 @@ var_dump($items);
                             </div>
                         </div>
                         
-                    </div>
-                    <div class="display-row">
-                        <div class="menu-items col-lg-6 col-sm-12">
-                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
-                                alt="Twin cannoli" class="photo">
-                            <div class="menu-info">
-                                <div class="menu-title">
-                                    <h4>Twin Cannoli</h4>
-                                    <span class="price">$7.00</span>
-                                </div>
-                                <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate
-                                    chip
-                                    ricotta cannoli cream.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-items col-lg-6 col-sm-12">
-                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
-                                alt="Twin cannoli" class="photo">
-                            <div class="menu-info">
-                                <div class="menu-title">
-                                    <h4>Twin Cannoli</h4>
-                                    <span class="price">$7.00</span>
-                                </div>
-                                <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate
-                                    chip
-                                    ricotta cannoli cream.
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
