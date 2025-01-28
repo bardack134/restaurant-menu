@@ -35,5 +35,15 @@ class conection{
         $sql_statement->execute(); // SQLステートメントを実行
         return $sql_statement->fetchAll(PDO::FETCH_ASSOC); // 結果をすべて取得して返す
     }
+
+    public function update($sql, $name,  $description, $price, $category, $return_id){
+        $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
+        $sql_statement->bindParam(1, $name, PDO::PARAM_STR);
+        $sql_statement->bindParam(2, $description, PDO::PARAM_STR);
+        $sql_statement->bindParam(3, $price, PDO::PARAM_INT);
+        $sql_statement->bindParam(4, $category, PDO::PARAM_STR);
+        $sql_statement->bindParam(5, $return_id, PDO::PARAM_INT);
+        $sql_statement->execute();
+    }
 }
 ?>

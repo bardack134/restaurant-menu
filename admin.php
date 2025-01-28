@@ -18,24 +18,54 @@ function adding()
     $description = $_POST['description'];
     $category = $_POST['category'];
 
-    print_r($name);
-    print_r($description);
-    print_r($category);
+    // print_r($name);
+    // print_r($description);
+    // print_r($category);
     // TODO; price column, prince input
-
-
 }
 
 function update()
-{
-    return 'I am updating';
-}
+{   
+    print_r($_POST);
+    $return_id = $_POST['food_id'];
+    $name = $_POST['name'];
+    $category = $_POST['category'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $sql= "UPDATE menu SET name = '$name', description = '$description ', price = '$price', category='$category' WHERE id = $return_id";
+    $ObjConnection = new conection();
+    $ObjConnection->execute_sql($sql);
+    header('Location:admin.php');
 
 function delete()
 {
     return 'I am deleting';
 }
 
+function show_all(){
+    global $items;
+    $ObjConnection = new conection();
+    $sql = "SELECT * FROM menu";
+    $items = $ObjConnection->consult($sql);
+    return $items;
+}
+
+function returnData()
+{
+    global $name, $category, $price, $description, $return_id;
+    $ObjConnection = new conection();
+    $id = $_POST['selected_id'];
+    $sql = "SELECT * FROM menu WHERE id=$id";
+    $data = $ObjConnection->consult($sql);
+    // print_r($data);
+    $return_id = $data[0]['id'];
+    $name = $data[0]['name'];
+    $category = $data[0]['category'];
+    $price = $data[0]['price'];
+    $description = $data[0]['description'];
+}
+
+// print_r($_POST);
 if (isset($_POST['action'])) {
     // var_dump($_POST['action']); //for debug
 
@@ -45,6 +75,7 @@ if (isset($_POST['action'])) {
         'add' => adding(),
         'update' => update(),
         'delete' => delete(),
+        'select' => returnData(),
     };
 
     var_dump($return_value);
@@ -58,16 +89,16 @@ if (isset($_POST['action'])) {
     <div class="row">
         <div class="col-md-12">
             <div class="card my-4">
-                <div class="card-header">プロジェクト情報</div>
+                <div class="card-header">メニュー情報</div>
                 <div class="card-body">
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="project_id" value="">
+                        <input type="hidden" name="food_id" value="<?php echo isset($return_id) ? $return_id : ''; ?>">
 
-                        <label for="name">プロジェクト名:</label>
-                        <input type="text" required class="form-control" id="name" name="name" value=""><br><br>
+                        <label for="name">皿名:</label>
+                        <input type="text" required class="form-control" id="name" name="name" value="<?php echo isset($name) ? $name : ''; ?>"><br><br>
 
                         <!-- file -->
-                        <label for="file">プロジェクトイメージ:</label>
+                        <label for="file">料理イメージ:</label>
                         <input type="file" class="form-control" name="file" id="file"><br><br>
 
                         <label for="category">カテゴリ:</label>
@@ -81,9 +112,11 @@ if (isset($_POST['action'])) {
                         <div class="mb-3">
                             <label for="text_area" class="form-label">説明</label>
                             <textarea required class="form-control" name="description" id="text_area" rows="3">
-
+                                <?php echo isset($description) ? $description : ''; ?>
                             </textarea>
                         </div>
+                        <label for="price">値段:</label>
+                        <input type="text" required class="form-control" id="price" name="price" value="<?php echo isset($price) ? $price : ''; ?>"><br><br>
 
                         <input type="submit" class="btn btn-success my-3" name="action" value="add">
                         <input type="submit" class="btn btn-warning my-3" name="action" value="update">
@@ -103,30 +136,31 @@ if (isset($_POST['action'])) {
                             <th scope="col">イメージ</th>
                             <th scope="col">カテゴリ</th>
                             <th scope="col">説明</th>
+                            <th scope="col">値段</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $ObjConnection = new conection();
-                        $sql = "SELECT * FROM menu";
-                        $items = $ObjConnection->consult($sql);
-                        print_r($items);
+                        show_all();
+                        
+                        // print_r($items); デバッグのために
                         ?>
                         <?php foreach ($items as $item => $value) { ?>
                             <tr>
                                 <td>
                                     <form action="" method="post">
-                                        <input type="hidden" name="select" value="">
-                                        <button name="update_data" type="submit" class="btn btn-warning" value="update data">Select</button>
+                                        <input type="hidden" name="selected_id" value="<?php echo $value['id']; ?>">
+                                        <button name="action" type="submit" class="btn btn-warning" value="select">Select</button><br>
+                                        <button name="action" type="submit" class="btn btn-danger mt-2" value="delete">削除❌</button>
                                     </form>
-                                    <a href="" class="btn btn-danger">削除❌</a>
+                                    
                                 </td>
-                                <td>"<?php echo $value['id']; ?>"</td>
-                                <td>"<?php echo $value['name']; ?>"</td>
+                                <td><?php echo $value['id']; ?></td>
+                                <td><?php echo $value['name']; ?></td>
                                 <td><img width="100px" src="" alt=""></td>
-                                <td>"<?php echo $value['category']; ?>"</td>
-                                <td class="text-wrap" style="max-width: 300px;">"<?php echo $value['description']; ?>"</td>
-
+                                <td><?php echo $value['category']; ?></td>
+                                <td class="text-wrap" style="max-width: 300px;"><?php echo $value['description']; ?></td>
+                                <td><?php echo $value['price']; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
