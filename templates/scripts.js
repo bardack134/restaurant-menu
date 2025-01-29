@@ -58,7 +58,7 @@ function NoShowModal() {
 }
 
 
-// nav-items------------------------------------
+// nav-items Active---------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み込まれたらmenu_options関数を実行
     function () {
@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み�
     });
 
 // ----------------------------------------------------------------
+// ユーザーが [li] をクリックすると、アイテムがリロードされます
 // https://digitalfox-tutorials.com/tutorial.php?title=Send-HTTP-GET-Request-Using-the-Fetch-API
 let seek;
 
@@ -88,7 +89,6 @@ function seekItem(event) {
     showData(seek);
 
 }
-
 
 function showData(seek) {
     let count = 0;
@@ -114,12 +114,9 @@ function showData(seek) {
 
         })
         .catch(error => console.error("Fetchエラー:", error));
-
-
 }
 
 function htmlTags(item) {
-
     return `<div class="menu-items col-lg-6 col-sm-12">
                                 <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
                                     alt="Twin cannoli" class="photo">
@@ -140,8 +137,11 @@ function clearMenuItems() {
     document.getElementById("MyMenuItems").innerHTML = "";
 }
 
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    seek = "'*'";
+    console.log(seek);
+    showData(seek);
+});
 
 
 
