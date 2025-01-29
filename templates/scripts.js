@@ -91,7 +91,8 @@ function seekItem(event) {
 
 
 function showData(seek) {
-    let text="";
+    let count = 0;
+    let text = `<div class="display-row">`;
     // PHPファイルからデータを取得する
     //クエリ文字列を付けてGETリクエストを送信することもできます。
     fetch("../data.php?category=" + seek)
@@ -100,18 +101,25 @@ function showData(seek) {
         .then(data => {
             console.log(data);
             data.forEach((item) => {
+                count += 1;
                 text += htmlTags(item); // htmlTags でHTMLを生成
+
+                if (count % 2 === 0) {
+                    text += `</div><div class="display-row">`;
+                }
+
             });
+            text += `</div>`;
             document.getElementById("MyMenuItems").innerHTML = text;
-            
+
         })
         .catch(error => console.error("Fetchエラー:", error));
 
 
 }
 
-function htmlTags(item, index) {
-    
+function htmlTags(item) {
+
     return `<div class="menu-items col-lg-6 col-sm-12">
                                 <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
                                     alt="Twin cannoli" class="photo">
@@ -125,7 +133,7 @@ function htmlTags(item, index) {
                                 </div>
                             </div>`;
     // console.log(text);
-    
+
 }
 
 function clearMenuItems() {
