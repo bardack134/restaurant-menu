@@ -78,25 +78,20 @@ document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み�
     });
 
 // ----------------------------------------------------------------
+// https://digitalfox-tutorials.com/tutorial.php?title=Send-HTTP-GET-Request-Using-the-Fetch-API
 document.addEventListener("DOMContentLoaded", showData);
 
 function showData() {
-    fetch("data.php")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("La respuesta de la red no fue correcta: " + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            // Aquí puedes agregar código para mostrar los datos en la pantalla
-        })
-        .catch(error => {
-            console.error("Hubo un problema con la operación de fetch:", error);
-        });
+    // PHPファイルからデータを取得する
+    fetch("../data.php?category=main")
+        .then(response => response.json())  // レスポンスをJSON形式に変換
+        .then(data => console.log(data))    // データをコンソールに表示
+        .catch(error => console.error("Fetchエラー:", error));  // エラー処理
+
+    // 2.特定のデータを取得するために、クエリ文字列を付けてGETリクエストを送信することもできます。
 }
 
+  
 
 
 

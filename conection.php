@@ -13,7 +13,7 @@ class conection{
             // PDOオブジェクトを作成し、データベースに接続
             $this->connection= new PDO("mysql:host=$this->servername; dbname=$this->db_name; charset=utf8mb4", $this->username, $this->password);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-            echo "Connected successfully"; // 接続成功メッセージ
+            // echo "Connected successfully"; // 接続成功メッセージ
 
         } catch (PDOException $error) {
             // 接続失敗時のメッセージ
