@@ -171,10 +171,10 @@
                 <!-- filter buttons-->
                 <div class="white-text menu-nav-bar">
                     <ul>
-                        <li class="nav-item active">All</li>
-                        <li class="nav-item">Main</li>
-                        <li class="nav-item">Drinks</li>
-                        <li class="nav-item">Desserts</li>
+                        <li onclick="seekItem(event)" class="nav-item active" id="*">All</li>
+                        <li onclick="seekItem(event)" class="nav-item" id="main">Main</li>
+                        <li onclick="seekItem(event)" id="drinks" class="drinks">Drinks</li>
+                        <li onclick="seekItem(event)" class="nav-item" id="dessert">Desserts</li>
                     </ul>
                 </div>
                 <!-- menu items -->

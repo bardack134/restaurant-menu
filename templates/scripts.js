@@ -79,17 +79,33 @@ document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み�
 
 // ----------------------------------------------------------------
 // https://digitalfox-tutorials.com/tutorial.php?title=Send-HTTP-GET-Request-Using-the-Fetch-API
+let seek;
+function seekItem(event) {
+    $seek=event.target.id
+    console.log($seek);
+    return $seek;
+    
+}
+
 document.addEventListener("DOMContentLoaded", showData);
 
 function showData() {
+    function seekItem(event) {
+    $seek=event.target.id
+    console.log($seek);
+    return $seek;
+    
+}
     // PHPファイルからデータを取得する
-    fetch("../data.php?category=main")
+    fetch("../data.php?category=drinks")
         .then(response => response.json())  // レスポンスをJSON形式に変換
         .then(data => console.log(data))    // データをコンソールに表示
         .catch(error => console.error("Fetchエラー:", error));  // エラー処理
 
     // 2.特定のデータを取得するために、クエリ文字列を付けてGETリクエストを送信することもできます。
 }
+
+
 
   
 
