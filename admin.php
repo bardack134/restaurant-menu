@@ -3,7 +3,7 @@
 <?php
 session_start();
 
-
+print_r($_FILES);
 // ユーザーがセッションに存在しない場合、ログインページにリダイレクト
 if (!isset($_SESSION['user'])) {
     header('location:login.php');
@@ -16,11 +16,11 @@ function adding()
     $name = $_POST['name'];
     $category = $_POST['category'];
     $price = $_POST['price'];
-    $description = $_POST['description'];
-    $sql = "INSERT INTO menu (name, description, price, category) VALUES (?, ?, ?, ?)";
-    $ObjConnection = new conection();
-    $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
-    header('Location:admin.php');
+    $description = $_POST['description'];  //NOTE: LO PARE MIENTRAS HAGO PRUEBAS CON $_FILES
+    // $sql = "INSERT INTO menu (name, description, price, category) VALUES (?, ?, ?, ?)";
+    // $ObjConnection = new conection();
+    // $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
+    // header('Location:admin.php');
 }
 
 function update()
@@ -108,7 +108,8 @@ if (isset($_POST['action'])) {
 
                         <label for="category" class="fw-bold">カテゴリ:</label>
                         <select name="category" id="category" class="form-control" >
-                            <option value="" >オプションをお選び下さい</option>
+                            <!-- <option value="" >オプションをお選び下さい</option> -->
+                            <option value="" >---</option>
                             <option value="main">メイン</option>
                             <option value="dessert">デザート</option>
                             <option value="drinks">ドリンク</option>

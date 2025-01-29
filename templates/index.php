@@ -107,7 +107,7 @@
             </div>
         </section>
 
-        <section id="about" class="backgroundImage2 mt-1 border  border-5 border-dark">
+        <section id="about " class=" backgroundImage2 mt-1 border  border-5 border-dark">
             <div class="myContainer col-xxl-8 px-4 py-5 txt-white">
                 <div class="row flex-lg-row-reverse align-items-center g-5 py-5 ">
                     <div class="col-10 col-sm-8 col-lg-6">
@@ -132,7 +132,7 @@
             </div>
         </section>
 
-        <section id="why-us" class="why-us">
+        <section id="why-us" class="why-us ">
             <div class="container myCardTitle">
                 <h2><span>なぜ当店を選んだのか</span></h2>
             </div>
