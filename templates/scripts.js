@@ -111,6 +111,7 @@ function showData(seek) {
 }
 
 function htmlTags(item, index) {
+    
     return `<div class="menu-items col-lg-6 col-sm-12">
                                 <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
                                     alt="Twin cannoli" class="photo">
@@ -124,7 +125,7 @@ function htmlTags(item, index) {
                                 </div>
                             </div>`;
     // console.log(text);
-    document.getElementById("MyMenuItems").innerHTML = text
+    
 }
 
 function clearMenuItems() {
