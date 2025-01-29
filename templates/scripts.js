@@ -80,34 +80,52 @@ document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み�
 // ----------------------------------------------------------------
 // https://digitalfox-tutorials.com/tutorial.php?title=Send-HTTP-GET-Request-Using-the-Fetch-API
 let seek;
+
 function seekItem(event) {
-    $seek=event.target.id
-    console.log($seek);
-    return $seek;
-    
+    seek = event.target.id
+    console.log(seek);
+    showData(seek);
+
 }
 
-document.addEventListener("DOMContentLoaded", showData);
-
-function showData() {
-    function seekItem(event) {
-    $seek=event.target.id
-    console.log($seek);
-    return $seek;
-    
+function htmlTags(item, index) {
+    let text=``;
+    text += `<div class="menu-items col-lg-6 col-sm-12">
+                                <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
+                                    alt="Twin cannoli" class="photo">
+                                <div class="menu-info">
+                                    <div class="menu-title">
+                                        <h4>${item.name}</h4>
+                                        <span class="price">$${item.price}</span>
+                                    </div>
+                                    <div class="menu-text">${item.description}
+                                    </div>
+                                </div>
+                            </div>`;
+    document.getElementById("MyMenuItems").innerHTML = text
 }
+
+function showData(seek) {
     // PHPファイルからデータを取得する
-    fetch("../data.php?category=drinks")
+    //クエリ文字列を付けてGETリクエストを送信することもできます。
+    fetch("../data.php?category=" + seek)
+        // .then()や.catch()を使って、処理の成功や失敗を簡単に扱えます。
         .then(response => response.json())  // レスポンスをJSON形式に変換
-        .then(data => console.log(data))    // データをコンソールに表示
-        .catch(error => console.error("Fetchエラー:", error));  // エラー処理
+        .then(data => {
+            console.log(data);
+            data.forEach(htmlTags);
+            
+        })
+        .catch(error => console.error("Fetchエラー:", error));
 
-    // 2.特定のデータを取得するために、クエリ文字列を付けてGETリクエストを送信することもできます。
+
 }
 
 
 
-  
+
+
+
 
 
 

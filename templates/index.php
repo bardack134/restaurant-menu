@@ -3,7 +3,7 @@
 <!-- cambio de prueba -->
 
 <head>
-    <title>Title</title>
+    <title>Restaurant</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -171,7 +171,7 @@
                 <!-- filter buttons-->
                 <div class="white-text menu-nav-bar">
                     <ul>
-                        <li onclick="seekItem(event)" class="nav-item active" id="*">All</li>
+                        <li onclick="seekItem(event)" class="nav-item active" id="'*'">All</li>
                         <li onclick="seekItem(event)" class="nav-item" id="main">Main</li>
                         <li onclick="seekItem(event)" id="drinks" class="drinks">Drinks</li>
                         <li onclick="seekItem(event)" class="nav-item" id="dessert">Desserts</li>
@@ -179,33 +179,23 @@
                 </div>
                 <!-- menu items -->
                 <div>
+                        <div id="MyMenuItems">
 
-
-                    <?php $count = 0;
-                    foreach ($items as $key => $item) {
-                        if ($count % 2 == 0) {
-                            echo '<div class="display-row">';
-                        }
-                    ?>
-                        <div class="menu-items col-lg-6 col-sm-12">
+                        </div>                
+                        <!-- <div class="menu-items col-lg-6 col-sm-12">
                             <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
                                 alt="Twin cannoli" class="photo">
                             <div class="menu-info">
                                 <div class="menu-title">
-                                    <h4><?php echo $item['name']; ?></h4>
-                                    <span class="price">$<?php echo $item['price']; ?></span>
+                                    <h4>name</h4>
+                                    <span class="price">$price</span>
                                 </div>
-                                <div class="menu-text"><?php echo $item['description']; ?>
+                                <div class="menu-text">description
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                    <?php
-                        $count += 1;
-                        if ($count % 2 == 0) {
-                            echo "</div>";
-                        }
-                    } ?>
+                   
 
 
                     <!-- <div class="display-row">
