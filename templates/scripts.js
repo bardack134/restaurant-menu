@@ -82,15 +82,36 @@ document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み�
 let seek;
 
 function seekItem(event) {
+    clearMenuItems();
     seek = event.target.id
     console.log(seek);
     showData(seek);
 
 }
 
+
+function showData(seek) {
+    let text="";
+    // PHPファイルからデータを取得する
+    //クエリ文字列を付けてGETリクエストを送信することもできます。
+    fetch("../data.php?category=" + seek)
+        // .then()や.catch()を使って、処理の成功や失敗を簡単に扱えます。
+        .then(response => response.json())  // レスポンスをJSON形式に変換
+        .then(data => {
+            console.log(data);
+            data.forEach((item) => {
+                text += htmlTags(item); // htmlTags でHTMLを生成
+            });
+            document.getElementById("MyMenuItems").innerHTML = text;
+            
+        })
+        .catch(error => console.error("Fetchエラー:", error));
+
+
+}
+
 function htmlTags(item, index) {
-    let text=``;
-    text += `<div class="menu-items col-lg-6 col-sm-12">
+    return `<div class="menu-items col-lg-6 col-sm-12">
                                 <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
                                     alt="Twin cannoli" class="photo">
                                 <div class="menu-info">
@@ -102,27 +123,13 @@ function htmlTags(item, index) {
                                     </div>
                                 </div>
                             </div>`;
+    // console.log(text);
     document.getElementById("MyMenuItems").innerHTML = text
 }
 
-function showData(seek) {
-    // PHPファイルからデータを取得する
-    //クエリ文字列を付けてGETリクエストを送信することもできます。
-    fetch("../data.php?category=" + seek)
-        // .then()や.catch()を使って、処理の成功や失敗を簡単に扱えます。
-        .then(response => response.json())  // レスポンスをJSON形式に変換
-        .then(data => {
-            console.log(data);
-            data.forEach(htmlTags);
-            
-        })
-        .catch(error => console.error("Fetchエラー:", error));
-
-
+function clearMenuItems() {
+    document.getElementById("MyMenuItems").innerHTML = "";
 }
-
-
-
 
 
 
