@@ -1,42 +1,3 @@
-const menuItems = [
-    {
-        id: 1,
-        name: "ステーキ",
-        category: "main",
-        rice: 1500,
-        description: "ジューシーなビーフステーキ"
-    },
-    {
-        id: 2,
-        name: "ケーキ",
-        category: "dessert",
-        price: 600,
-        sescription: "フワフワのチョコレートケーキ"
-    },
-    {
-        id: 3,
-        name: "コーヒー",
-        category: "drinks",
-        price: 300,
-        escription: "アロマ香るホットコーヒー"
-    },
-    {
-        id: 4,
-        name: "寿司",
-        category: "main",
-        rice: 1200,
-        description: "新鮮なネタの握り寿司"
-    },
-    {
-        id: 5,
-        name: "アイスクリーム",
-        category: "dessert",
-        rice: 500,
-        description: "滑らかなバニラアイスクリーム"
-    },
-];
-
-
 // モーダルを表示し、ビデオを再生する
 function showModal() {
     console.log("Hi i am showModal clicked ");
@@ -137,6 +98,7 @@ function clearMenuItems() {
     document.getElementById("MyMenuItems").innerHTML = "";
 }
 
+// ページが読み込まれると、メニュー内の「All</li>」の項目が自動的に表示されます。
 document.addEventListener('DOMContentLoaded', function() {
     seek = "'*'";
     console.log(seek);

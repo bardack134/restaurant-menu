@@ -96,7 +96,7 @@ section h2 span {
 /* start section "about us" */
 
 .backgroundImage2 {
-    background-image: url("/imgs/img2.webp") !important;
+    background-image: url("../templates/imgs/img2.webp") !important;
     background-size: cover;
     background-position-y: 86%;
     position: relative;
