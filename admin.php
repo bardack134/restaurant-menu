@@ -10,35 +10,37 @@ session_start();
 if (!isset($_SESSION['user'])) {
     header('location:login.php');
 }
-function post_data_form($sql, $image_name){
+
+function post_data_form($sql, $image_name)
+{
     // print_r($_POST);
     $return_id = $_POST['food_id'];
     $name = $_POST['name'];
     $category = $_POST['category'];
     $price = $_POST['price'];
-    $description = $_POST['description']; 
+    $description = $_POST['description'];
     $ObjConnection = new conection();
     $ObjConnection->execute_sql($sql, $name, $image_name,  $description, $price, $category, $return_id);
     header('Location:admin.php');
 }
 
-function send_image_to_folder($file){
+function send_image_to_folder($file)
+{
     $image_name =  time() . basename($_FILES['file']['name']);
     $to_directory = 'templates/food-imgs/' . $image_name;
     $from = $_FILES['file']['tmp_name'];
     move_uploaded_file($from, $to_directory);
-    return $image_name; 
+    return $image_name;
 }
 
 function adding()
 {
-    
+
     $file = $_FILES['file'];
-    $image_name=send_image_to_folder($file);
-    
+    $image_name = send_image_to_folder($file);
+
     $sql = "INSERT INTO menu (name, category, price, description, imagen) VALUES (?, ?, ?, ?,?)";
     post_data_form($sql, $image_name);
-    
 }
 
 function update()
@@ -51,21 +53,19 @@ function update()
         $search_image_name = "SELECT imagen FROM `menu` WHERE id=$return_id";
         $ObjConnection = new conection();
         $sql_answer = $ObjConnection->consult($search_image_name);
-        $oldImage =$sql_answer[0]["imagen"];
+        $oldImage = $sql_answer[0]["imagen"];
 
         if (file_exists("./templates/food-imgs/" . $oldImage)) {
             unlink("./templates/food-imgs/" . $oldImage); // https://www.php.net/manual/en/function.unlink.php
         }
         // -------------------新しいイメージ-------------------------
         $file = $_FILES['file'];
-        $image_name=send_image_to_folder($file);
+        $image_name = send_image_to_folder($file);
 
         // -----------------------send sql--------------------
-        $sql= "UPDATE menu SET name = ?, category=?, price = ?, description = ?, imagen=?  WHERE id = ?";
-        
-        post_data_form($sql, $image_name);
+        $sql = "UPDATE menu SET name = ?, category=?, price = ?, description = ?, imagen=?  WHERE id = ?";
 
-        
+        post_data_form($sql, $image_name);
     } // else {
     //     echo "ファイルは送信されませんでした";
 
@@ -115,9 +115,8 @@ function returnData()
     $description = $data[0]['description'];
 }
 
-// print_r($_POST);
-if (isset($_POST['action'])) {
-    // var_dump($_POST['action']); //for debug
+if (isset($_POST['action']) &&  $_POST['category'] !== '') {
+    var_dump($_POST); //for debug
 
     $option = $_POST['action'];
 
@@ -127,12 +126,12 @@ if (isset($_POST['action'])) {
         'delete' => delete(),
         'select' => returnData(),
     };
-} //  else {
-//     echo 'アクションが提供されていません';
-// }
-
+} elseif (isset($_POST['action'])) {
+    echo "<div class='container'><h3>フォームのすべての要素を入力してください</h3></div>";
+}
 
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12
@@ -143,14 +142,14 @@ if (isset($_POST['action'])) {
                     <input type="hidden" name="food_id" value="<?php echo isset($return_id) ? $return_id : ''; ?>">
 
                     <label for="name" class="fw-bold">皿名:</label>
-                    <input type="text" required class="form-control" id="name" name="name" value="<?php echo isset($name) ? $name : ''; ?>"><br><br>
+                    <input type="text" required class="form-control" id="name" name="name" value="<?php echo isset($name) ?  htmlspecialchars($name) : ''; ?>"><br><br>
 
                     <!-- file -->
                     <label for="file" class="fw-bold">料理イメージ:</label>
                     <input type="file" class="form-control" name="file" id="file"><br><br>
 
                     <label for="category" class="fw-bold">カテゴリ:</label>
-                    <select name="category" id="category" class="form-control">
+                    <select required name="category" id="category" class="form-control">
                         <!-- <option value="" >オプションをお選び下さい</option> -->
                         <option value="">---</option>
                         <option value="main">メイン</option>
@@ -160,12 +159,11 @@ if (isset($_POST['action'])) {
 
                     <div class="mb-3">
                         <label for="text_area" class="form-label fw-bold">説明</label>
-                        <textarea required class="form-control" name="description" id="text_area" rows="3">
-                                <?php echo isset($description) ? $description : ''; ?>
-                            </textarea>
+
+                        <textarea required class="form-control" name="description" id="text_area" rows="3"><?php echo isset($description) ? htmlspecialchars($description) : ''; ?></textarea>
                     </div>
                     <label for="price " class="fw-bold">値段:</label>
-                    <input type="text" required class="form-control" id="price" name="price" value="<?php echo isset($price) ? $price : ''; ?>"><br><br>
+                    <input type="number" required class="form-control" id="price" name="price" value="<?php echo isset($price) ?  htmlspecialchars($price) : ''; ?>"><br><br>
 
                     <input type="submit" class="btn btn-success my-3" name="action" value="add">
                     <input type="submit" class="btn btn-warning my-3" name="action" value="update">
