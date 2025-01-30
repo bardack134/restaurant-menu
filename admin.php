@@ -20,42 +20,62 @@ function adding()
     $price = $_POST['price'];
     $description = $_POST['description'];  //NOTE: LO PARE MIENTRAS HAGO PRUEBAS CON $_FILES
     // ----------------------------------------------------------
-    $image_name = basename($_FILES['file']['name']);
-    $to_directory = 'templates/food-imgs/'.$image_name;
+    $image_name =  time() . basename($_FILES['file']['name']);
+    $to_directory = 'templates/food-imgs/' . $image_name;
     $from = $_FILES['file']['tmp_name'];
     move_uploaded_file($from, $to_directory);
     // ----------------------------------------------------------
-     $sql = "INSERT INTO menu (name, category, price, description, imagen) VALUES (?, ?, ?, ?,?)";
+    $sql = "INSERT INTO menu (name, category, price, description, imagen) VALUES (?, ?, ?, ?,?)";
     $ObjConnection = new conection();
     $ObjConnection->execute_sql($sql, $name, $image_name,  $description, $price, $category, $return_id);
     header('Location:admin.php');
-   
 }
 
 function update()
 {
-    print_r($_POST);
     $return_id = $_POST['food_id'];
     $name = $_POST['name'];
     $category = $_POST['category'];
     $price = $_POST['price'];
     $description = $_POST['description'];
-    $sql = "UPDATE menu SET name = ?, description = ?, price = ?, category=? WHERE id = ?";
     $ObjConnection = new conection();
-    $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
-    header('Location:admin.php');
+    if ($_FILES['file']['name']) {
+        echo "ファイルは送信された";
+
+        // --------------------delete before file-----------
+        $search_image_name = "SELECT imagen FROM `menu` WHERE id=$id";
+        $sql_answer = $ObjConnection->consult($search_image_name);
+        $oldImage =$sql_answer[0]["imagen"];
+
+        if (file_exists("./templates/food-imgs/" . $oldImage)) {
+            unlink("./templates/food-imgs/" . $oldImage); // https://www.php.net/manual/en/function.unlink.php
+        }
+        // -------------------------------------------------
+
+        $sql = "UPDATE menu SET name = ?, description = ?, price = ?, category=? WHERE id = ?";
+
+        $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
+        header('Location:admin.php');
+    } else {
+        echo "ファイルは送信されませんでした";
+
+        $sql = "UPDATE menu SET name = ?, description = ?, price = ?, category=? WHERE id = ?";
+
+        $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
+        header('Location:admin.php');
+    }
 }
 
 function delete()
-{   
+{
     $ObjConnection = new conection();
     $id = $_POST['selected_id'];
-    $search_image_name="SELECT imagen FROM `menu` WHERE id=$id";
-    $sql_answer=$ObjConnection->consult($search_image_name);
+    $search_image_name = "SELECT imagen FROM `menu` WHERE id=$id";
+    $sql_answer = $ObjConnection->consult($search_image_name);
     // var_dump($sql_answer[0]["imagen"]); DEBUG
     // https://www.php.net/manual/en/function.unlink.php
-    unlink( "./templates/food-imgs/".$sql_answer[0]["imagen"]);
-   
+    unlink("./templates/food-imgs/" . $sql_answer[0]["imagen"]);
+
     $sql = "DELETE  FROM menu WHERE id=$id";
     $ObjConnection->delete($sql);
 
