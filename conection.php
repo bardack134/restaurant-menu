@@ -36,14 +36,15 @@ class conection{
         return $sql_statement->fetchAll(PDO::FETCH_ASSOC); // 結果をすべて取得して返す
     }
 
-    public function execute_sql($sql, $name,  $description, $price, $category, $return_id=null){
+    public function execute_sql($sql, $name, $image_name, $description, $price, $category, $return_id=null){
         $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
         $sql_statement->bindParam(1, $name, PDO::PARAM_STR);
-        $sql_statement->bindParam(2, $description, PDO::PARAM_STR);
+        $sql_statement->bindParam(2, $category, PDO::PARAM_STR);
         $sql_statement->bindParam(3, $price, PDO::PARAM_INT);
-        $sql_statement->bindParam(4, $category, PDO::PARAM_STR);
+        $sql_statement->bindParam(4, $description, PDO::PARAM_STR);
+        $sql_statement->bindParam(5, $image_name, PDO::PARAM_STR);
         if ($return_id != null) {
-            $sql_statement->bindParam(5, $return_id, PDO::PARAM_INT);
+            $sql_statement->bindParam(6, $return_id, PDO::PARAM_INT);
         }
         
         $sql_statement->execute();
