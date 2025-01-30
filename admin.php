@@ -10,55 +10,60 @@ session_start();
 if (!isset($_SESSION['user'])) {
     header('location:login.php');
 }
-
-function adding()
-{
+function post_data_form($sql, $image_name){
     // print_r($_POST);
     $return_id = $_POST['food_id'];
     $name = $_POST['name'];
     $category = $_POST['category'];
     $price = $_POST['price'];
-    $description = $_POST['description'];  //NOTE: LO PARE MIENTRAS HAGO PRUEBAS CON $_FILES
-    // ----------------------------------------------------------
-    $image_name =  time() . basename($_FILES['file']['name']);
-    $to_directory = 'templates/food-imgs/' . $image_name;
-    $from = $_FILES['file']['tmp_name'];
-    move_uploaded_file($from, $to_directory);
-    // ----------------------------------------------------------
-    $sql = "INSERT INTO menu (name, category, price, description, imagen) VALUES (?, ?, ?, ?,?)";
+    $description = $_POST['description']; 
     $ObjConnection = new conection();
     $ObjConnection->execute_sql($sql, $name, $image_name,  $description, $price, $category, $return_id);
     header('Location:admin.php');
 }
 
+function send_image_to_folder($file){
+    $image_name =  time() . basename($_FILES['file']['name']);
+    $to_directory = 'templates/food-imgs/' . $image_name;
+    $from = $_FILES['file']['tmp_name'];
+    move_uploaded_file($from, $to_directory);
+    return $image_name; 
+}
+
+function adding()
+{
+    
+    $file = $_FILES['file'];
+    $image_name=send_image_to_folder($file);
+    
+    $sql = "INSERT INTO menu (name, category, price, description, imagen) VALUES (?, ?, ?, ?,?)";
+    post_data_form($sql, $image_name);
+    
+}
+
 function update()
 {
-    $return_id = $_POST['food_id'];
-    $name = $_POST['name'];
-    $category = $_POST['category'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    $ObjConnection = new conection();
     if ($_FILES['file']['name']) {
         echo "ファイルは送信された";
 
-        // --------------------delete old image file-----------
+        // --------------------古いイメージファイルを削除する-----------
+        $return_id = $_POST['food_id'];
         $search_image_name = "SELECT imagen FROM `menu` WHERE id=$return_id";
+        $ObjConnection = new conection();
         $sql_answer = $ObjConnection->consult($search_image_name);
         $oldImage =$sql_answer[0]["imagen"];
 
         if (file_exists("./templates/food-imgs/" . $oldImage)) {
             unlink("./templates/food-imgs/" . $oldImage); // https://www.php.net/manual/en/function.unlink.php
         }
-        // -------------------new image-------------------------
-        $image_name =  time() . basename($_FILES['file']['name']);
-        $to_directory = 'templates/food-imgs/' . $image_name;
-        $from = $_FILES['file']['tmp_name'];
-        move_uploaded_file($from, $to_directory);
+        // -------------------新しいイメージ-------------------------
+        $file = $_FILES['file'];
+        $image_name=send_image_to_folder($file);
 
         // -----------------------send sql--------------------
-        $sql = "INSERT INTO menu (name, category, price, description, imagen) VALUES (?, ?, ?, ?,?)";
-        $ObjConnection->execute_sql($sql, $name, $image_name,  $description, $price, $category, );
+        $sql= "UPDATE menu SET name = ?, category=?, price = ?, description = ?, imagen=?  WHERE id = ?";
+        
+        post_data_form($sql, $image_name);
 
         
     } // else {

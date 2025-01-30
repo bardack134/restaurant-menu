@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container pt-3 text-center" style="font-size: 22px;">
+    <div class="container pt-3 text-center" style="font-size: 26px;">
     <a href="templates/index.html">ホーム</a> |
     <a href="admin.php">管理</a> |
     <a href="logout.php">ログアウト</a> |
