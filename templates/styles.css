@@ -270,8 +270,8 @@ section div h1 {
 }
 
 .myContainer-menu {
-    padding: 15px 0px 30px 80px;
-
+    padding: 0px 30px 0px 90px;
+    
 }
 
 .menu-nav-bar {
@@ -317,7 +317,8 @@ section div ul li:hover {
 }
 
 .price::before{
-    content: "........................................................................................";
+    content: ".....................................................................................";
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .display-row{
@@ -326,8 +327,8 @@ section div ul li:hover {
 
 .menu-items {
     display: flex;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     padding-right: 50px;
     
 }

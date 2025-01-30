@@ -54,8 +54,8 @@
 
                     </ul>
                     <div class="text-end pe-5">
-
-                        <button type="button" class="btn btn-outline-warning">席を予約する</button>
+                    <a class="btn btn-outline-warning" href="#book-a-table">席を予約する</a>
+                        <!-- <button type="button" class="btn btn-outline-warning">席を予約する</button> -->
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@
             </div>
         </section>
 
-
+                                        
         <section id="menu" class="">
             <div class="myContainer-menu">
                 <h2 class="gold-text">メニューをご覧ください</h2>
@@ -231,10 +231,12 @@
                     </div> -->
                 </div>
             </div>
-
+                                        
         </section>
 
+        <section id="book-a-table">
 
+        </section>                                
     </main>
     <footer>
         <!-- place footer here -->

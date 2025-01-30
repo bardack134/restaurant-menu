@@ -78,8 +78,8 @@ function showData(seek) {
 }
 
 function htmlTags(item) {
-    return `<div class="menu-items col-lg-6 col-sm-12">
-                                <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
+    return `<div class="menu-items col-lg-6  col-sm-12">
+                                <img src="../templates/food-imgs/${item.imagen}"
                                     alt="Twin cannoli" class="photo">
                                 <div class="menu-info">
                                     <div class="menu-title">
