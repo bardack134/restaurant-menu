@@ -42,28 +42,32 @@ function update()
     if ($_FILES['file']['name']) {
         echo "ファイルは送信された";
 
-        // --------------------delete before file-----------
-        $search_image_name = "SELECT imagen FROM `menu` WHERE id=$id";
+        // --------------------delete old image file-----------
+        $search_image_name = "SELECT imagen FROM `menu` WHERE id=$return_id";
         $sql_answer = $ObjConnection->consult($search_image_name);
         $oldImage =$sql_answer[0]["imagen"];
 
         if (file_exists("./templates/food-imgs/" . $oldImage)) {
             unlink("./templates/food-imgs/" . $oldImage); // https://www.php.net/manual/en/function.unlink.php
         }
-        // -------------------------------------------------
+        // -------------------new image-------------------------
+        $image_name =  time() . basename($_FILES['file']['name']);
+        $to_directory = 'templates/food-imgs/' . $image_name;
+        $from = $_FILES['file']['tmp_name'];
+        move_uploaded_file($from, $to_directory);
 
-        $sql = "UPDATE menu SET name = ?, description = ?, price = ?, category=? WHERE id = ?";
+        // -----------------------send sql--------------------
+        $sql = "INSERT INTO menu (name, category, price, description, imagen) VALUES (?, ?, ?, ?,?)";
+        $ObjConnection->execute_sql($sql, $name, $image_name,  $description, $price, $category, );
 
-        $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
-        header('Location:admin.php');
-    } else {
-        echo "ファイルは送信されませんでした";
+        
+    } // else {
+    //     echo "ファイルは送信されませんでした";
 
-        $sql = "UPDATE menu SET name = ?, description = ?, price = ?, category=? WHERE id = ?";
+    //     $sql = "UPDATE menu SET name = ?, description = ?, price = ?, category=? WHERE id = ?";
+    // }
 
-        $ObjConnection->execute_sql($sql, $name,  $description, $price, $category, $return_id);
-        header('Location:admin.php');
-    }
+    header('Location:admin.php');
 }
 
 function delete()
