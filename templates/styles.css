@@ -106,7 +106,7 @@ section h2 span {
 
 /* .backgroundImage2::after {
     /* https://developer.mozilla.org/en-US/docs/Web/CSS/::before#examples */
-    /* content: "";
+/* content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -114,7 +114,7 @@ section h2 span {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1; */
-    /* https://www.w3schools.com/css/css_z-index.asp */
+/* https://www.w3schools.com/css/css_z-index.asp */
 /* }  */
 
 
@@ -270,8 +270,8 @@ section div h1 {
 }
 
 .myContainer-menu {
-    padding: 0px 30px 0px 90px;
-    
+    padding: 0px 30px 70px 90px;
+
 }
 
 .menu-nav-bar {
@@ -279,7 +279,8 @@ section div h1 {
 
 }
 
-.links, section div ul li {
+.links,
+section div ul li {
 
     display: inline-block;
     padding: 40px 80px 0 0;
@@ -306,22 +307,22 @@ section div ul li:hover {
     box-shadow: -0px 0px 10px #FFF0DC; */
     object-fit: cover;
     width: 90px;
-    height: 90px; 
+    height: 90px;
     border-radius: 50%;
-    border: 4px solid #ea9000; 
+    border: 4px solid #ea9000;
     box-sizing: border-box;
 }
 
-.price{
-    color: #D8A25E ;
+.price {
+    color: #D8A25E;
 }
 
-.price::before{
+.price::before {
     content: ".....................................................................................";
     color: rgba(255, 255, 255, 0.3);
 }
 
-.display-row{
+.display-row {
     display: flex;
 }
 
@@ -330,7 +331,7 @@ section div ul li:hover {
     margin-top: 20px;
     margin-bottom: 10px;
     padding-right: 50px;
-    
+
 }
 
 .menu-info {
@@ -346,7 +347,162 @@ section div ul li:hover {
     font-weight: 700;
 }
 
-
-
 /* FINISH MY MENU */
 /* ---------------------------------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* START BOOK A TABLE*/
+
+/* id  */
+#book-a-table {
+    background: linear-gradient(115deg, #050505 80%, #543A14 98%);
+    border-top: 5px solid rgb(128, 128, 128, 0.3);
+}
+
+/* class */
+.book-a-table {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+.form-title {
+    padding: 80px 30px 0px 90px;
+    font-size: 41px;
+    font-weight: 600;
+    color: #D8A25E;
+    
+}
+
+.form-container {
+    max-width: 900px;
+    background: rgb(255, 255, 255, 0);
+    width: 900px;
+    padding: 0px 40px 10px 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container form {
+    padding: 10px 0 0 0;
+}
+
+
+.form-container form .form-block {
+    display: grid;
+    margin: 32px 0;
+
+}
+form .form-block .input-data{
+    width: 100%;
+    height: 40px;
+    margin: 25px 20px;
+    position: relative;
+  }
+  form .form-block .textarea{
+    height: 70px;
+  }
+  .input-data input,
+  .textarea textarea{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid #F0BB78;
+    background: rgb(0, 0, 0,0.5);
+    opacity: 0.5;
+  }
+  .input-data input:focus ~ label, .textarea textarea:focus ~ label,
+  .input-data input:valid ~ label, .textarea textarea:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #FFF0DC;
+  }
+  .textarea textarea{
+    resize: none;
+    padding-top: 10px;
+  }
+  .input-data label{
+    position: absolute;
+    /* pointer-events: none; */
+    bottom: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color: #F0BB78;
+  }
+  .textarea label{
+    width: 100%;
+    bottom: 40px;
+    background: rgb(0, 0, 0, 0.5);
+  }
+  .input-data .underline{
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+  }
+  .input-data .underline:before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: #F0BB78;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .input-data input:focus ~ .underline:before,
+  .input-data input:valid ~ .underline:before,
+  .textarea textarea:focus ~ .underline:before,
+  .textarea textarea:valid ~ .underline:before{
+    transform: scale(1);
+  }
+  .submit-btn .input-data{
+    overflow: hidden;
+    height: 45px!important;
+    width: 25%!important;
+  }
+  .submit-btn .input-data .inner{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: -webkit-linear-gradient(right, #F0BB78, #FFF0DC, #F0BB78, #FFF0DC);
+    
+  }
+  .submit-btn .input-data:hover .inner{
+    left: 0;
+  }
+  .submit-btn .input-data input{
+    background: none;
+    border: none;
+    background: rgb(255, 255, 255, 0);
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    
+  }
+  @media (max-width: 700px) {
+    .container .text{
+      font-size: 30px;
+    }
+    .container form{
+      padding: 10px 0 0 0;
+    }
+    .container form .form-block{
+      display: block;
+    }
+    form .form-block .input-data{
+      margin: 35px 0!important;
+    }
+    .submit-btn .input-data{
+      width: 40%!important;
+    }
+  }

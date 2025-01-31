@@ -15,13 +15,13 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
-    
+
 </head>
 
 <body class="pageDesign">
     <header class="fixed-top">
         <!-- NAV BAR -->
-        <nav class="navbar sticky-top navbar-expand-lg  mt-4" style="background-color: rgba(0, 0, 0, 0.6); ;">
+        <nav class="navbar sticky-top navbar-expand-lg  mt-4" style="background-color: rgba(0, 0, 0, 0.6); ">
             <div class="container-fluid">
                 <a class="navbar-brand text-white ps-5 pe-3 fw-bold fs-2" href="#">Cousine</a>
                 <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse"
@@ -54,7 +54,7 @@
 
                     </ul>
                     <div class="text-end pe-5">
-                    <a class="btn btn-outline-warning" href="#book-a-table">席を予約する</a>
+                        <a class="btn btn-outline-warning" href="#book-a-table">席を予約する</a>
                         <!-- <button type="button" class="btn btn-outline-warning">席を予約する</button> -->
                     </div>
                 </div>
@@ -164,7 +164,7 @@
             </div>
         </section>
 
-                                        
+
         <section id="menu" class="">
             <div class="myContainer-menu">
                 <h2 class="gold-text">メニューをご覧ください</h2>
@@ -179,10 +179,10 @@
                 </div>
                 <!-- menu items -->
                 <div>
-                        <div id="MyMenuItems">
+                    <div id="MyMenuItems">
 
-                        </div>                
-                        <!-- <div class="menu-items col-lg-6 col-sm-12">
+                    </div>
+                    <!-- <div class="menu-items col-lg-6 col-sm-12">
                             <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
                                 alt="Twin cannoli" class="photo">
                             <div class="menu-info">
@@ -195,7 +195,7 @@
                             </div>
                         </div> -->
 
-                   
+
 
 
                     <!-- <div class="display-row">
@@ -231,12 +231,63 @@
                     </div> -->
                 </div>
             </div>
-                                        
+
         </section>
 
         <section id="book-a-table">
 
-        </section>                                
+            <div class="form-title">
+                <h2 class="gold-text">席を予約</h2>
+            </div>
+            <div class="book-a-table">
+                <div class="form-container">
+                    <div class="form-block">
+                        <form action="" method="post">
+                            <div class="form-block">
+                            <div class="input-data">
+                                    <!-- <input required type="email" name="name" id="email"> -->
+                                    <input type="text" name="name" id="name">
+                                    <div class="underline"></div>
+                                    <label class="" for="name">Name</label>
+                                </div>
+                                <div class="input-data">
+                                    <input required type="email" name="email" id="email" >
+                                    <div class="underline"></div>
+                                    <label class="" for="email" >Email</label>
+                                </div>
+                                <div class="input-data">
+                                    <input required type="tel" name="phone" id="phone">
+                                    <div class="underline"></div>
+                                    <label class="" for="phone">Phone</label>
+                                </div>
+                                <div class="input-data">
+                                    <input required type="datetime-local" name="time" id="time">
+                                    <div class="underline"></div>
+                                    <label class="" for="time"></label>
+                                </div>
+                                <div class="input-data">
+                                    <input required type="number" name="numberOfPeople" id="numberOfPeople">
+                                    <div class="underline"></div>
+                                    <label class="" for="numberOfPeople">Number Of People</label>
+                                </div>
+                                <div class="input-data textarea">
+                                    <textarea required name="" id="" cols="30" rows="10"></textarea>
+                                    <div class="underline"></div>
+                                    <label class="" for="message">Message</label>
+                                    <div class="form-block submit-btn">
+                                        <div class="input-data">
+                                            <div class="inner"></div>
+                                            <input type="submit" value="submit">
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+           
+        </section>
     </main>
     <footer>
         <!-- place footer here -->
