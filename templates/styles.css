@@ -355,20 +355,24 @@ section div ul li:hover {
 /* ---------------------------------------------------------------------------------- */
 /* START BOOK A TABLE*/
 
-/* id  */
+/* フォーム全体を囲むセクションの背景と上部のボーダーにスタイルが適用されます。 */
 #book-a-table {
     background: linear-gradient(115deg, #050505 80%, #543A14 98%);
+    /* セクションの上部にボーダーを追加します。 */
     border-top: 5px solid rgb(128, 128, 128, 0.3);
 }
 
 /* class */
 .book-a-table {
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/display */
     display: grid;
+    /* （縦方向）に中央揃えします。 */
     align-items: center;
+    /* 水平方向（横方向）に中央揃えします。 */
     justify-content: center;
  
 }
-
+/* フォームのタイトルを表示する部分です。 */
 .form-title {
     padding: 80px 30px 0px 90px;
     font-size: 41px;
@@ -378,11 +382,13 @@ section div ul li:hover {
 }
 
 .form-container {
+    /* 要素の幅が900ピクセルを超えないように制限します。 */
     max-width: 900px;
-    background: rgb(255, 255, 255, 0);
+    /* フォームのボックス内の背景カラー */
+    background: rgb(0, 0, 0);
     width: 900px;
     padding: 0px 40px 10px 40px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+   
 }
 
 .form-container form {
