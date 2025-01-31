@@ -246,7 +246,7 @@
                             <div class="form-block">
                             <div class="input-data">
                                     <!-- <input required type="email" name="name" id="email"> -->
-                                    <input type="text" name="name" id="name">
+                                    <input required  type="text" name="name" id="name">
                                     <div class="underline"></div>
                                     <label class="" for="name">Name</label>
                                 </div>

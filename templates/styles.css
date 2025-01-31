@@ -413,7 +413,8 @@ form .form-block .input-data{
     font-size: 17px;
     border-bottom: 2px solid #F0BB78;
     background: rgb(0, 0, 0,0.5);
-    opacity: 0.5;
+    
+    color: #F0BB78;
   }
   .input-data input:focus ~ label, .textarea textarea:focus ~ label,
   .input-data input:valid ~ label, .textarea textarea:valid ~ label{
@@ -487,6 +488,7 @@ form .form-block .input-data{
     cursor: pointer;
     position: relative;
     z-index: 2;
+    color: black;
     
   }
   @media (max-width: 700px) {
