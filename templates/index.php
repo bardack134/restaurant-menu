@@ -274,11 +274,11 @@
                                     <textarea required name="" id="" cols="30" rows="10"></textarea>
                                     <div class="underline"></div>
                                     <label class="" for="message">Message</label>
-                                    <div class="form-block submit-btn">
-                                        <div class="input-data">
-                                            <div class="inner"></div>
-                                            <input type="submit" value="submit">
-                                        </div>
+                                </div>
+                                <div class="form-block submit-btn">
+                                    <div class="input-data">
+                                        <div class="inner"></div>
+                                        <input type="submit" value="submit">
                                     </div>
                                 </div>
                         </form>
