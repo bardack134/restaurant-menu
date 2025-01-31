@@ -241,52 +241,52 @@
             </div>
             <div class="book-a-table">
                 <div class="form-container">
-                    <div class="form-block">
-                        <form action="" method="post">
-                            <div class="form-block">
+                    <form action="" method="post">
+                        <div class="form-block">
                             <div class="input-data">
-                                    <!-- <input required type="email" name="name" id="email"> -->
-                                    <input required  type="text" name="name" id="name">
-                                    <div class="underline"></div>
-                                    <label class="" for="name">Name</label>
-                                </div>
+                                <!-- <input required type="email" name="name" id="email"> -->
+                                <input required type="text" name="name" id="name">
+                                <div class="underline"></div>
+                                <label class="" for="name">Name</label>
+                            </div>
+                            <div class="input-data">
+                                <input required type="email" name="email" id="email">
+                                <div class="underline"></div>
+                                <label class="" for="email">Email</label>
+                            </div>
+                            <div class="input-data">
+                                <input required type="tel" name="phone" id="phone">
+                                <div class="underline"></div>
+                                <label class="" for="phone">Phone</label>
+                            </div>
+                            <div class="input-data">
+                                <input required type="datetime-local" name="time" id="time">
+                                <div class="underline"></div>
+                                <label class="" for="time"></label>
+                            </div>
+                            <div class="input-data">
+                                <input required type="number" name="numberOfPeople" id="numberOfPeople">
+                                <div class="underline"></div>
+                                <label class="" for="numberOfPeople">Number Of People</label>
+                            </div>
+                            <div class="input-data textarea">
+                                <textarea required name="" id="" cols="30" rows="10"></textarea>
+                                <div class="underline"></div>
+                                <label class="" for="message">Message</label>
+                            </div>
+                            <div class="form-block submit-btn">
                                 <div class="input-data">
-                                    <input required type="email" name="email" id="email" >
-                                    <div class="underline"></div>
-                                    <label class="" for="email" >Email</label>
+                                    <div class="inner"></div>
+                                    <input type="submit" value="submit">
                                 </div>
-                                <div class="input-data">
-                                    <input required type="tel" name="phone" id="phone">
-                                    <div class="underline"></div>
-                                    <label class="" for="phone">Phone</label>
-                                </div>
-                                <div class="input-data">
-                                    <input required type="datetime-local" name="time" id="time">
-                                    <div class="underline"></div>
-                                    <label class="" for="time"></label>
-                                </div>
-                                <div class="input-data">
-                                    <input required type="number" name="numberOfPeople" id="numberOfPeople">
-                                    <div class="underline"></div>
-                                    <label class="" for="numberOfPeople">Number Of People</label>
-                                </div>
-                                <div class="input-data textarea">
-                                    <textarea required name="" id="" cols="30" rows="10"></textarea>
-                                    <div class="underline"></div>
-                                    <label class="" for="message">Message</label>
-                                </div>
-                                <div class="form-block submit-btn">
-                                    <div class="input-data">
-                                        <div class="inner"></div>
-                                        <input type="submit" value="submit">
-                                    </div>
-                                </div>
-                        </form>
-                    </div>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
 
-           
+
         </section>
     </main>
     <footer>
