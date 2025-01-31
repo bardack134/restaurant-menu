@@ -418,7 +418,7 @@ form .form-block .input-data{
   }
   .input-data input:focus ~ label, .textarea textarea:focus ~ label,
   .input-data input:valid ~ label, .textarea textarea:valid ~ label{
-    transform: translateY(-20px);
+    transform: translateY(-30px);
     font-size: 14px;
     color: #FFF0DC;
   }
