@@ -1,0 +1,46 @@
+
+.hide-element {
+    /* モーダルウィンドウが開かれたときに要素を非表示にする */
+    opacity: 0;
+}
+
+#modal-container p {
+    float: left;
+}
+
+#modal-close {
+    float: right;
+
+}
+
+/* モーダルコンテナが画面の中央に */
+#modal-container {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    /* 水平方向に自分の幅の50%だけ左に移動させることで、要素を完全に中央に配置します。 */
+    transform: translateX(-80%);
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    padding: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 600px;
+    z-index: 3;
+
+}
+
+#modal-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+.NoDisplayModal {
+    display: none;
+}
+

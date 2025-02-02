@@ -107,30 +107,28 @@
             </div>
         </section>
 
-        <section id="about " class=" backgroundImage2 mt-1 border  border-5 border-dark">
-            <div class="myContainer col-xxl-8 px-4 py-5 txt-white">
-                <div class="row flex-lg-row-reverse align-items-center g-5 py-5 ">
-                    <div class="col-10 col-sm-8 col-lg-6">
-
-                        <img src="imgs/img1.jpg" class="" alt="レストランのテーマ" height="420" loading="lazy">
-                    </div>
-                    <div class="col-lg-6">
-                        <h1 class="">レストランの紹介</h1>
-                        <p class="lead">
-                            私たちのレストランでは、新鮮な食材を使用し、一流のシェフが腕によりをかけて作り上げた料理をお楽しみいただけます。お客様一人ひとりに素晴らしいダイニング体験を提供することを目指しています。
-                        </p>
-                        <p>私たちのメニューには、多彩な料理が揃っており、季節ごとの特別メニューもご用意しています。また、おしゃれで落ち着いた雰囲気の中で、ゆったりとお食事を楽しんでいただけるよう、心地よい空間を提供しています。
-                        </p>
-                        <p>ぜひお越しいただき、美味しい料理とともに、素敵なひとときをお過ごしください。</p>
-
-                        <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">プライマリ</button>
-                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">デフォルト</button>
-                  </div> -->
-                    </div>
+        <section id="about" class="backgroundImage2 mt-1 border border-5 border-dark">
+            <div class="container col-xxl-8 px-4 py-5 text-white">
+              <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                  <img src="imgs/img1.jpg" class="d-block mx-lg-auto img-fluid" alt="レストランのテーマ" height="420" loading="lazy">
                 </div>
+                <div class="col-lg-6">
+                  <h1 class="gold-text">レストランの紹介</h1>
+                  <p class="lead">
+                    私たちのレストランでは、新鮮な食材を使用し、一流のシェフが腕によりをかけて作り上げた料理をお楽しみいただけます。お客様一人ひとりに素晴らしいダイニング体験を提供することを目指しています。
+                  </p>
+                  <p>
+                    私たちのメニューには、多彩な料理が揃っており、季節ごとの特別メニューもご用意しています。また、おしゃれで落ち着いた雰囲気の中で、ゆったりとお食事を楽しんでいただけるよう、心地よい空間を提供しています。
+                  </p>
+                  <p>
+                    ぜひお越しいただき、美味しい料理とともに、素敵なひとときをお過ごしください。
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
+          </section>
+          
 
         <section id="why-us" class="why-us ">
             <div class="container myCardTitle">

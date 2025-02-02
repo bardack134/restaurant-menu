@@ -95,42 +95,16 @@ section h2 span {
 /* ---------------------------------------------------------------------------------- */
 /* start section "about us" */
 
-.backgroundImage2 {
-    /* background-image: url("../templates/imgs/img2.webp") !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: 86%;
-    position: relative; */
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* .backgroundImage2::after {
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/::before#examples */
-/* content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1; */
-/* https://www.w3schools.com/css/css_z-index.asp */
-/* }  */
-
-
-.myContainer {
-    margin: 10px 0px 30px 60px;
-    /* padding: 10px 10px 30px 30px; */
-
+#about {
+    
+    background: linear-gradient(115deg, #050505 30%, #543A14 98%);
 }
 
 section img {
     border: 5px solid grey;
 }
 
-section div h1 {
-    color: #D8A25E;
-}
+
 
 /* Finish section about us */
 /* ---------------------------------------------------------------------------------- */
@@ -139,10 +113,7 @@ section div h1 {
 
 /* ---------------------------------------------------------------------------------- */
 /* MODAL Window in section "about us" */
-.hide-element {
-    /* モーダルウィンドウが開かれたときに要素を非表示にする */
-    opacity: 0;
-}
+
 
 #modal-container p {
     float: left;
