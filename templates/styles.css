@@ -4,6 +4,8 @@ li a:hover {
 
 }
 
+
+
 /* FINISH  NAV BAR */
 /* ---------------------------------------------------------------------------------- */
 
@@ -165,11 +167,13 @@ section img {
 
 /* ---------------------------------------------------------------------------------- */
 /* start section "why us" */
+
 .why-us {
     background-color: #0c0b09;
     padding: 60px;
-    scroll-margin-top: 50px;
+    
 }
+
 
 .myCardTitle {
     padding: 1rem 3rem 3rem 0;
@@ -220,6 +224,12 @@ section img {
     margin-bottom: 25px;
     margin-top: 28px;
 }
+/* ウィンドウの幅が900ピクセル以下の場合にoverflow-contentクラスにoverflow-y: auto;が適用されます。 */
+@media screen and (max-width: 700px) {
+    .my-overflow-content {
+        overflow-y: auto;
+    }
+  }
 
 /*finish  section "why us" */
 /* ---------------------------------------------------------------------------------- */
@@ -242,10 +252,6 @@ section img {
     color: white;
 }
 
-.myContainer-menu {
-    padding: 0px 30px 70px 90px;
-
-}
 
 .menu-nav-bar {
     text-align: center;

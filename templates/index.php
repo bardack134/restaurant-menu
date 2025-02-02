@@ -29,8 +29,8 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class=" nav-underline navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                <div class="collapse navbar-collapse " id="navbarScroll">
+                    <ul class=" nav-underline navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll text-center"
                         style="--bs-scroll-height: 100px;">
                         <li class="nav-item">
                             <a class=" nav-link  text-white" aria-current="page" href="#">ホーム</a>
@@ -48,12 +48,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-white px-5" href="#">ギャラリー</a>
                         </li>
-                        <li class="nav-item text-center">
+                        <li class="nav-item ">
                             <a class="nav-link text-white px-5" href="#">お問い合わせ</a>
                         </li>
 
                     </ul>
-                    <div class="text-end pe-5">
+                    <div class="text-end pe-5 text-center">
                         <a class="btn btn-outline-warning" href="#book-a-table">席を予約する</a>
                         <!-- <button type="button" class="btn btn-outline-warning">席を予約する</button> -->
                     </div>
@@ -138,22 +138,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-                        <div class="myCard">
+                        <div class="myCard mb-2 my-overflow-content">
                             <span class="myTransition">01</span>
                             <h4 class="myTransition">新鮮な食材</h4>
                             <p class="card-text">当店では毎日新鮮な食材を使用し、美味しさと健康を追求しています。地元の農家から直送される旬の食材を活かした料理をお楽しみいただけます。</p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="myCard">
-                            <span class="myTransition">02</span>
+                    
+                    <div class="col-lg-4 mb-2  ">
+                        <div class="myCard my-overflow-content">
+                            <span class="myTransition my-5">02</span>
                             <h4 class="myTransition">素晴らしい雰囲気</h4>
                             <p class="card-text">温かみのあるインテリアと心地よい音楽が、特別な時間を演出します。デートや家族の集まり、友人との楽しいひとときを過ごすのに最適な場所です。
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="myCard">
+                    <div class="col-lg-4 mb-2">
+                        <div class="myCard my-overflow-content">
                             <span class="myTransition pb-5 mb-5">03</span>
                             <h4 class="myTransition">おもてなしの心</h4>
                             <p class="card-text">スタッフ一同、心を込めたおもてなしでお迎えいたします。お客様一人ひとりのご要望にお応えし、最高のサービスをご提供いたします。</p>
@@ -165,10 +166,11 @@
 
 
         <section id="menu" class="">
-            <div class="myContainer-menu">
+            <div class="container">
+                <div class="row">
                 <h2 class="gold-text">メニューをご覧ください</h2>
                 <!-- filter buttons-->
-                <div class="white-text menu-nav-bar">
+                <div class="white-text menu-nav-bar nav">
                     <ul>
                         <li onclick="seekItem(event)" class="nav-item active" id="'*'">All</li>
                         <li onclick="seekItem(event)" class="nav-item" id="main">Main</li>
@@ -176,6 +178,7 @@
                         <li onclick="seekItem(event)" class="nav-item" id="dessert">Desserts</li>
                     </ul>
                 </div>
+            </div>
                 <!-- menu items -->
                 <div>
                     <div id="MyMenuItems">
@@ -295,11 +298,11 @@
     <script src="scripts.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script> -->
+        crossorigin="anonymous"></script> 
 </body>
 
 </html>
