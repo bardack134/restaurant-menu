@@ -98,6 +98,8 @@ section h2 span {
 #about {
     
     background: linear-gradient(115deg, #050505 30%, #543A14 98%);
+    border-top: 5px solid rgb(128, 128, 128, 0.3);
+    border-bottom: 5px solid rgb(128, 128, 128, 0.3);
 }
 
 section img {
