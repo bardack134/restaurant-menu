@@ -357,7 +357,7 @@ section div ul li:hover {
 
 /* フォーム全体を囲むセクションの背景と上部のボーダーにスタイルが適用されます。 */
 #book-a-table {
-    background: linear-gradient(115deg, #050505 80%, #543A14 98%);
+    background: linear-gradient(115deg, #050505 70%, #543A14 98%);
     /* セクションの上部にボーダーを追加します。 */
     border-top: 5px solid rgb(128, 128, 128, 0.3);
 }
@@ -379,14 +379,12 @@ section div ul li:hover {
     font-size: 41px;
     font-weight: 600;
     color: #D8A25E;
-
 }
 
 .form-container {
     /* 要素の幅が900ピクセルを超えないように制限します。 */
     max-width: 900px;
-    /* フォームのボックス内の背景カラー */
-    background: rgb(0, 0, 0);
+    /* background: rgb(250, 249, 249); */
     width: 900px;
     padding: 0px 40px 10px 40px;
 
@@ -397,56 +395,67 @@ section div ul li:hover {
 } */
 
 
-.form-container form .form-block {
+.form-block {
 
     display: grid;
     /* 上下ブロック間のスペースが確保されます */
     margin: 32px 0;
-
+    align-items: center;
 }
+
 /* input-dataは、各入力フィールド（テキスト、メール、電話番号など）とそのラベルを囲む要素です */
 form .form-block .input-data {
-    width: 100%;  /*要素の幅を親要素いっぱいに広げます*/
-    height: 40px; 
-    margin: 30px 20px; /* 要素間のスペースが確保されます。 */
+    width: 100%;
+    /*要素の幅を親要素いっぱいに広げます*/
+    height: 40px;
+    margin: 30px 20px;
+    /* 要素間のスペースが確保されます。 */
     position: relative;
 }
-/* comentarios desde aca */
+
 form .form-block .textarea {
     height: 70px;
 }
 
+/* すべての入力フィールド（<input>）とテキストエリア（<textarea>）に適用されます */
 .input-data input,
 .textarea textarea {
     display: block;
     width: 100%;
+    /* 幅が親要素いっぱいに広がります */
     height: 100%;
+    /* 入力フィールドやテキストエリアのデフォルトのボーダーが削除されます。 */
     border: none;
     font-size: 17px;
+    /* 入力フィールドやテキストエリアの下部にゴールド色の線が引かれます。 */
     border-bottom: 2px solid #F0BB78;
     background: rgb(0, 0, 0, 0.5);
 
     color: #F0BB78;
 }
 
+/* 入力フィールドやテキストエリアがフォーカスされたときに、対応する<label>にスタイルを適用します。 */
 .input-data input:focus~label,
+/* https://developer.mozilla.org/ja/docs/Web/CSS/:focus */
 .textarea textarea:focus~label,
+/* ~は、兄弟要素を選択するためのコンビネータです。 */
 .input-data input:valid~label,
 .textarea textarea:valid~label {
+    /* label が上に移動し、入力フィールドやテキストエリアの上部に表示されます。 */
     transform: translateY(-30px);
     font-size: 14px;
     color: #FFF0DC;
 }
 
 .textarea textarea {
+    /* ユーザーがテキストエリアのサイズを手動で変更できなくなります。 */
     resize: none;
     padding-top: 10px;
 }
 
 .input-data label {
     position: absolute;
-    /* pointer-events: none; */
-    bottom: 10px;
+    bottom: 10px; /* ラベルが入力フィールドの下部に表示されます。 */
     font-size: 16px;
     transition: all 0.3s ease;
     color: #F0BB78;
@@ -454,87 +463,65 @@ form .form-block .textarea {
 
 .textarea label {
     width: 100%;
+    /* ラベルを親要素の下部から40ピクセルの位置に配置します。 */
     bottom: 40px;
     background: rgb(0, 0, 0, 0.5);
 }
 
 .input-data .underline {
+    /* 下線が親要素（.input-data）に対して相対的に配置されます */
     position: absolute;
-    bottom: 0;
-    height: 2px;
+    bottom: 0; /* 下線を親要素の下部に配置します。 */
+    height: 3px;/*下線の高さを3ピクセルに設定します。*/
     width: 100%;
 }
 
+/* 疑似要素が親要素（.underline）に対して相対的に配置されます */
 .input-data .underline:before {
+    /* 疑似要素が親要素（.underline）に対して相対的に配置されます */
     position: absolute;
     content: "";
+    /*疑似要素の内容を空にします。*/
     height: 2px;
     width: 100%;
-    background: #F0BB78;
+    background: #FFF0DC;
     transform: scaleX(0);
+    /* 疑似要素が非表示になります*/
     transform-origin: center;
+    /*変形の起点を中央に設定します*/
     transition: transform 0.3s ease;
 }
 
+/*入力フィールドやテキストエリアがフォーカスされたとき、または有効な値が入力されたときに、下線が表示されます。 */
 .input-data input:focus~.underline:before,
 .input-data input:valid~.underline:before,
 .textarea textarea:focus~.underline:before,
 .textarea textarea:valid~.underline:before {
     transform: scale(1);
+    /*疑似要素の幅を元のサイズに戻します。*/
 }
 
-.submit-btn .input-data {
-    overflow: hidden;
-    height: 45px !important;
-    width: 25% !important;
+
+.submit-btn {
+    text-align: center;
+    margin-top: 20px;
+    
 }
 
-.submit-btn .input-data .inner {
-    height: 100%;
-    width: 300%;
-    position: absolute;
-    left: -100%;
-    background: -webkit-linear-gradient(right, #F0BB78, #FFF0DC, #F0BB78, #FFF0DC);
-
-}
-
-.submit-btn .input-data:hover .inner {
-    left: 0;
-}
-
-.submit-btn .input-data input {
-    background: none;
+.submit-button {
+    /* 背景色、文字色、余白、ボーダーを指定します。 */
+    background: linear-gradient(90deg, rgba(240, 187, 120, 1) 0%,  rgba(255,240,220,1) 100%);
     border: none;
-    background: rgb(255, 255, 255, 0);
-    font-size: 17px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #543A14;
+    font-size: 18px;
+    padding: 10px 20px;
     cursor: pointer;
-    position: relative;
-    z-index: 2;
-    color: black;
-
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    width: 100%;
 }
 
-@media (max-width: 700px) {
-    .container .text {
-        font-size: 30px;
-    }
-
-    .container form {
-        padding: 10px 0 0 0;
-    }
-
-    .container form .form-block {
-        display: block;
-    }
-
-    form .form-block .input-data {
-        margin: 35px 0 !important;
-    }
-
-    .submit-btn .input-data {
-        width: 40% !important;
-    }
+.submit-button:hover {
+    background: rgb(240, 187, 120);
 }

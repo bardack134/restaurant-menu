@@ -242,7 +242,7 @@
             <div class="book-a-table">
                 <div class="form-container">
                     <form action="" method="post">
-                        <div class="form-block">
+                        <div class="form-block ">
                             <div class="input-data">
                                 <!-- <input required type="email" name="name" id="email"> -->
                                 <input required type="text" name="name" id="name">
@@ -274,12 +274,12 @@
                                 <div class="underline"></div>
                                 <label class="" for="message">Message</label>
                             </div>
-                            <div class="form-block submit-btn">
-                                <div class="input-data">
-                                    <div class="inner"></div>
-                                    <input type="submit" value="submit">
+                            <div class="input-data ">
+                                <div class=" submit-btn">
+                                    <button type="submit" class="submit-button">Submit</button>
                                 </div>
                             </div>
+
                         </div>
                     </form>
 
