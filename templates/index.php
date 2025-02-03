@@ -144,7 +144,7 @@
                             <p class="card-text">当店では毎日新鮮な食材を使用し、美味しさと健康を追求しています。地元の農家から直送される旬の食材を活かした料理をお楽しみいただけます。</p>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-4 mb-2  ">
                         <div class="myCard my-overflow-content">
                             <span class="myTransition my-5">02</span>
@@ -166,75 +166,31 @@
 
 
         <section id="menu" class="">
-            <div class="container">
-                <div class="row">
+            <div class="myContainer-menu text-white" style="background-color: black;">
                 <h2 class="gold-text">メニューをご覧ください</h2>
-                <!-- filter buttons-->
-                <div class="white-text menu-nav-bar nav">
-                    <ul>
+
+                <!-- Menú para pantallas medianas y grandes -->
+                <nav class="d-none d-md-block">
+                    <ul class="menu-nav-bar d-flex justify-content-start">
                         <li onclick="seekItem(event)" class="nav-item active" id="'*'">All</li>
                         <li onclick="seekItem(event)" class="nav-item" id="main">Main</li>
                         <li onclick="seekItem(event)" id="drinks" class="drinks">Drinks</li>
                         <li onclick="seekItem(event)" class="nav-item" id="dessert">Desserts</li>
                     </ul>
-                </div>
-            </div>
-                <!-- menu items -->
+                </nav>
+
+                
+
+                <!-- Contenedor del menú -->
                 <div>
-                    <div id="MyMenuItems">
-
-                    </div>
-                    <!-- <div class="menu-items col-lg-6 col-sm-12">
-                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
-                                alt="Twin cannoli" class="photo">
-                            <div class="menu-info">
-                                <div class="menu-title">
-                                    <h4>name</h4>
-                                    <span class="price">$price</span>
-                                </div>
-                                <div class="menu-text">description
-                                </div>
-                            </div>
-                        </div> -->
-
-
-
-
-                    <!-- <div class="display-row">
-                        <div class="menu-items col-lg-6 col-sm-12">
-                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
-                                alt="Twin cannoli" class="photo">
-                            <div class="menu-info">
-                                <div class="menu-title">
-                                    <h4>Twin Cannoli</h4>
-                                    <span class="price">$7.00</span>
-                                </div>
-                                <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate
-                                    chip
-                                    ricotta cannoli cream.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-items col-lg-6 col-sm-12">
-                            <img src="https://www.mystoryinrecipes.com/uploads/4/4/9/3/44938739/5321015_orig.jpg"
-                                alt="Twin cannoli" class="photo">
-                            <div class="menu-info">
-                                <div class="menu-title">
-                                    <h4>Twin Cannoli</h4>
-                                    <span class="price">$7.00</span>
-                                </div>
-                                <div class="menu-text">Two crisp cannoli shells filled with our house made chocolate
-                                    chip
-                                    ricotta cannoli cream.
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div> -->
+                    <div id="MyMenuItems"></div>
                 </div>
             </div>
-
         </section>
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
 
         <section id="book-a-table">
 
@@ -302,7 +258,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script> 
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
