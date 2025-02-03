@@ -199,9 +199,9 @@
 
             <!-- Contenedor del menú -->
             <div class="container ">
-                <div class="row">
+                <div class="row row-cols-1 row-cols-md-2 g-4" id="MyMenuItems">
 
-                    <div id="MyMenuItems" ></div>
+                    
                 </div>
             </div>
             </div>
