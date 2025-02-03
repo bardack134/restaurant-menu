@@ -138,7 +138,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-                        <div class="myCard mb-2 my-overflow-content">
+                        <div class="myCard mb-2 ">
                             <span class="myTransition">01</span>
                             <h4 class="myTransition">新鮮な食材</h4>
                             <p class="card-text">当店では毎日新鮮な食材を使用し、美味しさと健康を追求しています。地元の農家から直送される旬の食材を活かした料理をお楽しみいただけます。</p>
@@ -146,7 +146,7 @@
                     </div>
 
                     <div class="col-lg-4 mb-2  ">
-                        <div class="myCard my-overflow-content">
+                        <div class="myCard ">
                             <span class="myTransition my-5">02</span>
                             <h4 class="myTransition">素晴らしい雰囲気</h4>
                             <p class="card-text">温かみのあるインテリアと心地よい音楽が、特別な時間を演出します。デートや家族の集まり、友人との楽しいひとときを過ごすのに最適な場所です。
@@ -154,7 +154,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 mb-2">
-                        <div class="myCard my-overflow-content">
+                        <div class="myCard ">
                             <span class="myTransition pb-5 mb-5">03</span>
                             <h4 class="myTransition">おもてなしの心</h4>
                             <p class="card-text">スタッフ一同、心を込めたおもてなしでお迎えいたします。お客様一人ひとりのご要望にお応えし、最高のサービスをご提供いたします。</p>

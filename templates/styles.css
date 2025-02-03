@@ -226,12 +226,28 @@ section img {
 }
 
 /* ウィンドウの幅が900ピクセル以下の場合にoverflow-contentクラスにoverflow-y: auto;が適用されます。 */
-@media screen and (max-width: 700px) {
-    .my-overflow-content {
-        overflow-y: auto;
+@media screen and (min-width: 400px) and (max-width: 500px) {
+    .myCard {
+        padding: 40px 30px;
+        margin: 15px;
+        /* background-color: #473311; */
+        background-color: rgb(24, 24, 24);
+        /* background-color: #F0BB78; */
+        height: 400px;
     }
 }
+@media screen and (max-width: 399px) {
+    .myCard {
+        padding: 40px 30px;
+        margin: 15px;
+        /* background-color: #473311; */
+        background-color: rgb(24, 24, 24);
+        /* background-color: #F0BB78; */
+        height: 450px;
+        
 
+    }
+}
 /*finish  section "why us" */
 /* ---------------------------------------------------------------------------------- */
 
