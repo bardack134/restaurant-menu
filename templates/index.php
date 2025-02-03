@@ -172,10 +172,11 @@
                 <!-- Menú para pantallas medianas y grandes -->
                 <div class="d-none d-lg-block  " >
                     <ul class="menu-nav-bar d-flex justify-content-center">
-                        <li onclick="seekItem(event)" class="menu-link active" id="'*'">All</li>
-                        <li onclick="seekItem(event)" class="menu-link" id="main">Main</li>
-                        <li onclick="seekItem(event)" class="menu-link" id="drinks">Drinks</li>
-                        <li onclick="seekItem(event)" class="menu-link" id="dessert">Desserts</li>
+                    <!-- nav-item is for javascript queryselector -->
+                        <li onclick="seekItem(event)" class="menu-link active nav-item" id="'*'">All</li>
+                        <li onclick="seekItem(event)" class="menu-link nav-item" id="main">Main</li>
+                        <li onclick="seekItem(event)" class="menu-link nav-item" id="drinks">Drinks</li>
+                        <li onclick="seekItem(event)" class="menu-link nav-item" id="dessert">Desserts</li>
                     </ul>
                 </div>
 
