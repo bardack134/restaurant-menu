@@ -48,12 +48,13 @@ function seekItem(event) {
     seek = event.target.id
     console.log(seek);
     showData(seek);
+    closeNav();
 
 }
 
 function showData(seek) {
     let count = 0;
-    let text = `<div class="display-row">`;
+    let text = ``;
     // PHPファイルからデータを取得する
     //クエリ文字列を付けてGETリクエストを送信することもできます。
     fetch("../data.php?category=" + seek)
@@ -65,9 +66,7 @@ function showData(seek) {
                 count += 1;
                 text += htmlTags(item); // htmlTags でHTMLを生成
 
-                if (count % 2 === 0) {
-                    text += `</div><div class="display-row">`;
-                }
+                
 
             });
             text += `</div>`;
@@ -78,7 +77,8 @@ function showData(seek) {
 }
 
 function htmlTags(item) {
-    return `<div class="menu-items col-lg-6  col-sm-12">
+    return ` <div class="col">
+                <div class="menu-items ">
                                 <img src="../templates/food-imgs/${item.imagen}"
                                     alt="Twin cannoli" class="photo">
                                 <div class="menu-info">
@@ -88,6 +88,7 @@ function htmlTags(item) {
                                     </div>
                                     <div class="menu-text">${item.description}
                                     </div>
+                                </div>
                                 </div>
                             </div>`;
     // console.log(text);
@@ -99,14 +100,19 @@ function clearMenuItems() {
 }
 
 // ページが読み込まれると、メニュー内の「All</li>」の項目が自動的に表示されます。
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     seek = "'*'";
     console.log(seek);
     showData(seek);
 });
 
-
-
+// OPEN AND CLOSE MENU FOR SMALL SCREENS
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
 
 
 

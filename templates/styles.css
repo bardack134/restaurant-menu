@@ -98,8 +98,8 @@ section h2 span {
 /* start section "about us" */
 
 #about {
-    
-    background: linear-gradient(115deg, #050505 30%, #543A14 98%);
+
+    background-color: black;
     border-top: 5px solid rgb(128, 128, 128, 0.3);
     border-bottom: 5px solid rgb(128, 128, 128, 0.3);
 }
@@ -169,9 +169,9 @@ section img {
 /* start section "why us" */
 
 .why-us {
-    background-color: #0c0b09;
+    background: linear-gradient(115deg, #050505 20%, #543A14 98%);
     padding: 60px;
-    
+
 }
 
 
@@ -224,12 +224,13 @@ section img {
     margin-bottom: 25px;
     margin-top: 28px;
 }
+
 /* ウィンドウの幅が900ピクセル以下の場合にoverflow-contentクラスにoverflow-y: auto;が適用されます。 */
 @media screen and (max-width: 700px) {
     .my-overflow-content {
         overflow-y: auto;
     }
-  }
+}
 
 /*finish  section "why us" */
 /* ---------------------------------------------------------------------------------- */
@@ -239,7 +240,7 @@ section img {
 /* ---------------------------------------------------------------------------------- */
 /* START MY MENU */
 #menu {
-    background: #000000;
+    background-color: black;
 
 }
 
@@ -252,10 +253,7 @@ section img {
     color: white;
 }
 
-.myContainer-menu {
-    padding: 0px 30px 70px 90px;
 
-}
 
 .menu-nav-bar {
     text-align: center;
@@ -263,13 +261,15 @@ section img {
 }
 
 .links,
-section div ul li {
+
+.menu-link {
 
     display: inline-block;
     padding: 40px 80px 0 0;
     text-decoration: none;
     text-align: center;
     color: white;
+    font-size: 25px;
 
 }
 
@@ -330,6 +330,91 @@ section div ul li:hover {
     font-weight: 700;
 }
 
+.menu-items-padding {
+    padding-bottom: 6%;
+}
+
+/*--------------MENU links - SMALL WINDOWS -------------------*/
+.hamburger {
+    font-size: 24px;
+    color: #FFF0DC;
+    font-size: 30px;
+    cursor: pointer
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay li {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay li:hover,
+.overlay li:focus {
+    color: #F0BB78;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media screen and (min-width: 991px) {
+
+    .overlay,
+    .overlay-content,
+    overlay a,
+    .overlay .closebtn {
+        display: none;
+    }
+
+    .dontShow {
+        display: none;
+    }
+}
+
+/* --------------------FINISH SMALL WINDOWS --------------------*/
 /* FINISH MY MENU */
 
 
@@ -436,7 +521,8 @@ form .form-block .textarea {
 
 .input-data label {
     position: absolute;
-    bottom: 10px; /* ラベルが入力フィールドの下部に表示されます。 */
+    bottom: 10px;
+    /* ラベルが入力フィールドの下部に表示されます。 */
     font-size: 16px;
     transition: all 0.3s ease;
     color: #F0BB78;
@@ -452,8 +538,10 @@ form .form-block .textarea {
 .input-data .underline {
     /* 下線が親要素（.input-data）に対して相対的に配置されます */
     position: absolute;
-    bottom: 0; /* 下線を親要素の下部に配置します。 */
-    height: 3px;/*下線の高さを3ピクセルに設定します。*/
+    bottom: 0;
+    /* 下線を親要素の下部に配置します。 */
+    height: 3px;
+    /*下線の高さを3ピクセルに設定します。*/
     width: 100%;
 }
 
@@ -486,12 +574,12 @@ form .form-block .textarea {
 .submit-btn {
     text-align: center;
     margin-top: 20px;
-    
+
 }
 
 .submit-button {
     /* 背景色、文字色、余白、ボーダーを指定します。 */
-    background: linear-gradient(90deg, rgba(240, 187, 120, 1) 0%,  rgba(255,240,220,1) 100%);
+    background: linear-gradient(90deg, rgba(240, 187, 120, 1) 0%, rgba(255, 240, 220, 1) 100%);
     border: none;
     color: #543A14;
     font-size: 18px;

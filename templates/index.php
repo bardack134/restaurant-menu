@@ -165,26 +165,44 @@
         </section>
 
 
-        <section id="menu" class="">
-            <div class="myContainer-menu text-white" style="background-color: black;">
+        <section id="menu">
+            <div class="container text-white py-5" style="background-color: black;">
                 <h2 class="gold-text">メニューをご覧ください</h2>
 
                 <!-- Menú para pantallas medianas y grandes -->
-                <nav class="d-none d-md-block">
-                    <ul class="menu-nav-bar d-flex justify-content-start">
-                        <li onclick="seekItem(event)" class="nav-item active" id="'*'">All</li>
-                        <li onclick="seekItem(event)" class="nav-item" id="main">Main</li>
-                        <li onclick="seekItem(event)" id="drinks" class="drinks">Drinks</li>
-                        <li onclick="seekItem(event)" class="nav-item" id="dessert">Desserts</li>
+                <div class="d-none d-lg-block  " >
+                    <ul class="menu-nav-bar d-flex justify-content-center">
+                        <li onclick="seekItem(event)" class="menu-link active" id="'*'">All</li>
+                        <li onclick="seekItem(event)" class="menu-link" id="main">Main</li>
+                        <li onclick="seekItem(event)" class="menu-link" id="drinks">Drinks</li>
+                        <li onclick="seekItem(event)" class="menu-link" id="dessert">Desserts</li>
                     </ul>
-                </nav>
-
-                
-
-                <!-- Contenedor del menú -->
-                <div>
-                    <div id="MyMenuItems"></div>
                 </div>
+
+                <!-- menu para pantallas pequenas -->
+                <div id="myNav" class="overlay">
+                    <a class="closebtn" onclick="closeNav()" style="color: #D8A25E;">&times;</a>
+                    <div class="overlay-content ">
+                        <li onclick="seekItem(event) " id="'*'">All</li>
+                        <li onclick="seekItem(event) " id="main">Main</li>
+                        <li onclick="seekItem(event) " id="drinks" onclick="seekItem(event)" id="drinks" class="drinks">Drinks</li>
+                        <li onclick="seekItem(event) " id="dessert">Desserts</li>
+                    </div>
+                </div>
+
+
+                <span class="dontShow hamburger" onclick="openNav()">&#9776; open</span>
+
+            </div>
+
+
+            <!-- Contenedor del menú -->
+            <div class="container ">
+                <div class="row">
+
+                    <div id="MyMenuItems" ></div>
+                </div>
+            </div>
             </div>
         </section>
 
