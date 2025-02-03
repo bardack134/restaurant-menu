@@ -301,9 +301,38 @@ section div ul li:hover {
 }
 
 .price::before {
-    content: ".....................................................................................";
+    content: "...........................";
     color: rgba(255, 255, 255, 0.3);
+    padding-right: 0;
 }
+
+@media screen and  (max-width: 767px) {
+    .price::before {
+        content: "";
+        padding-right: 3%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 989px) {
+    .price::before {
+        content: "........................................................................";
+        padding-right: 3%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+    .price::before {
+        content: "";
+        padding-right: 3%;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .price::before {
+        content: "......................................................";
+        padding-right: 3%;
+    }
+}
+
 
 .display-row {
     display: flex;
@@ -330,6 +359,9 @@ section div ul li:hover {
     font-weight: 700;
 }
 
+.menu-text{
+    color: rgba(255, 255, 255, 0.7);
+}
 .menu-items-padding {
     padding-bottom: 6%;
 }

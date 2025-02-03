@@ -78,7 +78,7 @@ function showData(seek) {
 
 function htmlTags(item) {
     return ` <div class="col">
-                <div class="menu-items ">
+                <div class="menu-items  ">
                                 <img src="../templates/food-imgs/${item.imagen}"
                                     alt="Twin cannoli" class="photo">
                                 <div class="menu-info">
