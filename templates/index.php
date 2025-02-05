@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include("../conection.php");
+ ?>
+
 <!doctype html>
 <html lang="en">
 <!-- cambio de prueba -->
@@ -170,9 +175,9 @@
                 <h2 class="gold-text">メニューをご覧ください</h2>
 
                 <!-- Menú para pantallas medianas y grandes -->
-                <div class="d-none d-lg-block  " >
+                <div class="d-none d-lg-block  ">
                     <ul class="menu-nav-bar d-flex justify-content-center">
-                    <!-- nav-item is for javascript queryselector -->
+                        <!-- nav-item is for javascript queryselector -->
                         <li onclick="seekItem(event)" class="menu-link active nav-item" id="'*'">All</li>
                         <li onclick="seekItem(event)" class="menu-link nav-item" id="main">Main</li>
                         <li onclick="seekItem(event)" class="menu-link nav-item" id="drinks">Drinks</li>
@@ -186,7 +191,7 @@
                     <div class="overlay-content ">
                         <li onclick="seekItem(event) " id="'*'">All</li>
                         <li onclick="seekItem(event) " id="main">Main</li>
-                        <li onclick="seekItem(event) " id="drinks" onclick="seekItem(event)" id="drinks" class="drinks">Drinks</li>
+                        <li onclick="seekItem(event) " id="drinks"  id="drinks" class="drinks">Drinks</li>
                         <li onclick="seekItem(event) " id="dessert">Desserts</li>
                     </div>
                 </div>
@@ -201,16 +206,13 @@
             <div class="container ">
                 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4" id="MyMenuItems">
 
-                    
+
                 </div>
             </div>
             </div>
         </section>
 
-        <!-- Bootstrap Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-
-
+        
         <section id="book-a-table">
 
             <div class="form-title">
@@ -218,7 +220,15 @@
             </div>
             <div class="book-a-table">
                 <div class="form-container">
-                    <form action="../admin-reservation.php" method="post">
+                       
+                    <p class="text-center white-text" style="font-size: 23px;">
+                        <?php 
+                        echo isset($_SESSION['answer']) ? $_SESSION['answer'] : ''; 
+                        ?>
+                    </p>
+                                      
+
+                    <form action="index.php" method="post">
                         <div class="form-block ">
                             <div class="input-data">
                                 <!-- <input required type="email" name="name" id="email"> -->
@@ -247,7 +257,7 @@
                                 <label class="" for="numberOfPeople">Number Of People</label>
                             </div>
                             <div class="input-data textarea">
-                                <textarea name="message" id="" cols="30" rows="10"></textarea>
+                                <textarea required name="message" id="" cols="30" rows="10"></textarea>
                                 <div class="underline"></div>
                                 <label class="" for="message">Message</label>
                             </div>
@@ -259,7 +269,25 @@
 
                         </div>
                     </form>
-
+                    <?php
+                       
+                    
+                        if (isset($_POST['action'])) {
+                            $name = $_POST['name'];
+                            $email = $_POST['email'];
+                            $phone = $_POST['phone'];
+                            $time = $_POST['time'];
+                            $numberOfPeople = $_POST['numberOfPeople'];
+                            $message = $_POST['message'];
+                            $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ? ,? ,?)";
+                            $ObjConnection = new conection();
+                            $ObjConnection->reservation_form($sql, $name, $email,  $phone, $time, $numberOfPeople, $message);
+                            $_SESSION['answer']='ご予約が正しく行われました';
+                        }
+                      
+                      
+                      
+                    ?>
                 </div>
             </div>
 
@@ -278,6 +306,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+
+        <!-- Bootstrap Scripts -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script> -->
+
 </body>
 
 </html>

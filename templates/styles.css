@@ -554,7 +554,8 @@ form .form-block .textarea {
 /* https://developer.mozilla.org/ja/docs/Web/CSS/:focus */
 .textarea textarea:focus~label,
 /* ~は、兄弟要素を選択するためのコンビネータです。 */
-.input-data input:valid~label {
+.input-data input:valid~label,
+.textarea textarea input:valid~label{
     /* label が上に移動し、入力フィールドやテキストエリアの上部に表示されます。 */
     transform: translateY(-30px);
     font-size: 14px;
@@ -612,7 +613,8 @@ form .form-block .textarea {
 /*入力フィールドやテキストエリアがフォーカスされたとき、または有効な値が入力されたときに、下線が表示されます。 */
 .input-data input:focus~.underline:before,
 .input-data input:valid~.underline:before,
-.textarea textarea:focus~.underline:before {
+.textarea textarea:focus~.underline:before, 
+.textarea textarea:valid~.underline:before {
     transform: scale(1);
     /*疑似要素の幅を元のサイズに戻します。*/
 }

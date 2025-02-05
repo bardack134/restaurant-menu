@@ -11,21 +11,7 @@ if (!isset($_SESSION['user'])) {
     header('location:login.php');
 }
 
-function adding()
-{
-    
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $time = $_POST['time'];
-    $numberOfPeople = $_POST['numberOfPeople'];
-    $message = $_POST['message'];
-    $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ? ,? ,?)";
-    $ObjConnection = new conection();
 
-    $ObjConnection->reservation_form($sql, $name, $email,  $phone, $time, $numberOfPeople, $message);
-    // header('Location:admin-reservation.php');
-}
 
 function delete()
 {
@@ -50,17 +36,14 @@ if (isset($_POST['action']) ) {
     
 
     $option = $_POST['action'];
-
     $return_value = match ($option) {
                
         'delete' => delete(),
-        'reservation-info' => adding(),
+        
     };
 }
 
-if (isset($_POST)) {
-    print_r($_POST);
-}
+
 ?>
 <div class="container">
     
