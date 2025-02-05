@@ -61,8 +61,8 @@ function show_all()
                             <td><?php echo isset($value['Phone']) ?  $value['Phone'] : '';  ?></td>
                             <td><?php echo isset($value['Date']) ?  $value['Date'] : '';  ?></td>
                             <td><?php echo isset($value['NumberOfPeople']) ?  $value['NumberOfPeople'] : '';  ?></td>
-                            <td class="text-wrap" style="max-width: 300px;"><?php echo isset($value['Message'])? $value['Message']: '';  ?></td>
-                            <td><?php echo "Message"; ?></td>
+                            <td class="fix-text"><?php echo 'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd';  ?></td>
+                            
                         </tr>
                     <?php 
                  }
