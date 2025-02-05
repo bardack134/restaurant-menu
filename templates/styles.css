@@ -238,7 +238,7 @@ section img {
 }
 @media screen and (max-width: 399px) {
     .myCard {
-        padding: 40px 30px;
+        padding: 20px 15px;
         margin: 15px;
         /* background-color: #473311; */
         background-color: rgb(24, 24, 24);
@@ -431,9 +431,10 @@ body {
 
 .overlay .closebtn {
     position: absolute;
-    top: 20px;
+    top: 10%;
     right: 45px;
     font-size: 60px;
+    cursor: pointer;
 }
 
 @media screen and (max-height: 450px) {
