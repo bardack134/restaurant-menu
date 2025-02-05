@@ -49,5 +49,20 @@ class conection{
         
         $sql_statement->execute();
     }
+
+    public function reservation_form($sql, $name, $email,  $phone, $time, $numberOfPeople, $message){
+        $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
+        $sql_statement->bindParam(1, $name, PDO::PARAM_STR);
+        $sql_statement->bindParam(2, $email, PDO::PARAM_STR);
+        $sql_statement->bindParam(3, $phone, PDO::PARAM_INT);
+        $sql_statement->bindParam(4, $time, PDO::PARAM_STR);
+        $sql_statement->bindParam(5, $numberOfPeople, PDO::PARAM_INT);
+        $sql_statement->bindParam(6, $message, PDO::PARAM_STR);
+        if ($message != null) {
+            $sql_statement->bindParam(6, $message, PDO::PARAM_STR);
+        }
+        
+        $sql_statement->execute();
+    }
 }
 ?>

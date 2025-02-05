@@ -10,7 +10,33 @@ session_start();
 if (!isset($_SESSION['user'])) {
     header('location:login.php');
 }
-   
+
+function adding()
+{
+    
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $time = $_POST['time'];
+    $numberOfPeople = $_POST['numberOfPeople'];
+    $message = $_POST['message'];
+    $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ? ,? ,?)";
+    $ObjConnection = new conection();
+
+    $ObjConnection->reservation_form($sql, $name, $email,  $phone, $time, $numberOfPeople, $message);
+    // header('Location:admin-reservation.php');
+}
+
+function delete()
+{
+    $ObjConnection = new conection();
+    $id = $_POST['selected_id'];
+    $sql = "DELETE  FROM reservation WHERE id=$id";
+    $ObjConnection->delete($sql);
+
+    header($_SERVER['PHP_SELF']);
+}
+
 function show_all()
 {
     global $items;
@@ -19,8 +45,23 @@ function show_all()
     $items = $ObjConnection->consult($sql);
     return $items;
 }
-?>
 
+if (isset($_POST['action']) ) {
+    
+
+    $option = $_POST['action'];
+
+    $return_value = match ($option) {
+               
+        'delete' => delete(),
+        'reservation-info' => adding(),
+    };
+}
+
+if (isset($_POST)) {
+    print_r($_POST);
+}
+?>
 <div class="container">
     
     <div class="col-md-12 py-4">
@@ -42,15 +83,16 @@ function show_all()
                     
                     show_all();
 
-                    print_r($items); //デバッグのために
+                    // print_r($items); //デバッグのために
                     ?>
                     <?php
                     foreach ($items as $item => $value) { 
                         ?>
                         <tr>
                             <td>
-                                <form action="" method="post">
-                                    <input type="hidden" name="selected_id" value="<?php echo "id" ?>">
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                    
+                                    <input type="hidden" name="selected_id" value="<?php echo isset($value['ID']) ?  $value['ID'] : '';  ?>">
                                     
                                     <button name="action" type="submit" class="btn btn-danger mt-2" value="delete">削除❌</button>
                                 </form>
@@ -61,7 +103,7 @@ function show_all()
                             <td><?php echo isset($value['Phone']) ?  $value['Phone'] : '';  ?></td>
                             <td><?php echo isset($value['Date']) ?  $value['Date'] : '';  ?></td>
                             <td><?php echo isset($value['NumberOfPeople']) ?  $value['NumberOfPeople'] : '';  ?></td>
-                            <td class="fix-text"><?php echo 'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd';  ?></td>
+                            <td class="fix-text"><?php echo isset($value['Message']) ?  $value['Message'] : '';  ?></td>
                             
                         </tr>
                     <?php 

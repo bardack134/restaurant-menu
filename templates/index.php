@@ -218,7 +218,7 @@
             </div>
             <div class="book-a-table">
                 <div class="form-container">
-                    <form action="" method="post">
+                    <form action="../admin-reservation.php" method="post">
                         <div class="form-block ">
                             <div class="input-data">
                                 <!-- <input required type="email" name="name" id="email"> -->
@@ -247,13 +247,13 @@
                                 <label class="" for="numberOfPeople">Number Of People</label>
                             </div>
                             <div class="input-data textarea">
-                                <textarea required name="" id="" cols="30" rows="10"></textarea>
+                                <textarea name="message" id="" cols="30" rows="10"></textarea>
                                 <div class="underline"></div>
                                 <label class="" for="message">Message</label>
                             </div>
                             <div class="input-data ">
                                 <div class=" submit-btn">
-                                    <button type="submit" class="submit-button">Submit</button>
+                                    <button type="submit" name="action" value="reservation-info" class="submit-button">Submit</button>
                                 </div>
                             </div>
 
