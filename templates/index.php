@@ -1,5 +1,6 @@
 <?php 
 session_start();
+// データベース接続ファイル
 include("../conection.php");
  ?>
 
@@ -17,7 +18,7 @@ include("../conection.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-    <!-- font awesome -->
+        <!-- ダイナミックplayアイコンをインポートするために使用しました -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
 
@@ -81,27 +82,27 @@ include("../conection.php");
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                                     <a href="#menu" class="mybutton txt-white">メニュー</a>
                                     <a href="#book-a-table" class="mybutton txt-white">席を予約する</a>
-                                    <!-- <button type="button" class="btn btn-outline-warning btn-lg px-5 me-md-2">Primary</button>
-                  <button type="button" class="btn btn-outline-warning btn-lg px-5">Default</button> -->
+                                  
                                 </div>
                             </div>
 
-
+                            <!-- 1. ユーザーがクリックすると showModal() 関数が呼び出され、モーダルウィンドウが表示されます。 -->
                             <div onclick="showModal()"
                                 class="modal-open col-10 col-sm-8 col-lg-3 d-flex align-items-center justify-content-center mt-5 txt-white">
                                 <i class="fa-solid fa-circle-play fa-beat-fade  fa-5x"
                                     style="color: #d8a25e; --fa-animation-duration: 3s;"></i>
                                 <!-- https://youtu.be/xPPLbEFbCAo -->
+                                 
                             </div>
+                            <!-- モーダルバックグラウンド -->
                             <div id="modal-bg" class="NoDisplayModal">
 
                             </div>
-
+                            
+                            <!-- モーダルコンテナ -->
                             <div id="modal-container" class="NoDisplayModal ">
                                 <div class="container">
-                                    <!-- <p><iframe width="560" height="315" src="https://www.youtube.com/embed/kRCH8kD1GD0?si=lcrZ_UXmbKar6keM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    </p>        -->
-                                    <video controls width="550" src="video/videoplayback.mp4" id="myVideo"></video>
+                                   <video controls width="550" src="video/videoplayback.mp4" id="myVideo"></video>
                                 </div>
                                 <div id="modal-close" onclick="NoShowModal()"><i class="fa-solid fa-xmark fa-2xl"
                                         style="color: #d8a25e;"></i></div>
