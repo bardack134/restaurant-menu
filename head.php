@@ -13,5 +13,6 @@
     <a href="templates/index.html">ホーム</a> |
     <a href="admin.php">管理</a> |
     <a href="logout.php">ログアウト</a> |
+    <a href="admin-reservation.php">席予約</a> |
     </div>
    
