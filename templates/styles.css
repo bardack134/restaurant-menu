@@ -260,11 +260,13 @@ section img {
 /* ---------------------------------------------------------------------------------- */
 /* START MY MENU */
 #menu {
+    /* セクション全体のスタイル  */
     background-color: black;
 
 }
 
 .gold-text {
+    /* タイトルのスタイル  */
     color: #D8A25E;
     ;
 }
@@ -276,14 +278,12 @@ section img {
 
 
 .menu-nav-bar {
-    text-align: center;
-
+    /* ナビゲーションバーのスタイル  */
+    text-align: center; /*テキスト配置*/
 }
 
-.links,
-
-.menu-link {
-
+.menu-link { /*リンクのスタイル:*/
+    /* パディング, テキスト色, テキスト配置 */
     display: inline-block;
     padding: 40px 80px 0 0;
     text-decoration: none;
@@ -294,8 +294,9 @@ section img {
 }
 
 section div ul li:hover {
+    /* ホバー時にテキスト色を金色になります */
     color: #D8A25E !important;
-    font-size: 23px;
+    font-size: 23px; /* フォントサイズを少し小さくします*/
 
 }
 
@@ -316,47 +317,12 @@ section div ul li:hover {
     box-sizing: border-box;
 }
 
-.price {
-    color: #D8A25E;
-}
-
-.price::before {
-    content: "...........................";
-    color: rgba(255, 255, 255, 0.3);
-    padding-right: 0;
-}
-
-@media screen and  (max-width: 767px) {
-    .price::before {
-        content: "";
-        padding-right: 3%;
-    }
-}
-@media screen and (min-width: 768px) and (max-width: 989px) {
-    .price::before {
-        content: "........................................................................";
-        padding-right: 3%;
-    }
-}
-
-@media screen and (min-width: 990px) and (max-width: 1200px) {
-    .price::before {
-        content: "";
-        padding-right: 3%;
-    }
-}
-
-@media screen and (min-width: 1201px) {
-    .price::before {
-        content: "......................................................";
-        padding-right: 3%;
-    }
-}
-
-
 .display-row {
-    display: flex;
+    display: flex; /*横並びに表示します。*/
 }
+
+
+/* (.menu-items, .menu-info, .menu-title, .menu-text) メニューアイテムのスタイルだけです*/
 
 .menu-items {
     display: flex;
@@ -385,6 +351,47 @@ section div ul li:hover {
 .menu-items-padding {
     padding-bottom: 6%;
 }
+
+
+.price {
+    color: #D8A25E;
+}
+
+/* 擬似要素＝＞ 価格の前に点線 */
+.price::before {
+    content: "...........................";
+    color: rgba(255, 255, 255, 0.3);
+    padding-right: 0;
+}
+
+/* レスポンシブデザイン */
+@media screen and  (max-width: 767px) {
+    .price::before {
+        content: "";
+        padding-right: 3%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 989px) {
+    .price::before {
+        content: "........................................................................";
+        padding-right: 3%;
+    }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+    .price::before {
+        content: "";
+        padding-right: 3%;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .price::before {
+        content: "......................................................";
+        padding-right: 3%;
+    }
+}
+
 
 /*--------------MENU links - SMALL WINDOWS -------------------*/
 .hamburger {

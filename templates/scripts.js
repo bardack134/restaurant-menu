@@ -18,21 +18,25 @@ function NoShowModal() {
 }
 
 
-// Menu-items Active---------------------------------------------------
+// ---------------------------------------------------
+// c. id='menu'　＝＞ステップ ２：JavaScriptの実行
 
 document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み込まれたらmenu_options関数を実行
     function () {
-        const navItems = document.querySelectorAll('.nav-item'); // .nav-itemクラスを持つすべての要素を取得
+        // .nav-itemクラスを持つすべての要素を取得
+        const navItems = document.querySelectorAll('.nav-item'); 
 
         // 各要素にクリックイベントリスナーを追加
         navItems.forEach(item => {
             item.addEventListener('click', function () {
 
+                // クリック時 -> すべての.nav-item要素から'active'クラスを削除 ->
                 navItems.forEach(navItem => {
-                    navItem.classList.remove('active')
-                });  // すべての.nav-item要素から'active'クラスを削除
+                    navItem.classList.remove('active');
+                });
 
-                this.classList.add('active'); // クリックされたアイテムに'active'クラスを追加
+                // -> クリックされたアイテムに'active'クラスを追加
+                this.classList.add('active');
             });
         });
     });

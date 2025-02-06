@@ -178,16 +178,20 @@ include("../conection.php");
             </div>
         </section>
 
-    
+        <!-- ステップ1:HTML構造, CSS-->
         <section id="menu">
             <div class="container text-white py-5 text-center" style="background-color: black;">
+                <!-- セクションのタイトル -->
                 <h2 class="gold-text">メニューをご覧ください</h2>
 
-                <!-- Menú para pantallas medianas y grandes -->
+                <!-- pantallas medianas y grandes -->
+                <!-- d-none d-lg-blockクラスを使用して、画面幅が大きい場合（992px以上）にのみ表示されます。 -->
                 <div class="d-none d-lg-block  ">
+                    <!-- メニュー項目をリスト形式で表示します -->
                     <ul class="menu-nav-bar d-flex justify-content-center">
-                        <!-- nav-item is for javascript queryselector -->
+                         <!-- 初期表示では「All」がアクティブでGoldカラーに表示される。 -->
                         <li onclick="seekItem(event)" class="menu-link active nav-item" id="'*'">All</li>
+                        <!-- クリック時にJavaScript関数seekItemを呼び出します。 -->
                         <li onclick="seekItem(event)" class="menu-link nav-item" id="main">Main</li>
                         <li onclick="seekItem(event)" class="menu-link nav-item" id="drinks">Drinks</li>
                         <li onclick="seekItem(event)" class="menu-link nav-item" id="dessert">Desserts</li>

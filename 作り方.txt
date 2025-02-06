@@ -5,6 +5,7 @@ http://localhost/p03/restaurant-menu/templates/index.php#book-a-table
     A.MODAL WINDOW
         (javascript)
         アイコンをクリック → 呼び出し → モーダルとビデオが表示・再生されるshowModal()
+
         閉じるアイコンをクリック → 呼び出し → モーダルが閉じ、ビデオが停止するNoShowModal()
 
     B."why-us section"
@@ -13,3 +14,6 @@ http://localhost/p03/restaurant-menu/templates/index.php#book-a-table
     c. id='menu'
         (HTML、CSS、JavaScript)
         ウェブページで「メニュー」を実装するための
+
+2.login.php fileを作りました
+
