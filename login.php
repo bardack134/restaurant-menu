@@ -9,10 +9,10 @@ if ($_POST) { //ステップ2 ->フォームが POST メソッドで送信され
         
         $_SESSION['user']='kenschool';
         //ステップ4 -> セッションにユーザー情報を保存します
-        header('location:admin.php');
+        header('location:admin.php'); //Finalステップ ->管理者ページへのリダイレクト
     }  
     else {
-        //ステップ5->管理者ページへのリダイレクト
+        
         echo "<script>alert('ユーザー名またはパスワードが間違っています');</script>";
     }
 }

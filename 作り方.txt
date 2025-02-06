@@ -15,5 +15,14 @@ http://localhost/p03/restaurant-menu/templates/index.php#book-a-table
         (HTML、CSS、JavaScript)
         ウェブページで「メニュー」を実装するための
 
+
 2.login.php fileを作りました
 
+
+3.logout.php fileを作りました
+
+
+4.conection.php　fileを作りました
+
+
+5.admin.php fileを作りました

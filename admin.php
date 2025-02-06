@@ -5,8 +5,7 @@ session_start();
 // $_FILES= https://www.php.net/manual/en/function.move-uploaded-file.php
 
 
-// ユーザーがセッションに存在しない場合、ログインページにリダイレクト
-// var_dump($_FILES);
+// STEP1 ->userがloginをしたかどうかを確認します。
 if (!isset($_SESSION['user'])) {
     header('location:login.php');
 }
@@ -32,7 +31,7 @@ function send_image_to_folder($file)
     move_uploaded_file($from, $to_directory);
     return $image_name;
 }
-
+// データベースに新しいデータを追加するためにSQLを実行する関数
 function adding()
 {
 
@@ -40,6 +39,7 @@ function adding()
     $image_name = send_image_to_folder($file);
 
     $sql = "INSERT INTO menu (name, category, price, description, imagen) VALUES (?, ?, ?, ?,?)";
+    // ユーザーが入力したデータを取得し、SQLコードを実行する関数です
     post_data_form($sql, $image_name);
 }
 
@@ -76,6 +76,8 @@ function update()
 }
 
 function delete()
+// POSTデータから選ばれたIDを取得ー＞そのIDに関連するデータ削除しますー＞管理ページにリダイレクトします
+
 {
     $ObjConnection = new conection();
     $id = $_POST['selected_id'];
@@ -90,9 +92,10 @@ function delete()
 
     header('Location:admin.php');
 }
-
+// STEP2 ->データベースを作成した、テストを行うためにデータを直接追加しました。
 function show_all()
 {
+    // step3 -> データベースにあるすべてのデータを取得する関数を作成しました。
     global $items;
     $ObjConnection = new conection();
     $sql = "SELECT * FROM menu";
@@ -114,7 +117,7 @@ function returnData()
     $price = $data[0]['price'];
     $description = $data[0]['description'];
 }
-
+// step6 ユーザーがフォームを送信したか確認する, add関数を作る-> 
 if (isset($_POST['action']) &&  $_POST['category'] !== '') {
     var_dump($_POST); //for debug
 
@@ -123,6 +126,7 @@ if (isset($_POST['action']) &&  $_POST['category'] !== '') {
     $return_value = match ($option) {
         'add' => adding(),
         'update' => update(),
+        // step 7 ー＞delete関数を作りました
         'delete' => delete(),
         'select' => returnData(),
     };
@@ -138,6 +142,7 @@ if (isset($_POST['action']) &&  $_POST['category'] !== '') {
             <div class=" card my-4">
             <div class="card-header">メニュー情報</div>
             <div class="card-body">
+             <!-- step5->データベースに新しいデータを追加するためにフォームを作成しました。 -->
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="food_id" value="<?php echo isset($return_id) ? $return_id : ''; ?>">
 
@@ -188,13 +193,17 @@ if (isset($_POST['action']) &&  $_POST['category'] !== '') {
                 </thead>
                 <tbody>
                     <?php
+                    // step4 ->データベースにあるのすべてのデータを取る関数を呼び出します,
+                    //データベースから取得したデータをテーブルで表示するためにforeachを実行します
                     show_all();
 
                     // print_r($items); デバッグのために
                     ?>
-                    <?php foreach ($items as $item => $value) { ?>
+                     <?php foreach ($items as $item => $value) { ?>
                         <tr>
                             <td>
+                                
+                                <!-- DELETE:フォームはPOSTメソッドを使って項目のidを送ります -->
                                 <form action="" method="post">
                                     <input type="hidden" name="selected_id" value="<?php echo $value['id']; ?>">
                                     <button name="action" type="submit" class="btn btn-warning" value="select">Select</button><br>
