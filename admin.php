@@ -104,10 +104,12 @@ function show_all()
 }
 
 function returnData()
-{
+{   
+    // 指定されたIDに基づいてデータベースからデータを取得します
     global $name, $category, $price, $description, $return_id;
     $ObjConnection = new conection();
     $id = $_POST['selected_id'];
+    // そのデータをグローバル変数に格納します。まず、selected_idが送信され、SQLクエリでそのIDに関連するメニューの情報を取得します。その後、取得したデータから名前、カテゴリ、価格、説明をグローバル変数に設定します。
     $sql = "SELECT * FROM menu WHERE id=$id";
     $data = $ObjConnection->consult($sql);
     // print_r($data);
@@ -118,8 +120,8 @@ function returnData()
     $description = $data[0]['description'];
 }
 // step6 ユーザーがフォームを送信したか確認する, add関数を作る-> 
-if (isset($_POST['action']) &&  $_POST['category'] !== '') {
-    var_dump($_POST); //for debug
+if (isset($_POST['action']) ) {
+    //var_dump($_POST); //for debug
 
     $option = $_POST['action'];
 
@@ -128,6 +130,7 @@ if (isset($_POST['action']) &&  $_POST['category'] !== '') {
         'update' => update(),
         // step 7 ー＞delete関数を作りました
         'delete' => delete(),
+        // step 8 ->要素のデータを更新するためには、まずその要素を選択し、要素のデータを取得します
         'select' => returnData(),
     };
 } elseif (isset($_POST['action'])) {
