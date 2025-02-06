@@ -26,3 +26,10 @@ http://localhost/p03/restaurant-menu/templates/index.php#book-a-table
 
 
 5.admin.php fileを作りました
+
+
+6.data.php ->{
+    admin.php はデータベースの管理を担当していますが、フロントエンドとの直接的な接続はありません。
+
+    
+}

@@ -23,18 +23,25 @@ function post_data_form($sql, $image_name)
     header('Location:admin.php');
 }
 
-function send_image_to_folder($file)
-{
+function send_image_to_folder($file){
+    /*10. この関数はユーザーがアップロードした写真をfood-imgsフォルダに保存します、
+     *その画像のファイル名をデータベースに保存するための関数です。
+     */
+
     $image_name =  time() . basename($_FILES['file']['name']);
+    // もし保存したい写真の名前がfood-imgsフォルダに他の写真の名前と同じであれば、その場合、food-imgsフォルダにある写真が上書きされます、エラーが発生します。だから　Time()関数を使います
     $to_directory = 'templates/food-imgs/' . $image_name;
     $from = $_FILES['file']['tmp_name'];
     move_uploaded_file($from, $to_directory);
     return $image_name;
 }
-// データベースに新しいデータを追加するためにSQLを実行する関数
+
+/* 
+ *データベースに新しいデータを追加するためにSQLを実行する関数 
+ */
 function adding()
 {
-
+    // step　10 ユーザーがアップロードした写真をfood-imgsフォルダに保存します, その写真の名前だけをデータベースに保存します。
     $file = $_FILES['file'];
     $image_name = send_image_to_folder($file);
 
@@ -43,12 +50,13 @@ function adding()
     post_data_form($sql, $image_name);
 }
 
-function update()
-{
-    if ($_FILES['file']['name']) {
+function update(){
+//   9. この関数は、フォームから送信されたファイルがあるかどうか確認します
+
+    if ($_FILES['file']['name']) { //もしあれば以下の処理を行います
         echo "ファイルは送信された";
 
-        // --------------------古いイメージファイルを削除する-----------
+        // --------------------1.まず古いイメージファイルを削除する-----------
         $return_id = $_POST['food_id'];
         $search_image_name = "SELECT imagen FROM `menu` WHERE id=$return_id";
         $ObjConnection = new conection();
@@ -59,32 +67,39 @@ function update()
             unlink("./templates/food-imgs/" . $oldImage); // https://www.php.net/manual/en/function.unlink.php
         }
         // -------------------新しいイメージ-------------------------
+        // 2. 送信された新しい画像ファイルをサーバーに保存します。
         $file = $_FILES['file'];
         $image_name = send_image_to_folder($file);
 
         // -----------------------send sql--------------------
+        // 3. 新しいデータ（名前、カテゴリ、価格、説明、画像）データで変更します。
         $sql = "UPDATE menu SET name = ?, category=?, price = ?, description = ?, imagen=?  WHERE id = ?";
 
+        // 最後に、SQLコードを実行する関数です
         post_data_form($sql, $image_name);
-    } // else {
-    //     echo "ファイルは送信されませんでした";
-
-    //     $sql = "UPDATE menu SET name = ?, description = ?, price = ?, category=? WHERE id = ?";
-    // }
+    } 
 
     header('Location:admin.php');
 }
 
 function delete()
-// POSTデータから選ばれたIDを取得ー＞そのIDに関連するデータ削除しますー＞管理ページにリダイレクトします
-
+/* POSTで送信されたIDを取得ー＞
+ * $id変数に代入し　→
+ * そのIDに関連するデータ削除しますー＞管理ページにリダイレクトします
+*/
 {
     $ObjConnection = new conection();
     $id = $_POST['selected_id'];
+
+    //step 11 -> $idを使って、menuテーブルから対応する写真ファイル名を検索します。
     $search_image_name = "SELECT imagen FROM `menu` WHERE id=$id";
     $sql_answer = $ObjConnection->consult($search_image_name);
-    // var_dump($sql_answer[0]["imagen"]); DEBUG
-    // https://www.php.net/manual/en/function.unlink.php
+
+    /* 
+     *https://www.php.net/manual/en/function.unlink.php
+     */
+
+    // step 12 (last) ->unlink()関数を使って、food-imgsフォルダーにある写真を削除します。
     unlink("./templates/food-imgs/" . $sql_answer[0]["imagen"]);
 
     $sql = "DELETE  FROM menu WHERE id=$id";
@@ -92,6 +107,7 @@ function delete()
 
     header('Location:admin.php');
 }
+
 // STEP2 ->データベースを作成した、テストを行うためにデータを直接追加しました。
 function show_all()
 {
@@ -105,21 +121,25 @@ function show_all()
 
 function returnData()
 {   
-    // 指定されたIDに基づいてデータベースからデータを取得します
+    // 8.指定されたIDに基づいてデータベースからデータを取得します
     global $name, $category, $price, $description, $return_id;
     $ObjConnection = new conection();
+
+    //8.そのデータをグローバル変数に格納します。
     $id = $_POST['selected_id'];
-    // そのデータをグローバル変数に格納します。まず、selected_idが送信され、SQLクエリでそのIDに関連するメニューの情報を取得します。その後、取得したデータから名前、カテゴリ、価格、説明をグローバル変数に設定します。
+
+    // 8.selected_idはSQLクエリでそのIDに関連するデータを取得します。
     $sql = "SELECT * FROM menu WHERE id=$id";
     $data = $ObjConnection->consult($sql);
-    // print_r($data);
+
+    // 8.その後、取得したデータから名前、カテゴリ、価格、説明をグローバル変数に代入します。
     $return_id = $data[0]['id'];
     $name = $data[0]['name'];
     $category = $data[0]['category'];
     $price = $data[0]['price'];
     $description = $data[0]['description'];
 }
-// step6 ユーザーがフォームを送信したか確認する, add関数を作る-> 
+// step　6 ユーザーがフォームを送信したか確認する, add関数を作る-> 
 if (isset($_POST['action']) ) {
     //var_dump($_POST); //for debug
 
@@ -127,6 +147,7 @@ if (isset($_POST['action']) ) {
 
     $return_value = match ($option) {
         'add' => adding(),
+        //step 9 -> 更新したいデータを選択しました、これから変更してupdateする
         'update' => update(),
         // step 7 ー＞delete関数を作りました
         'delete' => delete(),
@@ -147,6 +168,7 @@ if (isset($_POST['action']) ) {
             <div class="card-body">
              <!-- step5->データベースに新しいデータを追加するためにフォームを作成しました。 -->
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+                    <!-- グローバル変数に保存されたデータは、echo を使用して画面に表示されます。 -->
                     <input type="hidden" name="food_id" value="<?php echo isset($return_id) ? $return_id : ''; ?>">
 
                     <label for="name" class="fw-bold">皿名:</label>
@@ -209,6 +231,7 @@ if (isset($_POST['action']) ) {
                                 <!-- DELETE:フォームはPOSTメソッドを使って項目のidを送ります -->
                                 <form action="" method="post">
                                     <input type="hidden" name="selected_id" value="<?php echo $value['id']; ?>">
+                                    <!-- 8. delete 関数と同様に、ユーザーが「選択」ボタンをクリックすると、アイテムのIDがPOSTメソッドを通じて送信されます。 -->
                                     <button name="action" type="submit" class="btn btn-warning" value="select">Select</button><br>
                                     <button name="action" type="submit" class="btn btn-danger mt-2" value="delete">削除❌</button>
                                 </form>

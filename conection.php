@@ -1,11 +1,12 @@
 <?php
 
 class conection{
-    private $servername='localhost'; // サーバーネーム
-    private $db_name="restaurant"; // データベース名
-    private $username= 'root'; // ユーザー名
-    private $password = ""; // パスワード
-    private $connection; // 接続オブジェクト
+    /*サーバーネーム, データベース名, ユーザー名, パスワード, 接続オブジェクト*/
+    private $servername='localhost'; // 
+    private $db_name="restaurant"; // 
+    private $username= 'root'; // 
+    private $password = ""; // 
+    private $connection; // 
 
     public function __construct()
     {
@@ -16,26 +17,33 @@ class conection{
             // echo "Connected successfully"; // 接続成功メッセージ
 
         } catch (PDOException $error) {
-            // 接続失敗時のメッセージ
+            // 接続失敗したら、メッセージを表示
             echo "Connection failed: " . $error->getMessage();
             // echo "Connection failed: " . $error;
         }
     }
 
-    // SQL文を実行するメソッド
+    /* 
+     *delete-SQL文を実行するメソッド
+     */
     public function delete($sql){
         $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
         $sql_statement->execute(); // SQLステートメントを実行
         
     }
 
-    // SQL文を実行し、結果を取得するメソッド
+    /* 
+     *SQL文を実行するメソッドです、結果を取得するメソッド　
+     */
     public function consult($sql){
         $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
         $sql_statement->execute(); // SQLステートメントを実行
         return $sql_statement->fetchAll(PDO::FETCH_ASSOC); // 結果をすべて取得して返す
     }
 
+    /*
+     * このメソッドは、データベースのデータを追加または更新したい場合に使用されます。
+     */
     public function execute_sql($sql, $name, $image_name, $description, $price, $category, $return_id=null){
         $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
         $sql_statement->bindParam(1, $name, PDO::PARAM_STR);
