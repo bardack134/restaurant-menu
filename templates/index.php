@@ -86,12 +86,13 @@ include("../conection.php");
                                 </div>
                             </div>
 
-                            <!-- 1. ユーザーがクリックすると showModal() 関数が呼び出され、モーダルウィンドウが表示されます。 -->
+                            <!--ステップ1. ユーザーがクリックすると showModal() 関数が呼び出され、モーダルウィンドウが表示されます。 -->
                             <div onclick="showModal()"
                                 class="modal-open col-10 col-sm-8 col-lg-3 d-flex align-items-center justify-content-center mt-5 txt-white">
+                                <!-- Font Awesomeのplayボタンのアイコンを使用 -->
                                 <i class="fa-solid fa-circle-play fa-beat-fade  fa-5x"
                                     style="color: #d8a25e; --fa-animation-duration: 3s;"></i>
-                                <!-- https://youtu.be/xPPLbEFbCAo -->
+                               
                                  
                             </div>
                             <!-- モーダルバックグラウンド -->
@@ -102,8 +103,10 @@ include("../conection.php");
                             <!-- モーダルコンテナ -->
                             <div id="modal-container" class="NoDisplayModal ">
                                 <div class="container">
+                                <!-- ビデオ要素で、再生コントロールを表示 -->
                                    <video controls width="550" src="video/videoplayback.mp4" id="myVideo"></video>
                                 </div>
+                                <!-- 閉じるアイコン -->
                                 <div id="modal-close" onclick="NoShowModal()"><i class="fa-solid fa-xmark fa-2xl"
                                         style="color: #d8a25e;"></i></div>
                             </div>
@@ -136,17 +139,22 @@ include("../conection.php");
             </div>
         </section>
 
-
+        
         <section id="why-us" class="why-us ">
             <div class="container myCardTitle">
                 <h2><span>なぜ当店を選んだのか</span></h2>
             </div>
             <div class="container">
                 <div class="row">
+                <!-- 3つのカードを示するために、 各カードはcol-lg-4クラスを使用して、1行に3つ並ぶようにレイアウトされています。 -->
                     <div class="col-lg-4">
                         <div class="myCard mb-2 ">
-                            <span class="myTransition">01</span>
+                           <!-- カードの番号 -->
+                            <span 
+                            class="myTransition">01</span>
+                            <!-- カードのタイトルを表示します。 -->
                             <h4 class="myTransition">新鮮な食材</h4>
+                            <!-- カードの説明文を表示します。 -->
                             <p class="card-text">当店では毎日新鮮な食材を使用し、美味しさと健康を追求しています。地元の農家から直送される旬の食材を活かした料理をお楽しみいただけます。</p>
                         </div>
                     </div>
@@ -170,7 +178,7 @@ include("../conection.php");
             </div>
         </section>
 
-
+    
         <section id="menu">
             <div class="container text-white py-5 text-center" style="background-color: black;">
                 <h2 class="gold-text">メニューをご覧ください</h2>

@@ -1,25 +1,24 @@
-// モーダルを表示し、ビデオを再生する
+// ステップ2. モーダルを表示
 function showModal() {
+    // (#modal-bg) と (#modal-container) idで NoDisplayModal のクラスを削除します。
     console.log("Hi i am showModal clicked ");
     document.getElementById("modal-bg").classList.remove("NoDisplayModal");
     document.getElementById("modal-container").classList.remove("NoDisplayModal");
     document.getElementById("hide-item").classList.add("hide-element");
-    document.getElementById('myVideo').play();
+    document.getElementById('myVideo').play(); // ビデオの再生が自動的に始まります
 }
 
-
-// モーダルを非表示にし、ビデオを一時停止する
+// ステップ 3: ユーザーが閉じるアイコンをクリックすると、 NoShowModal() 関数が実行されます。
 function NoShowModal() {
-    // console.log("hi i am NoShowModal function  ");
+    // NoDisplayModal クラスを追加します。 これにより、モーダルが非表示になります。
     document.getElementById("modal-bg").classList.add("NoDisplayModal");
     document.getElementById("modal-container").classList.add("NoDisplayModal");
-    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause
-    // document.getElementsByTagName('video')[0].pause()
+    // NOTE: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause
     document.getElementById('myVideo').pause()
 }
 
 
-// nav-items Active---------------------------------------------------
+// Menu-items Active---------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み込まれたらmenu_options関数を実行
     function () {
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み�
         });
     });
 
-// ----------------------------------------------------------------
+// SHOW MENU BY CATEGORY-------------------------------------------------------
 // ユーザーが [li] をクリックすると、アイテムがリロードされます
 // https://digitalfox-tutorials.com/tutorial.php?title=Send-HTTP-GET-Request-Using-the-Fetch-API
 let seek;

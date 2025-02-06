@@ -1,1 +1,15 @@
-1.最初にフロントエンドを作成する ("index.php")
+http://localhost/p03/restaurant-menu/templates/index.php#book-a-table
+----------------------------------------------------
+
+1.最初にフロントエンドを作成しました。 ("index.php")
+    A.MODAL WINDOW
+        (javascript)
+        アイコンをクリック → 呼び出し → モーダルとビデオが表示・再生されるshowModal()
+        閉じるアイコンをクリック → 呼び出し → モーダルが閉じ、ビデオが停止するNoShowModal()
+
+    B."why-us section"
+        html -> css -> css :hover -> 　レスポンシブデザイン
+
+    c. id='menu'
+        (HTML、CSS、JavaScript)
+        ウェブページで「メニュー」を実装するための

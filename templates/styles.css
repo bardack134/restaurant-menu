@@ -168,6 +168,7 @@ section img {
 /* start section "why us" */
 
 .why-us {
+    /* backgroundColorグラデーションとパディングが設定されています。 */
     background: linear-gradient(115deg, #050505 20%, #543A14 98%);
     padding: 60px;
 
@@ -175,6 +176,7 @@ section img {
 
 
 .myCardTitle {
+    /* タイトルの上下左右にパディングを設定しています */
     padding: 1rem 3rem 3rem 0;
 }
 
@@ -187,6 +189,7 @@ section img {
     height: 310px;
 }
 
+/* テキスト色の変更: ホバー時にテキスト色を変更します。 */
 .myCard:hover {
     background: #D8A25E;
     /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.7); */
@@ -224,8 +227,9 @@ section img {
     margin-top: 28px;
 }
 
-/* ウィンドウの幅が900ピクセル以下の場合にoverflow-contentクラスにoverflow-y: auto;が適用されます。 */
+/* レスポンシブデザイン */
 @media screen and (min-width: 400px) and (max-width: 500px) {
+    /* 画面幅が400px～500pxの場合: */
     .myCard {
         padding: 40px 30px;
         margin: 15px;
@@ -236,6 +240,7 @@ section img {
     }
 }
 @media screen and (max-width: 399px) {
+    /* 画面幅が399px以下の場合: */
     .myCard {
         padding: 20px 15px;
         margin: 15px;
