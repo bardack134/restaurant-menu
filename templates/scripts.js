@@ -47,8 +47,14 @@ document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み�
 let seek;
 
 function seekItem(event) {
-    clearMenuItems();
     seek = event.target.id
+    if (seek=="'*'") {
+        document.getElementById("category").innerHTML = "all";
+    }else{
+        document.getElementById("category").innerHTML = seek;
+       
+    }
+    clearMenuItems();
     console.log(seek);
     showData(seek);
     closeNav();

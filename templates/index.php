@@ -1,8 +1,8 @@
-<?php 
+<?php
 session_start();
 // データベース接続ファイル
 include("../conection.php");
- ?>
+?>
 
 <!doctype html>
 <html lang="en">
@@ -18,13 +18,16 @@ include("../conection.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-        <!-- ダイナミックplayアイコンをインポートするために使用しました -->
+    <!-- ダイナミックplayアイコンをインポートするために使用しました -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
-
+    <!-- font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Great+Vibes&family=Mea+Culpa&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="pageDesign">
+<body class="pageDesign ">
     <header class="fixed-top">
         <!-- NAV BAR -->
         <nav class="navbar sticky-top navbar-expand-lg  mt-4" style="background-color: rgba(0, 0, 0, 0.6); ">
@@ -82,7 +85,7 @@ include("../conection.php");
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                                     <a href="#menu" class="mybutton txt-white">メニュー</a>
                                     <a href="#book-a-table" class="mybutton txt-white">席を予約する</a>
-                                  
+
                                 </div>
                             </div>
 
@@ -92,19 +95,19 @@ include("../conection.php");
                                 <!-- Font Awesomeのplayボタンのアイコンを使用 -->
                                 <i class="fa-solid fa-circle-play fa-beat-fade  fa-5x"
                                     style="color: #d8a25e; --fa-animation-duration: 3s;"></i>
-                               
-                                 
+
+
                             </div>
                             <!-- モーダルバックグラウンド -->
                             <div id="modal-bg" class="NoDisplayModal">
 
                             </div>
-                            
+
                             <!-- モーダルコンテナ -->
                             <div id="modal-container" class="NoDisplayModal ">
                                 <div class="container">
-                                <!-- ビデオ要素で、再生コントロールを表示 -->
-                                   <video controls width="550" src="video/videoplayback.mp4" id="myVideo"></video>
+                                    <!-- ビデオ要素で、再生コントロールを表示 -->
+                                    <video controls width="550" src="video/videoplayback.mp4" id="myVideo"></video>
                                 </div>
                                 <!-- 閉じるアイコン -->
                                 <div id="modal-close" onclick="NoShowModal()"><i class="fa-solid fa-xmark fa-2xl"
@@ -139,19 +142,19 @@ include("../conection.php");
             </div>
         </section>
 
-        
+
         <section id="why-us" class="why-us ">
             <div class="container myCardTitle">
                 <h2><span>なぜ当店を選んだのか</span></h2>
             </div>
             <div class="container">
                 <div class="row">
-                <!-- 3つのカードを示するために、 各カードはcol-lg-4クラスを使用して、1行に3つ並ぶようにレイアウトされています。 -->
+                    <!-- 3つのカードを示するために、 各カードはcol-lg-4クラスを使用して、1行に3つ並ぶようにレイアウトされています。 -->
                     <div class="col-lg-4">
                         <div class="myCard mb-2 ">
-                           <!-- カードの番号 -->
-                            <span 
-                            class="myTransition">01</span>
+                            <!-- カードの番号 -->
+                            <span
+                                class="myTransition">01</span>
                             <!-- カードのタイトルを表示します。 -->
                             <h4 class="myTransition">新鮮な食材</h4>
                             <!-- カードの説明文を表示します。 -->
@@ -186,17 +189,18 @@ include("../conection.php");
 
                 <!-- pantallas medianas y grandes -->
                 <!-- d-none d-lg-blockクラスを使用して、画面幅が大きい場合（992px以上）にのみ表示されます。 -->
-                <div class="d-none d-lg-block  ">
+                 
+                <!-- <div class="d-none d-lg-block  "> -->
                     <!-- メニュー項目をリスト形式で表示します -->
-                    <ul class="menu-nav-bar d-flex justify-content-center">
-                         <!-- 初期表示では「All」がアクティブでGoldカラーに表示される。 -->
-                        <li onclick="seekItem(event)" class="menu-link active nav-item" id="'*'">All</li>
+                    <!-- <ul class="menu-nav-bar d-flex justify-content-center"> -->
+                        <!-- 初期表示では「All」がアクティブでGoldカラーに表示される。 -->
+                        <!-- <li onclick="seekItem(event)" class="menu-link active nav-item" id="'*'">All</li> -->
                         <!-- クリック時にJavaScript関数seekItemを呼び出します。 -->
-                        <li onclick="seekItem(event)" class="menu-link nav-item" id="main">Main</li>
-                        <li onclick="seekItem(event)" class="menu-link nav-item" id="drinks">Drinks</li>
-                        <li onclick="seekItem(event)" class="menu-link nav-item" id="dessert">Desserts</li>
-                    </ul>
-                </div>
+                        <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="main">Main</li> -->
+                        <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="drinks">Drinks</li> -->
+                        <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="dessert">Desserts</li> -->
+                    <!-- </ul> -->
+                <!-- </div> -->
 
                 <!-- menu para pantallas pequenas -->
                 <div id="myNav" class="overlay">
@@ -204,7 +208,7 @@ include("../conection.php");
                     <div class="overlay-content ">
                         <li onclick="seekItem(event) " id="'*'">All</li>
                         <li onclick="seekItem(event) " id="main">Main</li>
-                        <li onclick="seekItem(event) " id="drinks"  id="drinks" class="drinks">Drinks</li>
+                        <li onclick="seekItem(event) " id="drinks" class="drinks">Drinks</li>
                         <li onclick="seekItem(event) " id="dessert">Desserts</li>
                     </div>
                 </div>
@@ -217,6 +221,9 @@ include("../conection.php");
 
             <!-- Contenedor del menú -->
             <div class="container ">
+                <p id="category" style="color: #FFF0DC; " class="text-center text-capitalize">
+
+                </p>
                 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4" id="MyMenuItems">
 
 
@@ -225,7 +232,7 @@ include("../conection.php");
             </div>
         </section>
 
-        
+
         <section id="book-a-table">
 
             <div class="form-title">
@@ -233,13 +240,13 @@ include("../conection.php");
             </div>
             <div class="book-a-table">
                 <div class="form-container">
-                       
+
                     <p class="text-center white-text" style="font-size: 23px;">
-                        <?php 
-                        echo isset($_SESSION['answer']) ? $_SESSION['answer'] : ''; 
+                        <?php
+                        echo isset($_SESSION['answer']) ? $_SESSION['answer'] : '';
                         ?>
                     </p>
-                                      
+
 
                     <form action="index.php" method="post">
                         <div class="form-block ">
@@ -283,23 +290,23 @@ include("../conection.php");
                         </div>
                     </form>
                     <?php
-                       
-                    
-                        if (isset($_POST['action'])) {
-                            $name = $_POST['name'];
-                            $email = $_POST['email'];
-                            $phone = $_POST['phone'];
-                            $time = $_POST['time'];
-                            $numberOfPeople = $_POST['numberOfPeople'];
-                            $message = $_POST['message'];
-                            $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ? ,? ,?)";
-                            $ObjConnection = new conection();
-                            $ObjConnection->reservation_form($sql, $name, $email,  $phone, $time, $numberOfPeople, $message);
-                            $_SESSION['answer']='ご予約が正しく行われました';
-                        }
-                      
-                      
-                      
+
+
+                    if (isset($_POST['action'])) {
+                        $name = $_POST['name'];
+                        $email = $_POST['email'];
+                        $phone = $_POST['phone'];
+                        $time = $_POST['time'];
+                        $numberOfPeople = $_POST['numberOfPeople'];
+                        $message = $_POST['message'];
+                        $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ? ,? ,?)";
+                        $ObjConnection = new conection();
+                        $ObjConnection->reservation_form($sql, $name, $email,  $phone, $time, $numberOfPeople, $message);
+                        $_SESSION['answer'] = 'ご予約が正しく行われました';
+                    }
+
+
+
                     ?>
                 </div>
             </div>
@@ -320,8 +327,8 @@ include("../conection.php");
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 
-        <!-- Bootstrap Scripts -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- Bootstrap Scripts -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script> -->
 
 </body>
 

@@ -14,6 +14,8 @@ li a:hover {
 /* START BODY  */
 .pageDesign {
     background-color: #2A3335;
+    width: 100%;
+    
 }
 
 
@@ -259,6 +261,54 @@ section img {
 
 /* ---------------------------------------------------------------------------------- */
 /* START MY MENU */
+
+.great-vibes-regular {
+  font-family: "Great Vibes", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.mea-culpa-regular {
+  font-family: "Mea Culpa", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.fleur-de-leah-regular {
+  font-family: "Fleur De Leah", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.tangerine-regular {
+  font-family: "Tangerine", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tangerine-bold {
+  font-family: "Tangerine", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#category {
+    /* font-family: "Great Vibes", "Fleur De Leah", "Mea Culpa",   "Tangerine", serif; */
+    font-family: "Fleur De Leah", "Great Vibes",  "Mea Culpa",   "Tangerine", serif;
+    /* font-family: "Great Vibes"; */
+    /* font-family:  "Mea Culpa"; */
+    /* font-family: "Fleur De Leah"; */
+    /* font-family:  "Tangerine"; */
+    font-weight: 400;
+    font-style: normal;
+    color: #FFF0DC;
+    font-size: 50px;
+  }
+  
+
 #menu {
     /* セクション全体のスタイル  */
     background-color: black;
@@ -460,19 +510,7 @@ body {
     }
 }
 
-@media screen and (min-width: 991px) {
 
-    .overlay,
-    .overlay-content,
-    overlay a,
-    .overlay .closebtn {
-        display: none;
-    }
-
-    .dontShow {
-        display: none;
-    }
-}
 
 /* --------------------FINISH SMALL WINDOWS --------------------*/
 /* FINISH MY MENU */
