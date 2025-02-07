@@ -58,6 +58,16 @@ class conection{
         $sql_statement->execute();
     }
 
+    public function execute_no_img($sql, $name,  $description, $price, $category, $return_id){
+        $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
+        $sql_statement->bindParam(1, $name, PDO::PARAM_STR);
+        $sql_statement->bindParam(2, $category, PDO::PARAM_STR);
+        $sql_statement->bindParam(3, $price, PDO::PARAM_INT);
+        $sql_statement->bindParam(4, $description, PDO::PARAM_STR);
+        $sql_statement->bindParam(5, $return_id, PDO::PARAM_INT);
+        $sql_statement->execute();
+    }
+
     public function reservation_form($sql, $name, $email,  $phone, $time, $numberOfPeople, $message){
         $sql_statement = $this->connection->prepare($sql); // SQLステートメントを準備
         $sql_statement->bindParam(1, $name, PDO::PARAM_STR);
