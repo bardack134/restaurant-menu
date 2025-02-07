@@ -55,22 +55,28 @@ function seekItem(event) {
 
 }
 
+/* https://digitalfox-tutorials.com/tutorial.php?title=Send-HTTP-GET-Request-Using-the-Fetch-API
+ * Fetch API は、JavaScript でサーバーとデータのやり取りをするための機能です。
+ * 主にウェブページから情報を取得したり、データを送信したりするために使います。
+ */
+
 function showData(seek) {
     let count = 0;
     let text = ``;
-    // PHPファイルからデータを取得する
+
+    // data.phpファイルからデータを取得する
     //クエリ文字列を付けてGETリクエストを送信することもできます。
     fetch("../data.php?category=" + seek)
         // .then()や.catch()を使って、処理の成功や失敗を簡単に扱えます。
-        .then(response => response.json())  // レスポンスをJSON形式に変換
+        .then(response => response.json())  //3. サーバーからのレスポンスをJSON形式に変換します。
         .then(data => {
-            console.log(data);
+            console.log(data); //3. data正しく取得した、確認するだけでした
+
+            //3. forEach() を使って、取得したデータ（アイテム情報）を1つずつ処理します
             data.forEach((item) => {
                 count += 1;
                 text += htmlTags(item); // htmlTags でHTMLを生成
-
-                
-
+              
             });
             text += `</div>`;
             document.getElementById("MyMenuItems").innerHTML = text;
