@@ -189,17 +189,17 @@ include("../conection.php");
 
                 <!-- pantallas medianas y grandes -->
                 <!-- d-none d-lg-blockクラスを使用して、画面幅が大きい場合（992px以上）にのみ表示されます。 -->
-                 
+
                 <!-- <div class="d-none d-lg-block  "> -->
-                    <!-- メニュー項目をリスト形式で表示します -->
-                    <!-- <ul class="menu-nav-bar d-flex justify-content-center"> -->
-                        <!-- 初期表示では「All」がアクティブでGoldカラーに表示される。 -->
-                        <!-- <li onclick="seekItem(event)" class="menu-link active nav-item" id="'*'">All</li> -->
-                        <!-- クリック時にJavaScript関数seekItemを呼び出します。 -->
-                        <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="main">Main</li> -->
-                        <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="drinks">Drinks</li> -->
-                        <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="dessert">Desserts</li> -->
-                    <!-- </ul> -->
+                <!-- メニュー項目をリスト形式で表示します -->
+                <!-- <ul class="menu-nav-bar d-flex justify-content-center"> -->
+                <!-- 初期表示では「All」がアクティブでGoldカラーに表示される。 -->
+                <!-- <li onclick="seekItem(event)" class="menu-link active nav-item" id="'*'">All</li> -->
+                <!-- クリック時にJavaScript関数seekItemを呼び出します。 -->
+                <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="main">Main</li> -->
+                <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="drinks">Drinks</li> -->
+                <!-- <li onclick="seekItem(event)" class="menu-link nav-item" id="dessert">Desserts</li> -->
+                <!-- </ul> -->
                 <!-- </div> -->
 
                 <!-- menu para pantallas pequenas -->
@@ -241,14 +241,7 @@ include("../conection.php");
             <div class="book-a-table">
                 <div class="form-container">
 
-                    <p class="text-center white-text" style="font-size: 23px;">
-                        <?php
-                        echo isset($_SESSION['answer']) ? $_SESSION['answer'] : '';
-                        ?>
-                    </p>
-
-
-                    <form action="index.php" method="post">
+                    <form action="success.php" method="post">
                         <div class="form-block ">
                             <div class="input-data">
                                 <!-- <input required type="email" name="name" id="email"> -->
@@ -267,7 +260,8 @@ include("../conection.php");
                                 <label class="" for="phone">Phone</label>
                             </div>
                             <div class="input-data">
-                                <input required type="datetime-local" name="time" id="time">
+                                <input required type="datetime-local" name="time" id="time" class="custom-datetime"> 
+                                
                                 <div class="underline"></div>
                                 <label class="" for="time"></label>
                             </div>
@@ -291,20 +285,23 @@ include("../conection.php");
                     </form>
                     <?php
 
-
                     if (isset($_POST['action'])) {
-                        $name = $_POST['name'];
-                        $email = $_POST['email'];
-                        $phone = $_POST['phone'];
-                        $time = $_POST['time'];
-                        $numberOfPeople = $_POST['numberOfPeople'];
-                        $message = $_POST['message'];
-                        $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ? ,? ,?)";
+                        $name = htmlspecialchars($_POST['name']);
+                        $email = htmlspecialchars($_POST['email']);
+                        $phone = htmlspecialchars($_POST['phone']);
+                        $time = htmlspecialchars($_POST['time']);
+                        $numberOfPeople = htmlspecialchars($_POST['numberOfPeople']);
+                        $message = htmlspecialchars($_POST['message']);
+
+                        $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ?, ?, ?)";
                         $ObjConnection = new conection();
-                        $ObjConnection->reservation_form($sql, $name, $email,  $phone, $time, $numberOfPeople, $message);
-                        $_SESSION['answer'] = 'ご予約が正しく行われました';
+                        $ObjConnection->reservation_form($sql, $name, $email, $phone, $time, $numberOfPeople, $message);
+                        header("Location: success.php");
+                        exit();    
                     }
 
+
+                    ?>
 
 
                     ?>

@@ -262,42 +262,9 @@ section img {
 /* ---------------------------------------------------------------------------------- */
 /* START MY MENU */
 
-.great-vibes-regular {
-  font-family: "Great Vibes", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-.mea-culpa-regular {
-  font-family: "Mea Culpa", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-.fleur-de-leah-regular {
-  font-family: "Fleur De Leah", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-.tangerine-regular {
-  font-family: "Tangerine", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.tangerine-bold {
-  font-family: "Tangerine", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
 #category {
-    /* font-family: "Great Vibes", "Fleur De Leah", "Mea Culpa",   "Tangerine", serif; */
-    font-family: "Fleur De Leah", "Great Vibes",  "Mea Culpa",   "Tangerine", serif;
+    font-family: "Great Vibes", "Fleur De Leah", "Mea Culpa",   "Tangerine", serif;
+    /* font-family: "Fleur De Leah", "Great Vibes",  "Mea Culpa",   "Tangerine", serif; */
     /* font-family: "Great Vibes"; */
     /* font-family:  "Mea Culpa"; */
     /* font-family: "Fleur De Leah"; */
@@ -307,7 +274,8 @@ section img {
     color: #FFF0DC;
     font-size: 50px;
   }
-  
+
+
 
 #menu {
     /* セクション全体のスタイル  */
@@ -602,9 +570,9 @@ form .form-block .textarea {
 .input-data input:focus~label,
 /* https://developer.mozilla.org/ja/docs/Web/CSS/:focus */
 .textarea textarea:focus~label,
+.textarea textarea:valid~label,
 /* ~は、兄弟要素を選択するためのコンビネータです。 */
-.input-data input:valid~label,
-.textarea textarea input:valid~label{
+.input-data input:valid~label{
     /* label が上に移動し、入力フィールドやテキストエリアの上部に表示されます。 */
     transform: translateY(-30px);
     font-size: 14px;
@@ -692,3 +660,8 @@ form .form-block .textarea {
 .submit-button:hover {
     background: rgb(240, 187, 120);
 }
+
+  /* カレンダーアイコンの色を白に設定 */
+  .custom-datetime::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* アイコンを反転（白にする） */
+  }
