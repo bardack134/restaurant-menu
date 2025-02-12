@@ -129,5 +129,40 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
 
+// ----------CHECK RESERVATIONS----------------------------------------
+function openNav_up_down(){
+    document.getElementById("myNav_up_down").style.height = "100%";
+}
+function closeNav_up_down() {
+    document.getElementById("myNav_up_down").style.height = "0%";
+}
+
+function fetchReservation() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    fetch(`fetch_reservation.php?name=${name}&email=${email}`)
+        .then(response => response.json())
+        .then(data => {
+            var resultDiv = document.getElementById('result');
+            if (data) {
+                console.log(data);
+                resultDiv.innerHTML = `
+                    <p class='gold-text'>Name:<span style='color:#FFF0DC'>${data.Name}</span></p>
+                    <p class='gold-text'>Email:<span style='color:#FFF0DC'>${data.Email}</span></p>
+                    <p class='gold-text'>Phone:<span style='color:#FFF0DC'>${data.Phone}</span></p>
+                    <p class='gold-text'>Date:<span style='color:#FFF0DC'>${data.Date}</span></p>
+                    <p class='gold-text'>Number of People:<span style='color:#FFF0DC'>${data.NumberOfPeople}</span></p>
+                    <p class='gold-text'>Message:<span style='color:#FFF0DC'>${data.Message}</span></p>
+                `;
+            } else {
+                resultDiv.innerHTML = "<p>該当する予約情報が見つかりませんでした。</p>";
+            }
+        })
+        .catch(error => console.error("Fetchエラー:", error));
+
+    return false; // フォームのデフォルトの送信をキャンセル
+}
+
 
 
