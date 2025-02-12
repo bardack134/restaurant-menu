@@ -57,14 +57,40 @@ include("../conection.php");
                         <li class="nav-item">
                             <a class="nav-link text-white px-5" href="#">ギャラリー</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white px-5" href="#">お問い合わせ</a>
-                        </li>
+
 
                     </ul>
                     <div class="text-end pe-5 text-center">
+                        <a class="btn btn-outline-light" onclick="openNav_up_down()">予約を確認する</a>
                         <a class="btn btn-outline-warning" href="#book-a-table">席を予約する</a>
-                        <!-- <button type="button" class="btn btn-outline-warning">席を予約する</button> -->
+
+                        <div id="myNav_up_down" class="overlay_up_down">
+                            <a class="closebtn" onclick="closeNav_up_down()" style="color: #D8A25E;">&times;</a>
+                            <div class="overlay-content">
+                                <li class="li-kakukin">
+                                    <div class="check_form" >
+                                       <p id="warning" style="color: red;"></p>
+                                        <!-- 名前の入力フィールド -->
+                                        <label for="name" class="block">
+                                            <span>名前:</span>
+                                            <input type="text" name="name" id="name" placeholder="名前を入力">
+                                            
+                                        </label>
+
+                                        <!-- メールアドレスの入力フィールド -->
+                                        <label for="email" class="block">
+                                            <span>メールアドレス:</span>
+                                            <input type="email" name="email" id="email" placeholder="メールアドレスを入力">
+                                        </label>
+
+                                        <!-- 検索ボタン -->
+                                        <button style="padding: 5px 40px; font-size: 20px;" onclick="fetchReservation()" class="btn btn-outline-warning">検索</button>
+                                    </div>
+                                    <div id="result" class="pt-3"></div>
+                                </li>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -206,10 +232,10 @@ include("../conection.php");
                 <div id="myNav" class="overlay">
                     <a class="closebtn" onclick="closeNav()" style="color: #D8A25E;">&times;</a>
                     <div class="overlay-content ">
-                        <li onclick="seekItem(event) " id="'*'">All</li>
-                        <li onclick="seekItem(event) " id="main">Main</li>
-                        <li onclick="seekItem(event) " id="drinks" class="drinks">Drinks</li>
-                        <li onclick="seekItem(event) " id="dessert">Desserts</li>
+                        <li class="li-food-items" onclick="seekItem(event) " id="'*'">All</li>
+                        <li class="li-food-items" onclick="seekItem(event) " id="main">Main</li>
+                        <li class="li-food-items" onclick="seekItem(event) " id="drinks" class="drinks">Drinks</li>
+                        <li class="li-food-items" onclick="seekItem(event) " id="dessert">Desserts</li>
                     </div>
                 </div>
 
@@ -224,7 +250,7 @@ include("../conection.php");
                 <p id="category" style="color: #FFF0DC; " class="text-center text-capitalize">
 
                 </p>
-                <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4" id="MyMenuItems">
+                <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4 pb-5" id="MyMenuItems">
 
 
                 </div>
