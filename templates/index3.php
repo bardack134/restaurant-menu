@@ -69,10 +69,12 @@ include("../conection.php");
                             <div class="overlay-content">
                                 <li class="li-kakukin">
                                     <div class="check_form" >
+                                       <p id="warning" style="color: red;"></p>
                                         <!-- 名前の入力フィールド -->
                                         <label for="name" class="block">
                                             <span>名前:</span>
                                             <input type="text" name="name" id="name" placeholder="名前を入力">
+                                            
                                         </label>
 
                                         <!-- メールアドレスの入力フィールド -->
@@ -84,7 +86,7 @@ include("../conection.php");
                                         <!-- 検索ボタン -->
                                         <button style="padding: 5px 40px; font-size: 20px;" onclick="fetchReservation()" class="btn btn-outline-warning">検索</button>
                                     </div>
-                                    <div id="result"></div>
+                                    <div id="result" class="pt-3"></div>
                                 </li>
                             </div>
                         </div>

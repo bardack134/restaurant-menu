@@ -24,7 +24,7 @@ function NoShowModal() {
 document.addEventListener('DOMContentLoaded', // DOMの内容がすべて読み込まれたらmenu_options関数を実行
     function () {
         // .nav-itemクラスを持つすべての要素を取得
-        const navItems = document.querySelectorAll('.nav-item'); 
+        const navItems = document.querySelectorAll('.nav-item');
 
         // 各要素にクリックイベントリスナーを追加
         navItems.forEach(item => {
@@ -48,11 +48,11 @@ let seek;
 
 function seekItem(event) {
     seek = event.target.id
-    if (seek=="'*'") {
+    if (seek == "'*'") {
         document.getElementById("category").innerHTML = "all";
-    }else{
+    } else {
         document.getElementById("category").innerHTML = seek;
-       
+
     }
     clearMenuItems();
     console.log(seek);
@@ -82,7 +82,7 @@ function showData(seek) {
             data.forEach((item) => {
                 count += 1;
                 text += htmlTags(item); // htmlTags でHTMLを生成
-              
+
             });
             text += `</div>`;
             document.getElementById("MyMenuItems").innerHTML = text;
@@ -130,7 +130,7 @@ function closeNav() {
 }
 
 // ----------CHECK RESERVATIONS----------------------------------------
-function openNav_up_down(){
+function openNav_up_down() {
     document.getElementById("myNav_up_down").style.height = "100%";
 }
 function closeNav_up_down() {
@@ -141,13 +141,17 @@ function fetchReservation() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
 
-    fetch(`fetch_reservation.php?name=${name}&email=${email}`)
-        .then(response => response.json())
-        .then(data => {
-            var resultDiv = document.getElementById('result');
-            if (data) {
-                console.log(data);
-                resultDiv.innerHTML = `
+    if (name == "" || email == "") {
+        document.getElementById('warning').innerHTML = "すべてのフィールドに記入してください";
+    } else {
+        document.getElementById('warning').innerHTML = "";
+        fetch(`fetch_reservation.php?name=${name}&email=${email}`)
+            .then(response => response.json())
+            .then(data => {
+                var resultDiv = document.getElementById('result');
+                if (data) {
+                    console.log(data);
+                    resultDiv.innerHTML = `
                     <p class='gold-text'>Name:<span style='color:#FFF0DC'>${data.Name}</span></p>
                     <p class='gold-text'>Email:<span style='color:#FFF0DC'>${data.Email}</span></p>
                     <p class='gold-text'>Phone:<span style='color:#FFF0DC'>${data.Phone}</span></p>
@@ -155,13 +159,14 @@ function fetchReservation() {
                     <p class='gold-text'>Number of People:<span style='color:#FFF0DC'>${data.NumberOfPeople}</span></p>
                     <p class='gold-text'>Message:<span style='color:#FFF0DC'>${data.Message}</span></p>
                 `;
-            } else {
-                resultDiv.innerHTML = "<p>該当する予約情報が見つかりませんでした。</p>";
-            }
-        })
-        .catch(error => console.error("Fetchエラー:", error));
+                } else {
+                    resultDiv.innerHTML = "<p>該当する予約情報が見つかりませんでした。</p>";
+                }
+            })
+            .catch(error => console.error("Fetchエラー:", error));
 
-    return false; // フォームのデフォルトの送信をキャンセル
+        return false; // フォームのデフォルトの送信をキャンセル
+    }
 }
 
 
