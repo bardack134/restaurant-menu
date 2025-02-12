@@ -84,7 +84,7 @@ include("../conection.php");
             box-shadow:
                 inset 2px 2px 3px rgba(255, 255, 255, 0.6),
                 inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-                text-decoration: none;
+            text-decoration: none;
         }
 
         .styled:hover {
@@ -112,23 +112,33 @@ include("../conection.php");
     </div>
     <?php
 
-if (isset($_POST['action'])) {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $time = htmlspecialchars($_POST['time']);
-    $numberOfPeople = htmlspecialchars($_POST['numberOfPeople']);
-    $message = htmlspecialchars($_POST['message']);
+    if (isset($_POST['action'])) {
+        $ObjConnection = new conection();
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $phone = htmlspecialchars($_POST['phone']);
+        $time = htmlspecialchars($_POST['time']);
+        $numberOfPeople = htmlspecialchars($_POST['numberOfPeople']);
+        $message = htmlspecialchars($_POST['message']);
 
-    $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ?, ?, ?)";
-    $ObjConnection = new conection();
-    $ObjConnection->reservation_form($sql, $name, $email, $phone, $time, $numberOfPeople, $message);
-    header("Location: success.php");
-    exit();    
-}
+        $sql = "SELECT * FROM reservation WHERE Name=? and Email=?";
+        $answer = $ObjConnection->check_reservation($sql, $name, $email);
+        if ($answer === False) {
+            $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ?, ?, ?)";
+            $ObjConnection->reservation_form($sql, $name, $email, $phone, $time, $numberOfPeople, $message);
+            header("Location: success.php");
+            exit();
+        }else {
+            $_SESSION['reservation']='data already exist';
+            header("Location: index.php");
+            
+        }
+
+        
+    }
 
 
-?>
+    ?>
     <footer>
         <!-- place footer here -->
     </footer>

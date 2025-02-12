@@ -240,6 +240,17 @@ include("../conection.php");
             </div>
             <div class="book-a-table">
                 <div class="form-container">
+                    <?php
+                    // 'reservation' セッション変数が設定されているかを確認
+                    if (isset($_SESSION['reservation'])) {
+                        // 設定されている場合は、JavaScriptアラートを出力
+                        echo "<script>alert('すでに名前とメールアドレスで予約があります');</script>";
+
+                        // セッションを破棄して、アラートがもう一度表示されないようにする
+                        unset($_SESSION['reservation']);
+                    }
+                    ?>
+
 
                     <form action="success.php" method="post">
                         <div class="form-block ">
@@ -260,8 +271,8 @@ include("../conection.php");
                                 <label class="" for="phone">Phone</label>
                             </div>
                             <div class="input-data">
-                                <input required type="datetime-local" name="time" id="time" class="custom-datetime"> 
-                                
+                                <input required type="datetime-local" name="time" id="time" class="custom-datetime">
+
                                 <div class="underline"></div>
                                 <label class="" for="time"></label>
                             </div>
@@ -283,28 +294,9 @@ include("../conection.php");
 
                         </div>
                     </form>
-                    <?php
-
-                    if (isset($_POST['action'])) {
-                        $name = htmlspecialchars($_POST['name']);
-                        $email = htmlspecialchars($_POST['email']);
-                        $phone = htmlspecialchars($_POST['phone']);
-                        $time = htmlspecialchars($_POST['time']);
-                        $numberOfPeople = htmlspecialchars($_POST['numberOfPeople']);
-                        $message = htmlspecialchars($_POST['message']);
-
-                        $sql = "INSERT INTO reservation (Name, Email, Phone, Date, NumberOfPeople, Message) VALUES (?, ?, ?, ?, ?, ?)";
-                        $ObjConnection = new conection();
-                        $ObjConnection->reservation_form($sql, $name, $email, $phone, $time, $numberOfPeople, $message);
-                        header("Location: success.php");
-                        exit();    
-                    }
 
 
-                    ?>
 
-
-                    ?>
                 </div>
             </div>
 
