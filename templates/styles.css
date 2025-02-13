@@ -1,3 +1,9 @@
+ #hero, #about, #why-us, header { 
+     width: 100vw;  
+     max-width: 100%; 
+ } 
+
+
 /* START NAV BAR */
 li a:hover {
     color: #D8A25E !important;
@@ -39,18 +45,6 @@ h6 {
 }
 
 /* https://www.w3schools.com/cssref/sel_before.php */
-.backgroundImage::after {
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/::before#examples */
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    /* https://www.w3schools.com/css/css_z-index.asp */
-}
 
 
 .txt-white {
@@ -140,11 +134,11 @@ section img {
     padding: 160px;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
-    max-width: 600px;
+    /* width: 350px; */
+    
     z-index: 3;
-
 }
+
 
 .hide-element{
     
@@ -170,7 +164,7 @@ section img {
         /* background-color: rgba(0, 0, 0, 0.8); */
        
         width: 80%;
-        max-width: 600px;
+        
         z-index: 3;
     
     }
@@ -759,4 +753,11 @@ form .form-block .textarea {
 .custom-datetime::-webkit-calendar-picker-indicator {
     filter: invert(1);
     /* アイコンを反転（白にする） */
+}
+
+@media (max-width: 768px) {
+    .book-a-table, 
+    .form-container {
+        width: 100%;
+    }
 }
