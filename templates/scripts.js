@@ -13,6 +13,7 @@ function NoShowModal() {
     // NoDisplayModal クラスを追加します。 これにより、モーダルが非表示になります。
     document.getElementById("modal-bg").classList.add("NoDisplayModal");
     document.getElementById("modal-container").classList.add("NoDisplayModal");
+    document.getElementById("hide-item").classList.remove("hide-element");
     // NOTE: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause
     document.getElementById('myVideo').pause()
 }

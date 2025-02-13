@@ -28,74 +28,63 @@ include("../conection.php");
 </head>
 
 <body class="pageDesign ">
-    <header class="fixed-top">
-        <!-- NAV BAR -->
-        <nav class="navbar sticky-top navbar-expand-lg  mt-4" style="background-color: rgba(0, 0, 0, 0.6); ">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white ps-5 pe-3 fw-bold fs-2" href="#">Cousine</a>
-                <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarScroll">
-                    <ul class=" nav-underline navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll text-center"
-                        style="--bs-scroll-height: 100px;">
-                        <li class="nav-item">
-                            <a class=" nav-link  text-white" aria-current="page" href="#">ホーム</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white px-5" href="#about">私たちについて</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white px-5" href="#menu">メニュー</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white px-5" href="#">スペシャル</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white px-5" href="#">ギャラリー</a>
-                        </li>
-
-
-                    </ul>
-                    <div class="text-end pe-5 text-center">
-                        <a class="btn btn-outline-light" onclick="openNav_up_down()">予約を確認する</a>
-                        <a class="btn btn-outline-warning" href="#book-a-table">席を予約する</a>
-
-                        <div id="myNav_up_down" class="overlay_up_down">
-                            <a class="closebtn" onclick="closeNav_up_down()" style="color: #D8A25E;">&times;</a>
-                            <div class="overlay-content">
-                                <li class="li-kakukin">
-                                    <div class="check_form" >
-                                       <p id="warning" style="color: red;"></p>
-                                        <!-- 名前の入力フィールド -->
-                                        <label for="name" class="block">
-                                            <span>名前:</span>
-                                            <input type="text" name="name" id="name" placeholder="名前を入力">
-                                            
-                                        </label>
-
-                                        <!-- メールアドレスの入力フィールド -->
-                                        <label for="email" class="block">
-                                            <span>メールアドレス:</span>
-                                            <input type="email" name="email" id="email" placeholder="メールアドレスを入力">
-                                        </label>
-
-                                        <!-- 検索ボタン -->
-                                        <button style="padding: 5px 40px; font-size: 20px;" onclick="fetchReservation()" class="btn btn-outline-warning">検索</button>
-                                    </div>
-                                    <div id="result" class="pt-3"></div>
-                                </li>
-                            </div>
+<header class="fixed-top">
+    <!-- NAV BAR -->
+    <nav class="navbar sticky-top navbar-expand-lg mt-4" style="background-color: rgba(0, 0, 0, 0.6); " >
+        <div class="container-fluid">
+            <a class="navbar-brand text-white ps-lg-5 ps-3 pe-3 fw-bold fs-2" href="#">cuisine</a>
+            <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="nav-underline navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll text-center"
+                    style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="#">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-lg-5 px-2" href="#about">私たちについて</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-lg-5 px-2" href="#menu">メニュー</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-lg-5 px-2" href="#">スペシャル</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-lg-5 px-2" href="#">ギャラリー</a>
+                    </li>
+                </ul>
+                <div class="text-end pe-lg-5 pe-3 text-center">
+                    <a class="btn btn-outline-light" onclick="openNav_up_down()">予約を確認する</a>
+                    <a class="btn btn-outline-warning" href="#book-a-table">席を予約する</a>
+                    <div id="myNav_up_down" class="overlay_up_down">
+                        <a class="closebtn" onclick="closeNav_up_down()" style="color: #D8A25E;">&times;</a>
+                        <div class="overlay-content">
+                            <li class="li-kakukin">
+                                <div class="check_form">
+                                    <p id="warning" style="color: red;"></p>
+                                    <label for="name" class="block">
+                                        <span>名前:</span>
+                                        <input type="text" name="name" id="name" placeholder="名前を入力">
+                                    </label>
+                                    <label for="email" class="block">
+                                        <span>メールアドレス:</span>
+                                        <input type="email" name="email" id="email" placeholder="メールアドレスを入力">
+                                    </label>
+                                    <button style="padding: 5px 40px; font-size: 20px;" onclick="fetchReservation()" class="btn btn-outline-warning">検索</button>
+                                </div>
+                                <div id="result" class="pt-3"></div>
+                            </li>
                         </div>
-
                     </div>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <main>
 
@@ -133,7 +122,8 @@ include("../conection.php");
                             <div id="modal-container" class="NoDisplayModal ">
                                 <div class="container">
                                     <!-- ビデオ要素で、再生コントロールを表示 -->
-                                    <video controls width="550" src="video/videoplayback.mp4" id="myVideo"></video>
+                                    <video controls class="video-control" src="video/videoplayback.mp4" id="myVideo"></video>
+                                    <!-- <iframe id="myVideo" width="560" height="315" src="https://www.youtube.com/embed/kRCH8kD1GD0?si=92fIs-kr4dzprl6S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
                                 </div>
                                 <!-- 閉じるアイコン -->
                                 <div id="modal-close" onclick="NoShowModal()"><i class="fa-solid fa-xmark fa-2xl"
