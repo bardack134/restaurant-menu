@@ -18,7 +18,7 @@ HERO ホームページ
 ![hero-homepage](https://github.com/user-attachments/assets/0e18f8e3-8b4a-45bc-b03d-3c7b7c90b4c8)
 
 
-ホームページ　メーヌ
+ホームページ　メニュー
 ![homepage-menu](https://github.com/user-attachments/assets/34daa515-66b9-4619-91f9-b5f179bcac7a)
 
 
