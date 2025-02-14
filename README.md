@@ -13,17 +13,18 @@
 
 ## 管理パネル　- password and user
 user= kenschool  
-password = kenschool
-
-![hospital_app (1)](https://github.com/bardack134/CRUD-HOSPITAL/assets/142977989/35a5108a-da38-4b18-a80e-cc6850ad0566)
-
-
 
 HERO ホームページ
 ![hero-homepage](https://github.com/user-attachments/assets/0e18f8e3-8b4a-45bc-b03d-3c7b7c90b4c8)
+
+
 ホームページ　メーヌ
 ![homepage-menu](https://github.com/user-attachments/assets/34daa515-66b9-4619-91f9-b5f179bcac7a)
+
+
 管理パネル
 ![管理パネル](https://github.com/user-attachments/assets/f1d8722e-e138-455e-9678-ce7376901da6)
+
+
 管理パネル2
 ![管理パネル２](https://github.com/user-attachments/assets/3b146afe-da59-4d77-9d95-21f990970e09)
