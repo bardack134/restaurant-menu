@@ -1,757 +1,765 @@
- #hero, #about, #why-us, header { 
-     width: 100vw;  
-     max-width: 100%; 
- } 
+ #hero,
+ #about,
+ #why-us,
+ header {
+     width: 100vw;
+     max-width: 100%;
+ }
 
 
-/* START NAV BAR */
-li a:hover {
-    color: #D8A25E !important;
+ /* START NAV BAR */
+ li a:hover {
+     color: #D8A25E !important;
 
-}
-
-
-/* FINISH  NAV BAR */
-/* ---------------------------------------------------------------------------------- */
+ }
 
 
-
-/* ---------------------------------------------------------------------------------- */
-/* START BODY  */
-.pageDesign {
-    background-color: #2A3335;
-    
-
-}
-
-
-h3,
-h5,
-h6 {
-    color: white !important;
-}
-
-/* END BODY  */
-/* ---------------------------------------------------------------------------------- */
+ /* FINISH  NAV BAR */
+ /* ---------------------------------------------------------------------------------- */
 
 
 
-/* ---------------------------------------------------------------------------------- */
-/* start section "hero us" */
-.backgroundImage {
-    background-image: url("https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2023/01/31073408/RK-Naperville-Bar-scaled.jpg") !important;
-    background-size: cover;
-    position: relative;
-}
-
-/* https://www.w3schools.com/cssref/sel_before.php */
+ /* ---------------------------------------------------------------------------------- */
+ /* START BODY  */
+ .pageDesign {
+     background-color: #2A3335;
 
 
-.txt-white {
-    position: relative;
-    color: #ffffff;
-    z-index: 2;
-    /* https://www.w3schools.com/css/css_z-index.asp */
-}
+ }
 
 
-.mybutton {
-    color: white;
-    border: 2px solid #D8A25E;
-    font-weight: 550;
-    font-size: 18px;
-    letter-spacing: .2rem;
-    padding: 6px 30px;
-    border-radius: 90px;
-    text-decoration: none;
-    transition: 3ms;
-}
+ h3,
+ h5,
+ h6 {
+     color: white !important;
+ }
 
-.mybutton:hover {
-
-    background-color: #d5b48c;
-    opacity: 0.85;
-
-}
-
-section h1 span {
-    color: #D8A25E;
-}
-
-section h2 span {
-    color: #D8A25E;
-    font-size: 36px;
-    font-weight: 550;
-}
-
-/* finish section "hero us" */
-/* ---------------------------------------------------------------------------------- */
+ /* END BODY  */
+ /* ---------------------------------------------------------------------------------- */
 
 
 
-/* ---------------------------------------------------------------------------------- */
-/* start section "about us" */
+ /* ---------------------------------------------------------------------------------- */
+ /* start section "hero us" */
+ .backgroundImage {
+     background-image: url("https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2023/01/31073408/RK-Naperville-Bar-scaled.jpg") !important;
+     background-size: cover;
+     position: relative;
+ }
 
-#about {
-
-    background-color: black;
-    border-top: 5px solid rgb(128, 128, 128, 0.3);
-    border-bottom: 5px solid rgb(128, 128, 128, 0.3);
-}
-
-section img {
-    border: 5px solid grey;
-}
+ /* https://www.w3schools.com/cssref/sel_before.php */
 
 
-
-/* Finish section about us */
-/* ---------------------------------------------------------------------------------- */
-
-
-
-/* ---------------------------------------------------------------------------------- */
-/* MODAL Window in section "about us" */
+ .txt-white {
+     position: relative;
+     color: #ffffff;
+     z-index: 2;
+     /* https://www.w3schools.com/css/css_z-index.asp */
+ }
 
 
-#modal-container p {
-    float: left;
-}
+ .mybutton {
+     color: white;
+     border: 2px solid #D8A25E;
+     font-weight: 550;
+     font-size: 18px;
+     letter-spacing: .2rem;
+     padding: 6px 30px;
+     border-radius: 90px;
+     text-decoration: none;
+     transition: 3ms;
+ }
 
-#modal-close {
-    float: right;
+ .mybutton:hover {
 
-}
+     background-color: #d5b48c;
+     opacity: 0.85;
 
-/* モーダルコンテナが画面の中央に */
-#modal-container {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    /* 水平方向に自分の幅の50%だけ左に移動させることで、要素を完全に中央に配置します。 */
-    transform: translateX(-80%);
-    /* background-color: rgba(0, 0, 0, 0.8); */
-    padding: 160px;
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 350px; */
-    
-    z-index: 3;
-}
+ }
+
+ section h1 span {
+     color: #D8A25E;
+ }
+
+ section h2 span {
+     color: #D8A25E;
+     font-size: 36px;
+     font-weight: 550;
+ }
+
+ /* finish section "hero us" */
+ /* ---------------------------------------------------------------------------------- */
 
 
-.hide-element{
-    
-    background-color: rgb(0, 0, 0);
-    opacity: 0;
-}
 
-.video-control{
-    width: 200%;
-}
+ /* ---------------------------------------------------------------------------------- */
+ /* start section "about us" */
 
-@media screen and (max-width: 576px) {
-    .video-control{
-        width: 290px;
-    }
+ #about {
 
-    #modal-container {
-        position: absolute;
-        top: 100px;
-        left: 35%;
-        /* 水平方向に自分の幅の50%だけ左に移動させることで、要素を完全に中央に配置します。 */
-        transform: translateX(-80%);
-        /* background-color: rgba(0, 0, 0, 0.8); */
-       
-        width: 80%;
+     background-color: black;
+     border-top: 5px solid rgb(128, 128, 128, 0.3);
+     border-bottom: 5px solid rgb(128, 128, 128, 0.3);
+ }
+
+ section img {
+     border: 5px solid grey;
+ }
+
+
+
+ /* Finish section about us */
+ /* ---------------------------------------------------------------------------------- */
+
+
+
+ /* ---------------------------------------------------------------------------------- */
+ /* MODAL Window in section "about us" */
+
+ .hide-element {
+
+     background-color: rgb(0, 0, 0);
+     opacity: 0;
+ }
+
+
+ @media screen and (max-width: 576px) {
+     .video-control {
+         width: 290px;
+     }
+
+     #modal-container {
+         position: absolute;
+         top: 100px;
+         left: 35%;
+         /* 水平方向に自分の幅の50%だけ左に移動させることで、要素を完全に中央に配置します。 */
+         transform: translateX(-45%);
+         /* background-color: rgba(0, 0, 0, 0.8); */
+
+         width: 80%;
+
+         z-index: 3;
+
+     }
+
+     #modal-close {
+         float: right;
+         position: absolute;
+         top: 100%;
+         left: 60%;
+
+     }
+
+ }
+
+ @media screen and (min-width:578px) {
+     .video-control {
+         width: 550px;
+     }
+
+     /* モーダルコンテナが画面の中央に */
+     #modal-container {
+         position: absolute;
+         top: 100px;
+         left: 100%;
+         /* 水平方向に自分の幅の50%だけ左に移動させることで、要素を完全に中央に配置します。 */
+         transform: translateX(-80%);
+         /* background-color: rgba(0, 0, 0, 0.8); */
+         padding: 160px;
+         margin-left: auto;
+         margin-right: auto;
+         /* width: 350px; */
+         z-index: 3;
+
         
-        z-index: 3;
-    
-    }
+     }
 
-    #modal-close {
+     #modal-close {
         float: right;
-        position: absolute;
-        top: 70%;
-        left: 95%;
-    
-    }
-    
-}
-
-#modal-bg {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-
-}
-
-.NoDisplayModal {
-    display: none;
-}
-
-
-/* FINISH MODAL Window - section "about us" */
-/* ---------------------------------------------------------------------------------- */
-
-
-
-/* ---------------------------------------------------------------------------------- */
-/* start section "why us" */
-
-.why-us {
-    /* backgroundColorグラデーションとパディングが設定されています。 */
-    background: linear-gradient(115deg, #050505 20%, #543A14 98%);
-    padding: 60px;
-
-}
-
-
-.myCardTitle {
-    /* タイトルの上下左右にパディングを設定しています */
-    padding: 1rem 3rem 3rem 0;
-}
-
-.myCard {
-    padding: 40px 30px;
-    margin: 15px;
-    /* background-color: #473311; */
-    background-color: rgb(24, 24, 24);
-    /* background-color: #F0BB78; */
-    height: 310px;
-}
-
-/* テキスト色の変更: ホバー時にテキスト色を変更します。 */
-.myCard:hover {
-    background: #D8A25E;
-    /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.7); */
-    box-shadow: 0 0 8px rgb(255, 255, 255);
-    transition: all 0.4s ease-out;
-
-    .myTransition {
-        transition: all 0.4s ease-out;
-        color: rgba(0, 0, 0, 0.8);
+         position: absolute;
+         top: 75%;
+         left: 30%;
+   
     }
 
-    .card-text {
-        transition: all 0.3s ease-out;
-        color: #000000;
-    }
-}
+ }
 
-.card-text {
-    color: rgba(255, 255, 255, 0.7);
+ #modal-bg {
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background-color: rgba(0, 0, 0, 0.7);
 
-}
+ }
 
-.why-us .myCard span {
-    color: #D8A25E;
-    font-size: 28px;
-    font-weight: 700;
-
-}
-
-.why-us .myCard h4 {
-    color: #f8f8f8;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    margin-top: 28px;
-}
-
-/* レスポンシブデザイン */
-@media screen and (min-width: 400px) and (max-width: 500px) {
-
-    /* 画面幅が400px～500pxの場合: */
-    .myCard {
-        padding: 40px 30px;
-        margin: 15px;
-        /* background-color: #473311; */
-        background-color: rgb(24, 24, 24);
-        /* background-color: #F0BB78; */
-        height: 400px;
-    }
-}
-
-@media screen and (max-width: 399px) {
-
-    /* 画面幅が399px以下の場合: */
-    .myCard {
-        padding: 10px 8px;
-        margin: 15px -10px;
-        
-        /* background-color: #473311; */
-        background-color: rgb(24, 24, 24);
-        /* background-color: #F0BB78; */
-        height: 350px;
-        width: 250px;
+ .NoDisplayModal {
+     display: none;
+ }
 
 
-    }
-}
-
-/*finish  section "why us" */
-/* ---------------------------------------------------------------------------------- */
+ /* FINISH MODAL Window - section "about us" */
+ /* ---------------------------------------------------------------------------------- */
 
 
 
-/* ---------------------------------------------------------------------------------- */
-/* START MY MENU */
+ /* ---------------------------------------------------------------------------------- */
+ /* start section "why us" */
 
-#category {
-    font-family: "Great Vibes", "Fleur De Leah", "Mea Culpa", "Tangerine", serif;
-    /* font-family: "Fleur De Leah", "Great Vibes",  "Mea Culpa",   "Tangerine", serif; */
-    /* font-family: "Great Vibes"; */
-    /* font-family:  "Mea Culpa"; */
-    /* font-family: "Fleur De Leah"; */
-    /* font-family:  "Tangerine"; */
-    font-weight: 400;
-    font-style: normal;
-    color: #FFF0DC;
-    font-size: 50px;
-}
+ .why-us {
+     /* backgroundColorグラデーションとパディングが設定されています。 */
+     background: linear-gradient(115deg, #050505 20%, #543A14 98%);
+     padding: 60px;
+
+ }
 
 
+ .myCardTitle {
+     /* タイトルの上下左右にパディングを設定しています */
+     padding: 1rem 3rem 3rem 0;
+ }
 
-#menu {
-    /* セクション全体のスタイル  */
-    background-color: black;
+ .myCard {
+     padding: 40px 30px;
+     margin: 15px;
+     /* background-color: #473311; */
+     background-color: rgb(24, 24, 24);
+     /* background-color: #F0BB78; */
+     height: 310px;
+ }
 
-}
+ /* テキスト色の変更: ホバー時にテキスト色を変更します。 */
+ .myCard:hover {
+     background: #D8A25E;
+     /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.7); */
+     box-shadow: 0 0 8px rgb(255, 255, 255);
+     transition: all 0.4s ease-out;
 
-.gold-text {
-    /* タイトルのスタイル  */
-    color: #D8A25E;
-    ;
-}
+     .myTransition {
+         transition: all 0.4s ease-out;
+         color: rgba(0, 0, 0, 0.8);
+     }
 
-.white-text {
-    color: white;
-}
+     .card-text {
+         transition: all 0.3s ease-out;
+         color: #000000;
+     }
+ }
+
+ .card-text {
+     color: rgba(255, 255, 255, 0.7);
+
+ }
+
+ .why-us .myCard span {
+     color: #D8A25E;
+     font-size: 28px;
+     font-weight: 700;
+
+ }
+
+ .why-us .myCard h4 {
+     color: #f8f8f8;
+     font-size: 24px;
+     font-weight: 600;
+     margin-bottom: 25px;
+     margin-top: 28px;
+ }
+
+ /* レスポンシブデザイン */
+ @media screen and (min-width: 400px) and (max-width: 500px) {
+
+     /* 画面幅が400px～500pxの場合: */
+     .myCard {
+         padding: 40px 30px;
+         margin: 15px;
+         /* background-color: #473311; */
+         background-color: rgb(24, 24, 24);
+         /* background-color: #F0BB78; */
+         height: 400px;
+     }
+ }
+
+ @media screen and (max-width: 399px) {
+
+     /* 画面幅が399px以下の場合: */
+     .myCard {
+         padding: 10px 8px;
+         margin: 15px -10px;
+
+         /* background-color: #473311; */
+         background-color: rgb(24, 24, 24);
+         /* background-color: #F0BB78; */
+         height: 350px;
+         width: 250px;
+
+
+     }
+ }
+
+ /*finish  section "why us" */
+ /* ---------------------------------------------------------------------------------- */
 
 
 
-.menu-nav-bar {
-    /* ナビゲーションバーのスタイル  */
-    text-align: center;
-    /*テキスト配置*/
-}
+ /* ---------------------------------------------------------------------------------- */
+ /* START MY MENU */
 
-.menu-link {
-    /*リンクのスタイル:*/
-    /* パディング, テキスト色, テキスト配置 */
-    display: inline-block;
-    padding: 40px 80px 0 0;
-    text-decoration: none;
-    text-align: center;
-    color: white;
-    font-size: 25px;
+ #category {
+     font-family: "Great Vibes", "Fleur De Leah", "Mea Culpa", "Tangerine", serif;
+     /* font-family: "Fleur De Leah", "Great Vibes",  "Mea Culpa",   "Tangerine", serif; */
+     /* font-family: "Great Vibes"; */
+     /* font-family:  "Mea Culpa"; */
+     /* font-family: "Fleur De Leah"; */
+     /* font-family:  "Tangerine"; */
+     font-weight: 400;
+     font-style: normal;
+     color: #FFF0DC;
+     font-size: 50px;
+ }
 
-}
 
-section div ul li:hover {
-    /* ホバー時にテキスト色を金色になります */
-    color: #D8A25E !important;
-    font-size: 23px;
-    /* フォントサイズを少し小さくします*/
 
-}
+ #menu {
+     /* セクション全体のスタイル  */
+     background-color: black;
 
-.active {
-    color: #D8A25E;
-}
+ }
 
-.photo {
-    /* width: 90px;
+ .gold-text {
+     /* タイトルのスタイル  */
+     color: #D8A25E;
+     ;
+ }
+
+ .white-text {
+     color: white;
+ }
+
+
+
+ .menu-nav-bar {
+     /* ナビゲーションバーのスタイル  */
+     text-align: center;
+     /*テキスト配置*/
+ }
+
+ .menu-link {
+     /*リンクのスタイル:*/
+     /* パディング, テキスト色, テキスト配置 */
+     display: inline-block;
+     padding: 40px 80px 0 0;
+     text-decoration: none;
+     text-align: center;
+     color: white;
+     font-size: 25px;
+
+ }
+
+ section div ul li:hover {
+     /* ホバー時にテキスト色を金色になります */
+     color: #D8A25E !important;
+     font-size: 23px;
+     /* フォントサイズを少し小さくします*/
+
+ }
+
+ .active {
+     color: #D8A25E;
+ }
+
+ .photo {
+     /* width: 90px;
     object-fit: contain;
     border-radius: 50%;
     box-shadow: -0px 0px 10px #FFF0DC; */
-    object-fit: cover;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 4px solid #ea9000;
-    box-sizing: border-box;
-}
+     object-fit: cover;
+     width: 90px;
+     height: 90px;
+     border-radius: 50%;
+     border: 4px solid #ea9000;
+     box-sizing: border-box;
+ }
 
-.display-row {
-    display: flex;
-    /*横並びに表示します。*/
-}
-
-
-/* (.menu-items, .menu-info, .menu-title, .menu-text) メニューアイテムのスタイルだけです*/
-
-.menu-items {
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding-right: 50px;
-
-}
-
-.menu-info {
-    margin-left: 20px;
-    width: 100%;
-    color: white;
-}
-
-.menu-title {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    font-weight: 700;
-}
-
-.menu-text {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.menu-items-padding {
-    padding-bottom: 6%;
-}
+ .display-row {
+     display: flex;
+     /*横並びに表示します。*/
+ }
 
 
-.price {
-    color: #D8A25E;
-}
+ /* (.menu-items, .menu-info, .menu-title, .menu-text) メニューアイテムのスタイルだけです*/
 
-/* 擬似要素＝＞ 価格の前に点線 */
-.price::before {
-    content: "...........................";
-    color: rgba(255, 255, 255, 0.3);
-    padding-right: 0;
-}
+ .menu-items {
+     display: flex;
+     margin-top: 20px;
+     margin-bottom: 10px;
+     padding-right: 50px;
 
-/* レスポンシブデザイン */
-@media screen and (max-width: 767px) {
-    .price::before {
-        content: "";
-        padding-right: 3%;
-    }
-}
+ }
 
-@media screen and (min-width: 768px) and (max-width: 989px) {
-    .price::before {
-        content: "........................................................................";
-        padding-right: 3%;
-    }
-}
+ .menu-info {
+     margin-left: 20px;
+     width: 100%;
+     color: white;
+ }
 
-@media screen and (min-width: 990px) and (max-width: 1200px) {
-    .price::before {
-        content: "";
-        padding-right: 3%;
-    }
-}
+ .menu-title {
+     display: flex;
+     justify-content: space-between;
+     color: white;
+     font-weight: 700;
+ }
 
-@media screen and (min-width: 1201px) {
-    .price::before {
-        content: "......................................................";
-        padding-right: 3%;
-    }
-}
+ .menu-text {
+     color: rgba(255, 255, 255, 0.7);
+ }
+
+ .menu-items-padding {
+     padding-bottom: 6%;
+ }
 
 
-/*--------------MENU links - SMALL WINDOWS -------------------*/
-.hamburger {
-    font-size: 24px;
-    color: #FFF0DC;
-    font-size: 30px;
-    cursor: pointer
-}
+ .price {
+     color: #D8A25E;
+ }
 
-body {
-    font-family: 'Lato', sans-serif;
-}
+ /* 擬似要素＝＞ 価格の前に点線 */
+ .price::before {
+     content: "...........................";
+     color: rgba(255, 255, 255, 0.3);
+     padding-right: 0;
+ }
 
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-}
+ /* レスポンシブデザイン */
+ @media screen and (max-width: 767px) {
+     .price::before {
+         content: "";
+         padding-right: 3%;
+     }
+ }
 
-.check_form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+ @media screen and (min-width: 768px) and (max-width: 989px) {
+     .price::before {
+         content: "........................................................................";
+         padding-right: 3%;
+     }
+ }
 
-    /* height: 100vh; */
+ @media screen and (min-width: 990px) and (max-width: 1200px) {
+     .price::before {
+         content: "";
+         padding-right: 3%;
+     }
+ }
 
-}
-
-.overlay_up_down {
-    height: 0%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow-y: hidden;
-    transition: 0.5s;
-
-}
-
-.overlay-content {
-    position: relative;
-    top: 15%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.li-food-items {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #ffffff;
-    display: block;
-    transition: 0.3s;
-
-}
-
-.li-food-items:hover,
-.li-food-items:focus {
-    color: #F0BB78;
-}
-
-.closebtn {
-    position: absolute;
-    top: 10%;
-    right: 45px;
-    font-size: 60px;
-    cursor: pointer;
-}
-
-@media screen and (max-height: 450px) {
-
-    .overlay {
-        overflow-y: auto;
-    }
-
-    .overlay a {
-        font-size: 20px
-    }
-
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
-}
-
-.li-kakukin {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #ffffff;
-    display: block;
-    transition: 0.3s;
-}
-
-.block {
-    display: grid;
-    width: 40% !important;
-    margin-bottom: 1.5%;
-}
-
-/* --------------------FINISH SMALL WINDOWS --------------------*/
-/* FINISH MY MENU */
+ @media screen and (min-width: 1201px) {
+     .price::before {
+         content: "......................................................";
+         padding-right: 3%;
+     }
+ }
 
 
-/* ---------------------------------------------------------------------------------- */
-/* START BOOK A TABLE*/
+ /*--------------MENU links - SMALL WINDOWS -------------------*/
+ .hamburger {
+     font-size: 24px;
+     color: #FFF0DC;
+     font-size: 30px;
+     cursor: pointer
+ }
 
-/* フォーム全体を囲むセクションの背景と上部のボーダーにスタイルが適用されます。 */
-#book-a-table {
-    background: linear-gradient(115deg, #050505 70%, #543A14 98%);
-    /* セクションの上部にボーダーを追加します。 */
-    border-top: 5px solid rgb(128, 128, 128, 0.3);
-}
+ body {
+     font-family: 'Lato', sans-serif;
+ }
 
-/* class */
-.book-a-table {
-    display: flex;  
-    align-items: center;
-    justify-content: center;
-    width: 100%; /* Asegura que ocupe el ancho completo */
-}
+ .overlay {
+     height: 100%;
+     width: 0;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: rgb(0, 0, 0);
+     background-color: rgba(0, 0, 0, 0.9);
+     overflow-x: hidden;
+     transition: 0.5s;
+ }
 
-/* フォームのタイトルを表示する部分です。 */
-.form-title {
-    padding: 80px 30px 0px 90px;
-    font-size: 41px;
-    font-weight: 600;
-    color: #D8A25E;
-}
+ .check_form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
 
-.form-container {
-    max-width: 900px; /* Mantiene un límite en pantallas grandes */
-    width: 100%; /* Permite que se adapte en pantallas pequeñas */
-    padding: 0px 40px 10px 40px;
-}
+     /* height: 100vh; */
 
-/* .form-container form {
+ }
+
+ .overlay_up_down {
+     height: 0%;
+     width: 100%;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: rgb(0, 0, 0);
+     background-color: rgba(0, 0, 0, 0.9);
+     overflow-y: hidden;
+     transition: 0.5s;
+
+ }
+
+ .overlay-content {
+     position: relative;
+     top: 15%;
+     width: 100%;
+     text-align: center;
+     margin-top: 30px;
+ }
+
+ .li-food-items {
+     padding: 8px;
+     text-decoration: none;
+     font-size: 36px;
+     color: #ffffff;
+     display: block;
+     transition: 0.3s;
+
+ }
+
+ .li-food-items:hover,
+ .li-food-items:focus {
+     color: #F0BB78;
+ }
+
+ .closebtn {
+     position: absolute;
+     top: 10%;
+     right: 45px;
+     font-size: 60px;
+     cursor: pointer;
+ }
+
+ @media screen and (max-height: 450px) {
+
+     .overlay {
+         overflow-y: auto;
+     }
+
+     .overlay a {
+         font-size: 20px
+     }
+
+     .overlay .closebtn {
+         font-size: 40px;
+         top: 15px;
+         right: 35px;
+     }
+ }
+
+ .li-kakukin {
+     padding: 8px;
+     text-decoration: none;
+     font-size: 20px;
+     color: #ffffff;
+     display: block;
+     transition: 0.3s;
+ }
+
+ .block {
+     display: grid;
+     width: 40% !important;
+     margin-bottom: 1.5%;
+ }
+
+ /* --------------------FINISH SMALL WINDOWS --------------------*/
+ /* FINISH MY MENU */
+
+
+ /* ---------------------------------------------------------------------------------- */
+ /* START BOOK A TABLE*/
+
+ /* フォーム全体を囲むセクションの背景と上部のボーダーにスタイルが適用されます。 */
+ #book-a-table {
+     background: linear-gradient(115deg, #050505 70%, #543A14 98%);
+     /* セクションの上部にボーダーを追加します。 */
+     border-top: 5px solid rgb(128, 128, 128, 0.3);
+ }
+
+ /* class */
+ .book-a-table {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     /* Asegura que ocupe el ancho completo */
+ }
+
+ /* フォームのタイトルを表示する部分です。 */
+ .form-title {
+     padding: 80px 30px 0px 90px;
+     font-size: 41px;
+     font-weight: 600;
+     color: #D8A25E;
+ }
+
+ .form-container {
+     max-width: 900px;
+     /* Mantiene un límite en pantallas grandes */
+     width: 100%;
+     /* Permite que se adapte en pantallas pequeñas */
+     padding: 0px 40px 10px 40px;
+ }
+
+ /* .form-container form {
     padding: 10px 0 0 0;
 } */
 
 
-.form-block {
+ .form-block {
 
-    display: grid;
-    /* 上下ブロック間のスペースが確保されます */
-    margin: 32px 0;
-    align-items: center;
-}
+     display: grid;
+     /* 上下ブロック間のスペースが確保されます */
+     margin: 32px 0;
+     align-items: center;
+ }
 
-/* input-dataは、各入力フィールド（テキスト、メール、電話番号など）とそのラベルを囲む要素です */
-form .form-block .input-data {
-    width: 100%;
-    /*要素の幅を親要素いっぱいに広げます*/
-    height: 40px;
-    margin: 30px 20px;
-    /* 要素間のスペースが確保されます。 */
-    position: relative;
-}
+ /* input-dataは、各入力フィールド（テキスト、メール、電話番号など）とそのラベルを囲む要素です */
+ form .form-block .input-data {
+     width: 100%;
+     /*要素の幅を親要素いっぱいに広げます*/
+     height: 40px;
+     margin: 30px 20px;
+     /* 要素間のスペースが確保されます。 */
+     position: relative;
+ }
 
-form .form-block .textarea {
-    height: 70px;
-}
+ form .form-block .textarea {
+     height: 70px;
+ }
 
-/* すべての入力フィールド（<input>）とテキストエリア（<textarea>）に適用されます */
-.input-data input,
-.textarea textarea {
-    display: block;
-    width: 100%;
-    /* 幅が親要素いっぱいに広がります */
-    height: 100%;
-    /* 入力フィールドやテキストエリアのデフォルトのボーダーが削除されます。 */
-    border: none;
-    font-size: 17px;
-    /* 入力フィールドやテキストエリアの下部にゴールド色の線が引かれます。 */
-    border-bottom: 2px solid #F0BB78;
-    background: rgb(0, 0, 0, 0.5);
+ /* すべての入力フィールド（<input>）とテキストエリア（<textarea>）に適用されます */
+ .input-data input,
+ .textarea textarea {
+     display: block;
+     width: 100%;
+     /* 幅が親要素いっぱいに広がります */
+     height: 100%;
+     /* 入力フィールドやテキストエリアのデフォルトのボーダーが削除されます。 */
+     border: none;
+     font-size: 17px;
+     /* 入力フィールドやテキストエリアの下部にゴールド色の線が引かれます。 */
+     border-bottom: 2px solid #F0BB78;
+     background: rgb(0, 0, 0, 0.5);
 
-    color: #F0BB78;
-}
+     color: #F0BB78;
+ }
 
-/* 入力フィールドやテキストエリアがフォーカスされたときに、対応する<label>にスタイルを適用します。 */
-.input-data input:focus~label,
-/* https://developer.mozilla.org/ja/docs/Web/CSS/:focus */
-.textarea textarea:focus~label,
-.textarea textarea:valid~label,
-/* ~は、兄弟要素を選択するためのコンビネータです。 */
-.input-data input:valid~label {
-    /* label が上に移動し、入力フィールドやテキストエリアの上部に表示されます。 */
-    transform: translateY(-30px);
-    font-size: 14px;
-    color: #FFF0DC;
-}
+ /* 入力フィールドやテキストエリアがフォーカスされたときに、対応する<label>にスタイルを適用します。 */
+ .input-data input:focus~label,
+ /* https://developer.mozilla.org/ja/docs/Web/CSS/:focus */
+ .textarea textarea:focus~label,
+ .textarea textarea:valid~label,
+ /* ~は、兄弟要素を選択するためのコンビネータです。 */
+ .input-data input:valid~label {
+     /* label が上に移動し、入力フィールドやテキストエリアの上部に表示されます。 */
+     transform: translateY(-30px);
+     font-size: 14px;
+     color: #FFF0DC;
+ }
 
-.textarea textarea {
-    /* ユーザーがテキストエリアのサイズを手動で変更できなくなります。 */
-    resize: none;
-    padding-top: 10px;
-}
+ .textarea textarea {
+     /* ユーザーがテキストエリアのサイズを手動で変更できなくなります。 */
+     resize: none;
+     padding-top: 10px;
+ }
 
-.input-data label {
-    position: absolute;
-    bottom: 10px;
-    /* ラベルが入力フィールドの下部に表示されます。 */
-    font-size: 16px;
-    transition: all 0.3s ease;
-    color: #F0BB78;
-}
+ .input-data label {
+     position: absolute;
+     bottom: 10px;
+     /* ラベルが入力フィールドの下部に表示されます。 */
+     font-size: 16px;
+     transition: all 0.3s ease;
+     color: #F0BB78;
+ }
 
-.textarea label {
-    width: 100%;
-    /* ラベルを親要素の下部から40ピクセルの位置に配置します。 */
-    bottom: 40px;
-    background: rgb(0, 0, 0, 0.5);
-}
+ .textarea label {
+     width: 100%;
+     /* ラベルを親要素の下部から40ピクセルの位置に配置します。 */
+     bottom: 40px;
+     background: rgb(0, 0, 0, 0.5);
+ }
 
-.input-data .underline {
-    /* 下線が親要素（.input-data）に対して相対的に配置されます */
-    position: absolute;
-    bottom: 0;
-    /* 下線を親要素の下部に配置します。 */
-    height: 3px;
-    /*下線の高さを3ピクセルに設定します。*/
-    width: 100%;
-}
+ .input-data .underline {
+     /* 下線が親要素（.input-data）に対して相対的に配置されます */
+     position: absolute;
+     bottom: 0;
+     /* 下線を親要素の下部に配置します。 */
+     height: 3px;
+     /*下線の高さを3ピクセルに設定します。*/
+     width: 100%;
+ }
 
-/* 疑似要素が親要素（.underline）に対して相対的に配置されます */
-.input-data .underline:before {
-    /* 疑似要素が親要素（.underline）に対して相対的に配置されます */
-    position: absolute;
-    content: "";
-    /*疑似要素の内容を空にします。*/
-    height: 2px;
-    width: 100%;
-    background: #FFF0DC;
-    transform: scaleX(0);
-    /* 疑似要素が非表示になります*/
-    transform-origin: center;
-    /*変形の起点を中央に設定します*/
-    transition: transform 0.3s ease;
-}
+ /* 疑似要素が親要素（.underline）に対して相対的に配置されます */
+ .input-data .underline:before {
+     /* 疑似要素が親要素（.underline）に対して相対的に配置されます */
+     position: absolute;
+     content: "";
+     /*疑似要素の内容を空にします。*/
+     height: 2px;
+     width: 100%;
+     background: #FFF0DC;
+     transform: scaleX(0);
+     /* 疑似要素が非表示になります*/
+     transform-origin: center;
+     /*変形の起点を中央に設定します*/
+     transition: transform 0.3s ease;
+ }
 
-/*入力フィールドやテキストエリアがフォーカスされたとき、または有効な値が入力されたときに、下線が表示されます。 */
-.input-data input:focus~.underline:before,
-.input-data input:valid~.underline:before,
-.textarea textarea:focus~.underline:before,
-.textarea textarea:valid~.underline:before {
-    transform: scale(1);
-    /*疑似要素の幅を元のサイズに戻します。*/
-}
+ /*入力フィールドやテキストエリアがフォーカスされたとき、または有効な値が入力されたときに、下線が表示されます。 */
+ .input-data input:focus~.underline:before,
+ .input-data input:valid~.underline:before,
+ .textarea textarea:focus~.underline:before,
+ .textarea textarea:valid~.underline:before {
+     transform: scale(1);
+     /*疑似要素の幅を元のサイズに戻します。*/
+ }
 
 
-.submit-btn {
-    text-align: center;
-    margin-top: 20px;
+ .submit-btn {
+     text-align: center;
+     margin-top: 20px;
 
-}
+ }
 
-.submit-button {
-    /* 背景色、文字色、余白、ボーダーを指定します。 */
-    background: linear-gradient(90deg, rgba(240, 187, 120, 1) 0%, rgba(255, 240, 220, 1) 100%);
-    border: none;
-    color: #543A14;
-    font-size: 18px;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 5px;
-    transition: all 0.4s ease;
-    width: 100%;
-}
+ .submit-button {
+     /* 背景色、文字色、余白、ボーダーを指定します。 */
+     background: linear-gradient(90deg, rgba(240, 187, 120, 1) 0%, rgba(255, 240, 220, 1) 100%);
+     border: none;
+     color: #543A14;
+     font-size: 18px;
+     padding: 10px 20px;
+     cursor: pointer;
+     text-transform: uppercase;
+     border-radius: 5px;
+     transition: all 0.4s ease;
+     width: 100%;
+ }
 
-.submit-button:hover {
-    background: rgb(240, 187, 120);
-}
+ .submit-button:hover {
+     background: rgb(240, 187, 120);
+ }
 
-/* カレンダーアイコンの色を白に設定 */
-.custom-datetime::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-    /* アイコンを反転（白にする） */
-}
+ /* カレンダーアイコンの色を白に設定 */
+ .custom-datetime::-webkit-calendar-picker-indicator {
+     filter: invert(1);
+     /* アイコンを反転（白にする） */
+ }
 
  @media (max-width: 768px) {
-    
-    .form-container {
-        padding: 0px 35px 10px 8px;
-    }
-} 
+
+     .form-container {
+         padding: 0px 35px 10px 8px;
+     }
+ }

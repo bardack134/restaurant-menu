@@ -120,7 +120,7 @@ include("../conection.php");
 
                             <!-- モーダルコンテナ -->
                             <div id="modal-container" class="NoDisplayModal ">
-                                <div class="container">
+                                <div class="container ">
                                     <!-- ビデオ要素で、再生コントロールを表示 -->
                                     <video controls class="video-control" src="video/videoplayback.mp4" id="myVideo"></video>
                                     <!-- <iframe id="myVideo" width="560" height="315" src="https://www.youtube.com/embed/kRCH8kD1GD0?si=92fIs-kr4dzprl6S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
@@ -134,6 +134,7 @@ include("../conection.php");
                 </div>
             </div>
         </section>
+
 
         <section id="about" class="backgroundImage2 mt-1">
             <div class="container col-xxl-8 px-4 py-5 text-white">
