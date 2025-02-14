@@ -1,3 +1,24 @@
+
+
+## Description:
+このコードは、レストランのウェブサイトを管理するためのPHPスクリプトです。メニュー管理、予約管理、ナビゲーション、モーダル表示などを実装しています。データベースと連携し、画像や予約情報の追加・更新・削除が可能です。Bootstrapでデザインし、JavaScriptでインタラクションを制御します。
+
+## Tools Used:
+- html
+- css
+- bootstrap
+- javascript
+- php
+- データベース
+
+## 管理パネル　- password and user
+user= kenschool  
+password = kenschool
+
+![hospital_app (1)](https://github.com/bardack134/CRUD-HOSPITAL/assets/142977989/35a5108a-da38-4b18-a80e-cc6850ad0566)
+
+
+
 HERO ホームページ
 ![hero-homepage](https://github.com/user-attachments/assets/0e18f8e3-8b4a-45bc-b03d-3c7b7c90b4c8)
 ホームページ　メーヌ
